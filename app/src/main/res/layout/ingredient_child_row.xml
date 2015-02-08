@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"   
+    android:layout_width="match_parent"  
+    android:layout_height="wrap_content" 
+    android:orientation="horizontal" > 
+
+    <ImageView
+        android:id="@+id/icon"
+        android:contentDescription="@+id/icon"
+        android:layout_width="44dp"
+        android:layout_height="44dp" />
+        <!-- 
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp" --> 
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="start|left|center_vertical"
+        android:text="[Ingredient Name]" />
+  
+</LinearLayout>

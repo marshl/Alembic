@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/switch_game"
+          android:title="@string/menu_button_switch_game"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+    
+    <item android:id="@+id/remove_ingredients"
+          android:title="@string/menu_button_remove_ingredients"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+</menu>
+

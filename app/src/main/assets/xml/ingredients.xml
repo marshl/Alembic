@@ -1,0 +1,1688 @@
+<?xml version="1.0"?>
+<alchemy>
+	<game>
+		<name>Morrowind</name>
+		<prefix>mw</prefix>
+		<package>
+			<name>Morrowind</name>
+			<ingredient>
+				<name>Alit Hide</name>
+				<effect>Drain Intelligence</effect>
+				<effect>Resist Poison</effect>
+				<effect>Telekinesis</effect>
+				<effect>Detect Animal</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ampoule Pod</name>
+				<effect>Water Walking</effect>
+				<effect>Paralyze</effect>
+				<effect>Detect Animal</effect>
+				<effect>Drain Willpower</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ash Salts</name>
+				<effect>Drain Agility</effect>
+				<effect>Resist Magicka</effect>
+				<effect>Cure Blight Disease</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ash Yam</name>
+				<effect>Fortify Intelligence</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Resist Common Disease</effect>
+				<effect>Detect Key</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bittergreen Petals</name>
+				<effect>Restore Intelligence</effect>
+				<effect>Invisibility</effect>
+				<effect>Drain Endurance</effect>
+				<effect>Drain Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Black Anther</name>
+				<effect>Drain Agility</effect>
+				<effect>Resist Fire</effect>
+				<effect>Drain Endurance</effect>
+				<effect>Light</effect>
+			</ingredient>
+			<ingredient>
+				<name>Black Lichen</name>
+				<effect>Drain Strength</effect>
+				<effect>Resist Frost</effect>
+				<effect>Drain Speed</effect>
+				<effect>Cure Poison</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bloat</name>
+				<effect>Drain Magicka</effect>
+				<effect>Fortify Intelligence</effect>
+				<effect>Fortify Willpower</effect>
+				<effect>Detect Animal</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bonemeal</name>
+				<effect>Restore Agility</effect>
+				<effect>Telekinesis</effect>
+				<effect>Drain Fatigue</effect>
+				<effect>Drain Personality</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bread</name>
+				<effect>Restore Fatigue</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bungler's Bane</name>
+				<effect>Drain Speed</effect>
+				<effect>Drain Endurance</effect>
+				<effect>Dispel</effect>
+				<effect>Drain Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Chokeweed</name>
+				<effect>Drain Luck</effect>
+				<effect>Restore Fatigue</effect>
+				<effect>Cure Common Disease</effect>
+				<effect>Drain Willpower</effect>
+			</ingredient>
+			<ingredient>
+				<name>Coda Flower</name>
+				<effect>Drain Personality</effect>
+				<effect>Levitate</effect>
+				<effect>Drain Intelligence</effect>
+				<effect>Drain Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Comberry</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Fire Shield</effect>
+				<effect>Reflect</effect>
+			</ingredient>
+			<ingredient>
+				<name>Corkbulb Root</name>
+				<effect>Cure Paralyzation</effect>
+				<effect>Restore Health</effect>
+				<effect>Lightning Shield</effect>
+				<effect>Fortify Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Corprus Weepings</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Fortify Luck</effect>
+				<effect>Drain Willpower</effect>
+				<effect>Restore Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Crab Meat</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Resist Shock</effect>
+				<effect>Lightning Shield</effect>
+				<effect>Restore Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Daedra Skin</name>
+				<effect>Fortify Strength</effect>
+				<effect>Cure Common Disease</effect>
+				<effect>Paralyze</effect>
+				<effect>Swift Swim</effect>
+			</ingredient>
+			<ingredient>
+				<name>Daedra's Heart</name>
+				<effect>Restore Magicka</effect>
+				<effect>Fortify Endurance</effect>
+				<effect>Drain Agility</effect>
+				<effect>Night Eye</effect>
+			</ingredient>
+			<ingredient>
+				<name>Diamond</name>
+				<effect>Drain Agility</effect>
+				<effect>Invisibility</effect>
+				<effect>Reflect</effect>
+				<effect>Detect Key</effect>
+			</ingredient>
+			<ingredient>
+				<name>Dreugh Wax</name>
+				<effect>Fortify Strength</effect>
+				<effect>Restore Strength</effect>
+				<effect>Drain Luck</effect>
+				<effect>Drain Willpower</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ectoplasm</name>
+				<effect>Fortify Agility</effect>
+				<effect>Detect Animal</effect>
+				<effect>Drain Strength</effect>
+				<effect>Drain Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Emerald</name>
+				<effect>Fortify Magicka</effect>
+				<effect>Restore Health</effect>
+				<effect>Drain Agility</effect>
+				<effect>Drain Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Fire Petal</name>
+				<effect>Resist Fire</effect>
+				<effect>Drain Health</effect>
+				<effect>Spell Absorption</effect>
+				<effect>Paralyze</effect>
+			</ingredient>
+			<ingredient>
+				<name>Fire Salts</name>
+				<effect>Drain Health</effect>
+				<effect>Fortify Agility</effect>
+				<effect>Resist Frost</effect>
+				<effect>Fire Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Frost Salts</name>
+				<effect>Drain Speed</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Frost Shield</effect>
+				<effect>Resist Fire</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ghoul Heart</name>
+				<effect>Paralyze</effect>
+				<effect>Cure Poison</effect>
+				<effect>Fortify Attack</effect>
+			</ingredient>
+			<ingredient>
+				<name>Gold Kanet</name>
+				<effect>Drain Health</effect>
+				<effect>Burden</effect>
+				<effect>Drain Luck</effect>
+				<effect>Restore Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Gravedust</name>
+				<effect>Drain Intelligence</effect>
+				<effect>Cure Common Disease</effect>
+				<effect>Drain Magicka</effect>
+				<effect>Restore Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Green Lichen</name>
+				<effect>Fortify Personality</effect>
+				<effect>Cure Common Disease</effect>
+				<effect>Drain Strength</effect>
+				<effect>Drain Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Guar Hide</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Fortify Endurance</effect>
+				<effect>Restore Personality</effect>
+				<effect>Fortify Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Hackle-Lo Leaf</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Paralyze</effect>
+				<effect>Water Breathing</effect>
+				<effect>Restore Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Heather</name>
+				<effect>Restore Personality</effect>
+				<effect>Feather</effect>
+				<effect>Drain Speed</effect>
+				<effect>Drain Personality</effect>
+			</ingredient>
+			<ingredient>
+				<name>Hound Meat</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Fortify Fatigue</effect>
+				<effect>Reflect</effect>
+				<effect>Detect Enchantment</effect>
+			</ingredient>
+			<ingredient>
+				<name>Hypha Facia</name>
+				<effect>Drain Luck</effect>
+				<effect>Drain Agility</effect>
+				<effect>Drain Fatigue</effect>
+				<effect>Detect Enchantment</effect>
+			</ingredient>
+			<ingredient>
+				<name>Kagouti Hide</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Fortify Speed</effect>
+				<effect>Resist Common Disease</effect>
+				<effect>Night Eye</effect>
+			</ingredient>
+			<ingredient>
+				<name>Kresh Fiber</name>
+				<effect>Restore Luck</effect>
+				<effect>Fortify Personality</effect>
+				<effect>Drain Magicka</effect>
+				<effect>Drain Speed</effect>
+			</ingredient>
+			<ingredient>
+				<name>Kwama Cuttle</name>
+				<effect>Resist Poison</effect>
+				<effect>Drain Fatigue</effect>
+				<effect>Water Walking</effect>
+				<effect>Water Breathing</effect>
+			</ingredient>
+			<ingredient>
+				<name>Large Kwama Egg</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Paralyze</effect>
+				<effect>Frost Shield</effect>
+				<effect>Fortify Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Luminous Russula</name>
+				<effect>Water Breathing</effect>
+				<effect>Drain Fatigue</effect>
+				<effect>Poison</effect>
+			</ingredient>
+			<ingredient>
+				<name>Marshmerrow</name>
+				<effect>Restore Health</effect>
+				<effect>Detect Enchantment</effect>
+				<effect>Drain Willpower</effect>
+				<effect>Drain Fatigue</effect>
+			</ingredient>
+			<ingredient>
+				<name>Moon Sugar</name>
+				<effect>Fortify Speed</effect>
+				<effect>Dispel</effect>
+				<effect>Drain Endurance</effect>
+				<effect>Drain Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Muck</name>
+				<effect>Drain Intelligence</effect>
+				<effect>Detect Key</effect>
+				<effect>Drain Personality</effect>
+				<effect>Cure Common Disease</effect>
+			</ingredient>
+			<ingredient>
+				<name>Netch Leather</name>
+				<effect>Fortify Endurance</effect>
+				<effect>Fortify Intelligence</effect>
+				<effect>Drain Personality</effect>
+				<effect>Cure Paralyzation</effect>
+			</ingredient>
+			<ingredient>
+				<name>Pearl</name>
+				<effect>Drain Agility</effect>
+				<effect>Dispel</effect>
+				<effect>Water Breathing</effect>
+				<effect>Resist Common Disease</effect>
+			</ingredient>
+			<ingredient>
+				<name>Racer Plumes</name>
+				<effect>Drain Willpower</effect>
+				<effect>Levitate</effect>
+			</ingredient>
+			<ingredient>
+				<name>Rat Meat</name>
+				<effect>Drain Magicka</effect>
+				<effect>Paralyze</effect>
+				<effect>Cure Poison</effect>
+				<effect>Resist Poison</effect>
+			</ingredient>
+			<ingredient>
+				<name>Raw Ebony</name>
+				<effect>Drain Agility</effect>
+				<effect>Cure Poison</effect>
+				<effect>Frost Shield</effect>
+				<effect>Restore Speed</effect>
+			</ingredient>
+			<ingredient>
+				<name>Raw Glass</name>
+				<effect>Drain Intelligence</effect>
+				<effect>Drain Strength</effect>
+				<effect>Drain Speed</effect>
+				<effect>Fire Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Red Lichen</name>
+				<effect>Drain Speed</effect>
+				<effect>Light</effect>
+				<effect>Cure Common Disease</effect>
+				<effect>Drain Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Resin</name>
+				<effect>Restore Health</effect>
+				<effect>Restore Speed</effect>
+				<effect>Burden</effect>
+				<effect>Resist Common Disease</effect>
+			</ingredient>
+			<ingredient>
+				<name>Roobrush</name>
+				<effect>Drain Willpower</effect>
+				<effect>Fortify Agility</effect>
+				<effect>Drain Health</effect>
+				<effect>Cure Poison</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ruby</name>
+				<effect>Drain Health</effect>
+				<effect>Feather</effect>
+				<effect>Restore Intelligence</effect>
+				<effect>Drain Agility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Saltrice</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Drain Strength</effect>
+				<effect>Restore Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scales</name>
+				<effect>Drain Personality</effect>
+				<effect>Water Walking</effect>
+				<effect>Restore Endurance</effect>
+				<effect>Swift Swim</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scamp Skin</name>
+				<effect>Drain Magicka</effect>
+				<effect>Cure Paralyzation</effect>
+				<effect>Restore Personality</effect>
+				<effect>Restore Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scathecraw</name>
+				<effect>Drain Strength</effect>
+				<effect>Cure Poison</effect>
+				<effect>Drain Health</effect>
+				<effect>Restore Willpower</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scrap Metal</name>
+				<effect>Drain Health</effect>
+				<effect>Lightning Shield</effect>
+				<effect>Resist Shock</effect>
+				<effect>Restore Intelligence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scrib Jelly</name>
+				<effect>Fortify Willpower</effect>
+				<effect>Cure Poison</effect>
+				<effect>Cure Blight Disease</effect>
+				<effect>Restore Willpower</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scrib Jerky</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Fortify Fatigue</effect>
+				<effect>Burden</effect>
+				<effect>Swift Swim</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scuttle</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Fortify Fatigue</effect>
+				<effect>Feather</effect>
+				<effect>Telekinesis</effect>
+			</ingredient>
+			<ingredient>
+				<name>Shalk Resin</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Fortify Health</effect>
+				<effect>Drain Personality</effect>
+				<effect>Fortify Speed</effect>
+			</ingredient>
+			<ingredient>
+				<name>Sload Soap</name>
+				<effect>Drain Personality</effect>
+				<effect>Fortify Agility</effect>
+				<effect>Fire Shield</effect>
+				<effect>Restore Agility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Small Kwama Egg</name>
+				<effect>Restore Fatigue</effect>
+			</ingredient>
+			<ingredient>
+				<name>Spore Pod</name>
+				<effect>Drain Strength</effect>
+				<effect>Drain Fatigue</effect>
+				<effect>Detect Key</effect>
+				<effect>Paralyze</effect>
+			</ingredient>
+			<ingredient>
+				<name>Stoneflower Petals</name>
+				<effect>Restore Strength</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Drain Luck</effect>
+				<effect>Fortify Personality</effect>
+			</ingredient>
+			<ingredient>
+				<name>Trama Root</name>
+				<effect>Restore Willpower</effect>
+				<effect>Levitate</effect>
+				<effect>Drain Magicka</effect>
+				<effect>Drain Speed</effect>
+			</ingredient>
+			<ingredient>
+				<name>Vampire Dust</name>
+				<effect>Fortify Health</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Spell Absorption</effect>
+				<effect>Vampirism</effect>
+			</ingredient>
+			<ingredient>
+				<name>Violet Coprinus</name>
+				<effect>Water Walking</effect>
+				<effect>Drain Fatigue</effect>
+				<effect>Poison</effect>
+			</ingredient>
+			<ingredient>
+				<name>Void Salts</name>
+				<effect>Restore Magicka</effect>
+				<effect>Spell Absorption</effect>
+				<effect>Paralyze</effect>
+				<effect>Drain Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Wickwheat</name>
+				<effect>Restore Health</effect>
+				<effect>Fortify Willpower</effect>
+				<effect>Paralyze</effect>
+				<effect>Damage Intelligence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Willow Anther</name>
+				<effect>Drain Personality</effect>
+				<effect>Frost Shield</effect>
+				<effect>Cure Common Disease</effect>
+				<effect>Cure Paralyzation</effect>
+			</ingredient>
+
+		</package>
+		<package>
+			<name>Tribunal</name>
+			<ingredient>
+				<name>Adamantium Ore</name>
+				<effect>Burden</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Poison</effect>
+				<effect>Reflect</effect>
+			</ingredient>
+			<ingredient>
+				<name>Durzog Meat</name>
+				<effect>Fortify Agility</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Blind Blind</effect>
+				<effect>Damage Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Golden Sedge Flowers</name>
+				<effect>Drain Magicka</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Fortify Attack</effect>
+				<effect>Swift Swim</effect>
+			</ingredient>
+			<ingredient>
+				<name>Horn Lily Bulb</name>
+				<effect>Resist Paralysis</effect>
+				<effect>Drain Health</effect>
+				<effect>Restore Strength</effect>
+				<effect>Restore Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Lloramor Spines</name>
+				<effect>Spell Absorption</effect>
+				<effect>Invisibility</effect>
+				<effect>Poison</effect>
+				<effect>Detect Enchantment</effect>
+			</ingredient>
+			<ingredient>
+				<name>Meadow Rye</name>
+				<effect>Fortify Speed</effect>
+				<effect>Damage Health</effect>
+				<effect>Restore Speed</effect>
+				<effect>Drain Speed</effect>
+			</ingredient>
+			<ingredient>
+				<name>Nirthfly Stalks</name>
+				<effect>Damage Health</effect>
+				<effect>Fortify Speed</effect>
+				<effect>Restore Speed</effect>
+				<effect>Drain Speed</effect>
+			</ingredient>
+			<ingredient>
+				<name>Noble Sedge Flowers</name>
+				<effect>Damage Health</effect>
+				<effect>Restore Agility</effect>
+				<effect>Poison</effect>
+				<effect>Fortify Agility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scrib Cabbage</name>
+				<effect>Drain Intelligence</effect>
+				<effect>Damage Health</effect>
+				<effect>Restore Agility</effect>
+				<effect>Fortify Agility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Sweetpulp</name>
+				<effect>Paralyze</effect>
+				<effect>Levitate</effect>
+				<effect>Resist Paralysis</effect>
+				<effect>Restore Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Timsa-Come-By flowers</name>
+				<effect>Dispel</effect>
+				<effect>Resist Paralysis</effect>
+				<effect>Drain Magicka</effect>
+				<effect>Restore Endurance</effect>
+			</ingredient>
+
+		</package>
+		<package>
+			<name>Bloodmoon</name>
+			<ingredient>
+				<name>Bear Pelt</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Resist Common Disease</effect>
+				<effect>Night Eye</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bristleback Leather</name>
+				<effect>Blind</effect>
+				<effect>Frost Damage</effect>
+				<effect>Resist Frost</effect>
+				<effect>Recall</effect>
+			</ingredient>
+			<ingredient>
+				<name>Grahl Eyeball</name>
+				<effect>Resist Frost</effect>
+				<effect>Night Eye</effect>
+				<effect>Drain Magicka</effect>
+				<effect>Fortify Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Gravetar</name>
+				<effect>Resist Frost</effect>
+				<effect>Drain Health</effect>
+				<effect>Fortify Fatigue</effect>
+				<effect>Drain Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Heartwood</name>
+				<effect>Restore Magicka</effect>
+				<effect>Fortify Agility</effect>
+				<effect>Drain Strength</effect>
+				<effect>Weakness to Fire</effect>
+			</ingredient>
+			<ingredient>
+				<name>Holly Berries</name>
+				<effect>Resist Frost</effect>
+				<effect>Frost Shield</effect>
+				<effect>Frost Damage</effect>
+				<effect>Weakness to Fire</effect>
+			</ingredient>
+			<ingredient>
+				<name>Horker Tusk</name>
+				<effect>Drain Alteration</effect>
+				<effect>Fortify Intelligence</effect>
+				<effect>Fortify Maximum Magicka</effect>
+				<effect>Detect Animal</effect>
+			</ingredient>
+			<ingredient>
+				<name>Raw Stalhrim</name>
+				<effect>Resist Frost</effect>
+				<effect>Frost Damage</effect>
+				<effect>Paralyze Paralyze</effect>
+				<effect>Restore Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ripened Belladonna Berries</name>
+				<effect>Resist Magicka</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Drain Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Snow Bear Pelt</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Fortify Speed</effect>
+				<effect>Resist Common Disease</effect>
+				<effect>Night Eye</effect>
+			</ingredient>
+			<ingredient>
+				<name>Snow Wolf Pelt</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Fortify Speed</effect>
+				<effect>Resist Common Disease</effect>
+				<effect>Night Eye</effect>
+			</ingredient>
+			<ingredient>
+				<name>Unripened Belladonna Berries</name>
+				<effect>Resist Magicka</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Drain Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Wolf Pelt</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Fortify Speed</effect>
+				<effect>Resist Common Disease</effect>
+				<effect>Night Eye</effect>
+			</ingredient>
+			<ingredient>
+				<name>Wolfsbane Petals</name>
+				<effect>Restore Intelligence</effect>
+				<effect>Invisibility</effect>
+				<effect>Drain Endurance</effect>
+				<effect>Drain Magicka</effect>
+			</ingredient>
+		</package>
+	</game>
+	<game>
+		<name>Oblivion</name>
+		<prefix>ob</prefix>
+		<package>
+			<name>Oblivion</name>
+			<ingredient>
+				<name>Alkanet Flower</name>
+				<effect>Restore Intelligence</effect>
+				<effect>Resist Poison</effect>
+				<effect>Light</effect>
+				<effect>Damage Fatigue</effect>
+			</ingredient>
+			<ingredient>
+				<name>Aloe Vera Leaves</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Restore Health</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Invisibility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ambrosia</name>
+				<effect>Restore Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Apple</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Luck</effect>
+				<effect>Fortify Willpower</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Arrowroot</name>
+				<effect>Restore Agility</effect>
+				<effect>Damage Luck</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Burden</effect>
+			</ingredient>
+			<ingredient>
+				<name>Beef</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Shield</effect>
+				<effect>Fortify Agility</effect>
+				<effect>Dispel</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bergamot Seeds</name>
+				<effect>Resist Disease</effect>
+				<effect>Dispel</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Silence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Blackberry</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Resist Shock</effect>
+				<effect>Fortify Endurance</effect>
+				<effect>Restore Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Blood Grass</name>
+				<effect>Chameleon</effect>
+				<effect>Resist Paralysis</effect>
+				<effect>Burden</effect>
+				<effect>Fortify Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Boar Meat</name>
+				<effect>Restore Health</effect>
+				<effect>Damage Speed</effect>
+				<effect>Fortify Health</effect>
+				<effect>Burden</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bog Beacon Asco Cap</name>
+				<effect>Restore Magicka</effect>
+				<effect>Shield</effect>
+				<effect>Damage Personality</effect>
+				<effect>Damage Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bonemeal</name>
+				<effect>Damage Fatigue</effect>
+				<effect>Resist Fire</effect>
+				<effect>Fortify Luck</effect>
+				<effect>Night-Eye</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bread Loaf</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Detect Life</effect>
+				<effect>Damage Agility</effect>
+				<effect>Damage Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Cairn Bolete Cap</name>
+				<effect>Restore Health</effect>
+				<effect>Damage Intelligence</effect>
+				<effect>Resist Paralysis</effect>
+				<effect>Shock Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Carrot</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Night-Eye</effect>
+				<effect>Fortify Intelligence</effect>
+				<effect>Damage Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Cheese Wedge</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Resist Fire</effect>
+				<effect>Fire Shield</effect>
+				<effect>Damage Agility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Cheese Wheel</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Resist Paralysis</effect>
+				<effect>Damage Luck</effect>
+				<effect>Fortify Willpower</effect>
+			</ingredient>
+			<ingredient>
+				<name>Cinnabar Polypore Red Cap</name>
+				<effect>Restore Agility</effect>
+				<effect>Shield</effect>
+				<effect>Damage Personality</effect>
+				<effect>Damage Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Cinnabar Polypore Yellow Cap</name>
+				<effect>Restore Endurance</effect>
+				<effect>Fortify Endurance</effect>
+				<effect>Damage Personality</effect>
+				<effect>Reflect Spell</effect>
+			</ingredient>
+			<ingredient>
+				<name>Clannfear Claws</name>
+				<effect>Cure Disease</effect>
+				<effect>Resist Disease</effect>
+				<effect>Paralyze</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Clouded Funnel Cap</name>
+				<effect>Restore Intelligence</effect>
+				<effect>Fortify Intelligence</effect>
+				<effect>Damage Endurance</effect>
+				<effect>Damage Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Columbine Root Pulp</name>
+				<effect>Restore Personality</effect>
+				<effect>Resist Frost</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Chameleon</effect>
+			</ingredient>
+			<ingredient>
+				<name>Corn</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Restore Intelligence</effect>
+				<effect>Damage Agility</effect>
+				<effect>Shock Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Crab Meat</name>
+				<effect>Restore Endurance</effect>
+				<effect>Resist Shock</effect>
+				<effect>Damage Fatigue</effect>
+				<effect>Fire Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Daedra Heart</name>
+				<effect>Restore Health</effect>
+				<effect>Shock Shield</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Silence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Daedra Silk</name>
+				<effect>Burden</effect>
+				<effect>Night-Eye</effect>
+				<effect>Chameleon</effect>
+				<effect>Damage Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Daedra Venin</name>
+				<effect>Paralyze</effect>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Health</effect>
+				<effect>Reflect Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Daedroth Teeth</name>
+				<effect>Night-Eye</effect>
+				<effect>Frost Shield</effect>
+				<effect>Burden</effect>
+				<effect>Light</effect>
+			</ingredient>
+			<ingredient>
+				<name>Dragon's Tongue</name>
+				<effect>Resist Fire</effect>
+				<effect>Damage Health</effect>
+				<effect>Restore Health</effect>
+				<effect>Fire Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Dreugh Wax</name>
+				<effect>Damage Fatigue</effect>
+				<effect>Resist Poison</effect>
+				<effect>Water Breathing</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Dryad Saddle Polypore Cap</name>
+				<effect>Restore Luck</effect>
+				<effect>Resist Frost</effect>
+				<effect>Damage Speed</effect>
+				<effect>Frost Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ectoplasm</name>
+				<effect>Shock Damage</effect>
+				<effect>Dispel</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Elf Cup Cap</name>
+				<effect>Damage Willpower</effect>
+				<effect>Cure Disease</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Damage Intelligence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Emetic Russula Cap</name>
+				<effect>Restore Agility</effect>
+				<effect>Shield</effect>
+				<effect>Damage Personality</effect>
+				<effect>Damage Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Fennel Seeds</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Intelligence</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Paralyze</effect>
+			</ingredient>
+			<ingredient>
+				<name>Fire Salts</name>
+				<effect>Fire Damage</effect>
+				<effect>Resist Frost</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Fire Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Flax Seeds</name>
+				<effect>Restore Magicka</effect>
+				<effect>Feather</effect>
+				<effect>Shield</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Flour</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Personality</effect>
+				<effect>Fortify Fatigue</effect>
+				<effect>Reflect Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Fly Amanita Cap</name>
+				<effect>Restore Agility</effect>
+				<effect>Burden</effect>
+				<effect>Restore Health</effect>
+				<effect>Shock Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Foxglove Nectar</name>
+				<effect>Resist Poison</effect>
+				<effect>Resist Paralysis</effect>
+				<effect>Restore Luck</effect>
+				<effect>Resist Disease</effect>
+			</ingredient>
+			<ingredient>
+				<name>Frost Salts</name>
+				<effect>Frost Damage</effect>
+				<effect>Resist Fire</effect>
+				<effect>Silence</effect>
+				<effect>Frost Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Garlic</name>
+				<effect>Resist Disease</effect>
+				<effect>Damage Agility</effect>
+				<effect>Frost Shield</effect>
+				<effect>Fortify Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ginkgo Leaf</name>
+				<effect>Restore Speed</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Damage Luck</effect>
+				<effect>Shock Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ginseng</name>
+				<effect>Damage Luck</effect>
+				<effect>Cure Poison</effect>
+				<effect>Burden</effect>
+				<effect>Fortify Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Glow Dust</name>
+				<effect>Restore Speed</effect>
+				<effect>Light</effect>
+				<effect>Reflect Spell</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Grapes</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Water Walking</effect>
+				<effect>Dispel</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Green Stain Cup Cap</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Speed</effect>
+				<effect>Reflect Damage</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Green Stain Shelf Cap</name>
+				<effect>Restore Luck</effect>
+				<effect>Fortify Luck</effect>
+				<effect>Damage Fatigue</effect>
+				<effect>Restore Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ham</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Restore Health</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Damage Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Harrada</name>
+				<effect>Damage Health</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Silence</effect>
+				<effect>Paralyze</effect>
+			</ingredient>
+			<ingredient>
+				<name>Imp Gall</name>
+				<effect>Fortify Personality</effect>
+				<effect>Cure Paralysis</effect>
+				<effect>Damage Health</effect>
+				<effect>Fire Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ironwood Nut</name>
+				<effect>Restore Intelligence</effect>
+				<effect>Resist Fire</effect>
+				<effect>Damage Fatigue</effect>
+				<effect>Fortify Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Lady's Mantle Leaves</name>
+				<effect>Restore Health</effect>
+				<effect>Damage Endurance</effect>
+				<effect>Night-Eye</effect>
+				<effect>Feather</effect>
+			</ingredient>
+			<ingredient>
+				<name>Lady's Smock Leaves</name>
+				<effect>Restore Intelligence</effect>
+				<effect>Resist Fire</effect>
+				<effect>Damage Fatigue</effect>
+				<effect>Fortify Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Lavender Sprig</name>
+				<effect>Restore Personality</effect>
+				<effect>Fortify Willpower</effect>
+				<effect>Restore Health</effect>
+				<effect>Damage Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Leek</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Fortify Agility</effect>
+				<effect>Damage Personality</effect>
+				<effect>Damage Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Lettuce</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Restore Luck</effect>
+				<effect>Fire Shield</effect>
+				<effect>Damage Personality</effect>
+			</ingredient>
+			<ingredient>
+				<name>Lichor</name>
+				<effect>Restore Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Mandrake Root</name>
+				<effect>Cure Disease</effect>
+				<effect>Resist Poison</effect>
+				<effect>Damage Agility</effect>
+				<effect>Fortify Willpower</effect>
+			</ingredient>
+			<ingredient>
+				<name>Milk Thistle Seeds</name>
+				<effect>Light</effect>
+				<effect>Frost Damage</effect>
+				<effect>Cure Paralysis</effect>
+				<effect>Paralyze</effect>
+			</ingredient>
+			<ingredient>
+				<name>Minotaur Horn</name>
+				<effect>Restore Willpower</effect>
+				<effect>Burden</effect>
+				<effect>Fortify Endurance</effect>
+				<effect>Resist Paralysis</effect>
+			</ingredient>
+			<ingredient>
+				<name>Monkshood Root Pulp</name>
+				<effect>Restore Strength</effect>
+				<effect>Damage Intelligence</effect>
+				<effect>Fortify Endurance</effect>
+				<effect>Burden</effect>
+			</ingredient>
+			<ingredient>
+				<name>Morning Glory Root Pulp</name>
+				<effect>Burden</effect>
+				<effect>Damage Willpower</effect>
+				<effect>Frost Shield</effect>
+				<effect>Damage Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Mort Flesh</name>
+				<effect>Damage Fatigue</effect>
+				<effect>Damage Luck</effect>
+				<effect>Fortify Health</effect>
+				<effect>Silence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Motherwort Sprig</name>
+				<effect>Resist Poison</effect>
+				<effect>Damage Fatigue</effect>
+				<effect>Silence</effect>
+				<effect>Invisibility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Mugwort Seeds</name>
+				<effect>Restore Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Mutton</name>
+				<effect>Fortify Health</effect>
+				<effect>Damage Fatigue</effect>
+				<effect>Dispel</effect>
+				<effect>Damage Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Nightshade</name>
+				<effect>Damage Health</effect>
+				<effect>Burden</effect>
+				<effect>Damage Luck</effect>
+				<effect>Fortify Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ogre's Teeth</name>
+				<effect>Damage Intelligence</effect>
+				<effect>Resist Paralysis</effect>
+				<effect>Shock Damage</effect>
+				<effect>Fortify Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Onion</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Water Breathing</effect>
+				<effect>Detect Life</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Orange</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Detect Life</effect>
+				<effect>Burden</effect>
+				<effect>Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Pear</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Speed</effect>
+				<effect>Fortify Speed</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Peony Seeds</name>
+				<effect>Restore Strength</effect>
+				<effect>Damage Health</effect>
+				<effect>Damage Speed</effect>
+				<effect>Restore Fatigue</effect>
+			</ingredient>
+			<ingredient>
+				<name>Potato</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Shield</effect>
+				<effect>Burden</effect>
+				<effect>Frost Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Primrose Leaves</name>
+				<effect>Restore Willpower</effect>
+				<effect>Restore Personality</effect>
+				<effect>Fortify Luck</effect>
+				<effect>Damage Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Pumpkin</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Agility</effect>
+				<effect>Damage Personality</effect>
+				<effect>Detect Life</effect>
+			</ingredient>
+			<ingredient>
+				<name>Purgeblood Salts</name>
+				<effect>Restore Magicka</effect>
+				<effect>Damage Health</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Dispel</effect>
+			</ingredient>
+			<ingredient>
+				<name>Radish</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Endurance</effect>
+				<effect>Chameleon</effect>
+				<effect>Burden</effect>
+			</ingredient>
+			<ingredient>
+				<name>Rat Meat</name>
+				<effect>Damage Fatigue</effect>
+				<effect>Detect Life</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Silence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Redwort Flower</name>
+				<effect>Resist Frost</effect>
+				<effect>Cure Poison</effect>
+				<effect>Damage Health</effect>
+				<effect>Invisibility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Rice</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Silence</effect>
+				<effect>Shock Shield</effect>
+				<effect>Damage Agility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Root Pulp</name>
+				<effect>Cure Disease</effect>
+				<effect>Damage Willpower</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Damage Intelligence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Sacred Lotus Seeds</name>
+				<effect>Resist Frost</effect>
+				<effect>Damage Health</effect>
+				<effect>Feather</effect>
+				<effect>Dispel</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scales</name>
+				<effect>Damage Willpower</effect>
+				<effect>Water Breathing</effect>
+				<effect>Damage Health</effect>
+				<effect>Water Walking</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scamp Skin</name>
+				<effect>Damage Magicka</effect>
+				<effect>Resist Shock</effect>
+				<effect>Reflect Damage</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Shepherd's Pie</name>
+				<effect>Cure Disease</effect>
+				<effect>Shield</effect>
+				<effect>Fortify Agility</effect>
+				<effect>Dispel</effect>
+			</ingredient>
+			<ingredient>
+				<name>S'jirra's Famous Potato Bread</name>
+				<effect>Detect Life</effect>
+				<effect>Restore Health</effect>
+				<effect>Damage Agility</effect>
+				<effect>Damage Strength</effect>
+			</ingredient>
+			<ingredient>
+				<name>Somnalius Frond</name>
+				<effect>Restore Speed</effect>
+				<effect>Damage Endurance</effect>
+				<effect>Fortify Health</effect>
+				<effect>Feather</effect>
+			</ingredient>
+			<ingredient>
+				<name>Spiddal Stick</name>
+				<effect>Damage Health</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Fire Damage</effect>
+				<effect>Restore Fatigue</effect>
+			</ingredient>
+			<ingredient>
+				<name>St. Jahn's Wort Nectar</name>
+				<effect>Resist Shock</effect>
+				<effect>Damage Health</effect>
+				<effect>Cure Poison</effect>
+				<effect>Chameleon</effect>
+			</ingredient>
+			<ingredient>
+				<name>Steel-Blue Entoloma Cap</name>
+				<effect>Restore Magicka</effect>
+				<effect>Fire Damage</effect>
+				<effect>Resist Frost</effect>
+				<effect>Burden</effect>
+			</ingredient>
+			<ingredient>
+				<name>Stinkhorn Cap</name>
+				<effect>Damage Health</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Water Walking</effect>
+				<effect>Invisibility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Strawberry</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Cure Poison</effect>
+				<effect>Damage Health</effect>
+				<effect>Reflect Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Summer Bolete Cap</name>
+				<effect>Restore Agility</effect>
+				<effect>Shield</effect>
+				<effect>Damage Personality</effect>
+				<effect>Damage Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Sweetcake</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Feather</effect>
+				<effect>Restore Health</effect>
+				<effect>Burden</effect>
+			</ingredient>
+			<ingredient>
+				<name>Sweetroll</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Resist Disease</effect>
+				<effect>Damage Personality</effect>
+				<effect>Fortify Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Taproot</name>
+				<effect>Restore Luck</effect>
+				<effect>Damage Endurance</effect>
+				<effect>Resist Poison</effect>
+				<effect>Shock Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Tiger Lily Nectar</name>
+				<effect>Restore Endurance</effect>
+				<effect>Damage Strength</effect>
+				<effect>Water Walking</effect>
+				<effect>Damage Willpower</effect>
+			</ingredient>
+			<ingredient>
+				<name>Tinder Polypore Cap</name>
+				<effect>Restore Willpower</effect>
+				<effect>Resist Disease</effect>
+				<effect>Invisibility</effect>
+				<effect>Damage Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Tobacco</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Resist Paralysis</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Dispel</effect>
+			</ingredient>
+			<ingredient>
+				<name>Tomato</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Detect Life</effect>
+				<effect>Burden</effect>
+				<effect>Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Troll Fat</name>
+				<effect>Damage Agility</effect>
+				<effect>Fortify Personality</effect>
+				<effect>Damage Willpower</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Vampire Dust</name>
+				<effect>Silence</effect>
+				<effect>Resist Disease</effect>
+				<effect>Frost Damage</effect>
+				<effect>Invisibility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Venison</name>
+				<effect>Restore Health</effect>
+				<effect>Feather</effect>
+				<effect>Damage Health</effect>
+				<effect>Chameleon</effect>
+			</ingredient>
+			<ingredient>
+				<name>Viper's Bugloss Leaves</name>
+				<effect>Resist Paralysis</effect>
+				<effect>Night-Eye</effect>
+				<effect>Burden</effect>
+				<effect>Cure Paralysis</effect>
+			</ingredient>
+			<ingredient>
+				<name>Void Salts</name>
+				<effect>Restore Magicka</effect>
+				<effect>Damage Health</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Dispel</effect>
+			</ingredient>
+			<ingredient>
+				<name>Water Hyacinth Nectar</name>
+				<effect>Damage Luck</effect>
+				<effect>Damage Fatigue</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Fortify Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Watermelon</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Light</effect>
+				<effect>Burden</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Wheat Grain</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Fortify Health</effect>
+				<effect>Damage Personality</effect>
+			</ingredient>
+			<ingredient>
+				<name>White Seed Pod</name>
+				<effect>Restore Strength</effect>
+				<effect>Water Breathing</effect>
+				<effect>Silence</effect>
+				<effect>Light</effect>
+			</ingredient>
+			<ingredient>
+				<name>Wisp Stalk Caps</name>
+				<effect>Damage Health</effect>
+				<effect>Damage Willpower</effect>
+				<effect>Damage Intelligence</effect>
+				<effect>Fortify Speed</effect>
+			</ingredient>
+			<ingredient>
+				<name>Wormwood Leaves</name>
+				<effect>Fortify Fatigue</effect>
+				<effect>Invisibility</effect>
+				<effect>Damage Health</effect>
+				<effect>Damage Magicka</effect>
+			</ingredient>
+
+		</package>
+		<package>
+			<name>Shivering Isles</name>
+			<ingredient>
+				<name>Alocasia Fruit</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Light</effect>
+				<effect>Restore Health</effect>
+				<effect>Damage Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Ashen Remains</name>
+				<effect>Fortify Fatigue</effect>
+				<effect>Damage Luck</effect>
+				<effect>Silence</effect>
+				<effect>Weakness to Fire</effect>
+			</ingredient>
+			<ingredient>
+				<name>Aster Bloom Core</name>
+				<effect>Restore Agility</effect>
+				<effect>Dispel</effect>
+				<effect>Shield</effect>
+				<effect>Burden</effect>
+			</ingredient>
+			<ingredient>
+				<name>Black Tar</name>
+				<effect>Damage Fatigue</effect>
+				<effect>Damage Speed</effect>
+				<effect>Damage Health</effect>
+				<effect>Shock Damage</effect>
+			</ingredient>
+			<ingredient>
+				<name>Blister Pod Cap</name>
+				<effect>Restore Magicka</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Night-Eye</effect>
+				<effect>Invisibility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bone Marrow</name>
+				<effect>Damage Health</effect>
+				<effect>Frost Damage</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Paralyze</effect>
+			</ingredient>
+			<ingredient>
+				<name>Bone Shard</name>
+				<effect>Restore Willpower</effect>
+				<effect>Frost Shield</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Damage Luck</effect>
+			</ingredient>
+			<ingredient>
+				<name>Congealed Putrescence</name>
+				<effect>Restore Strength</effect>
+				<effect>Fire Damage</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Elytra Ichor</name>
+				<effect>Restore Magicka</effect>
+				<effect>Burden</effect>
+				<effect>Chameleon</effect>
+				<effect>Silence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Flame Stalk</name>
+				<effect>Restore Health</effect>
+				<effect>Fire Damage</effect>
+				<effect>Frost Shield</effect>
+				<effect>Invisibility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Fungus Stalk</name>
+				<effect>Restore Strength</effect>
+				<effect>Water Walking</effect>
+				<effect>Fortify Health</effect>
+				<effect>Restore Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Gnarl Bark</name>
+				<effect>Restore Endurance</effect>
+				<effect>Shield</effect>
+				<effect>Fire Shield</effect>
+				<effect>Damage Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Grummite Eggs</name>
+				<effect>Damage Magicka</effect>
+				<effect>Dispel</effect>
+				<effect>Chameleon</effect>
+				<effect>Silence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Hound Tooth</name>
+				<effect>Cure Poison</effect>
+				<effect>Detect Life</effect>
+				<effect>Burden</effect>
+				<effect>Invisibility</effect>
+			</ingredient>
+			<ingredient>
+				<name>Hunger Tongue</name>
+				<effect>Cure Poison</effect>
+				<effect>Cure Disease</effect>
+				<effect>Fire Damage</effect>
+				<effect>Fortify Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Hydnum Azure Giant Spore</name>
+				<effect>Restore Endurance</effect>
+				<effect>Detect Life</effect>
+				<effect>Fortify Health</effect>
+				<effect>Frost Shield</effect>
+			</ingredient>
+			<ingredient>
+				<name>Letifer Orca Digestive Slime</name>
+				<effect>Damage Health</effect>
+				<effect>Damage Fatigue</effect>
+				<effect>Damage Magicka</effect>
+				<effect>Restore Fatigue</effect>
+			</ingredient>
+			<ingredient>
+				<name>Red Kelp Gas Bladder</name>
+				<effect>Restore Speed</effect>
+				<effect>Water Breathing</effect>
+				<effect>Cure Disease</effect>
+				<effect>Fortify Magicka</effect>
+			</ingredient>
+			<ingredient>
+				<name>Rot Scale</name>
+				<effect>Burden</effect>
+				<effect>Damage Health</effect>
+				<effect>Silence</effect>
+				<effect>Paralyze</effect>
+			</ingredient>
+			<ingredient>
+				<name>Scalon Fin</name>
+				<effect>Water Breathing</effect>
+				<effect>Damage Health</effect>
+				<effect>Shock Damage</effect>
+				<effect>Burden</effect>
+			</ingredient>
+			<ingredient>
+				<name>Screaming Maw</name>
+				<effect>Restore Willpower</effect>
+				<effect>Detect Life</effect>
+				<effect>Chameleon</effect>
+				<effect>Restore Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Smoked Baliwog Leg</name>
+				<effect>Restore Fatigue</effect>
+				<effect>Feather</effect>
+				<effect>Restore Health</effect>
+				<effect>Damage Fatigue</effect>
+			</ingredient>
+			<ingredient>
+				<name>Swamp Tentacle</name>
+				<effect>Restore Personality</effect>
+				<effect>Water Breathing</effect>
+				<effect>Water Walking</effect>
+				<effect>Fortify Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Thorn Hook</name>
+				<effect>Damage Health</effect>
+				<effect>Damage Luck</effect>
+				<effect>Restore Magicka</effect>
+				<effect>Fortify Health</effect>
+			</ingredient>
+			<ingredient>
+				<name>Unrefined Greenmote</name>
+				<effect>Drain Fatigue</effect>
+				<effect>Drain Health</effect>
+				<effect>Drain Magicka</effect>
+				<effect>Drain Intelligence</effect>
+			</ingredient>
+			<ingredient>
+				<name>Void Essence</name>
+				<effect>Restore Health</effect>
+				<effect>Fortify Health</effect>
+				<effect>Fortify Strength</effect>
+				<effect>Fortify Endurance</effect>
+			</ingredient>
+			<ingredient>
+				<name>Watcher's Eye</name>
+				<effect>Restore Intelligence</effect>
+				<effect>Fortify Magicka</effect>
+				<effect>Light</effect>
+				<effect>Reflect Spell</effect>
+			</ingredient>
+			<ingredient>
+				<name>Water Root Pod Pit</name>
+				<effect>Restore Health</effect>
+				<effect>Resist Fire</effect>
+				<effect>Fire Shield</effect>
+				<effect>Water Breathing</effect>
+			</ingredient>
+			<ingredient>
+				<name>Wisp Core</name>
+				<effect>Restore Intelligence</effect>
+				<effect>Burden</effect>
+				<effect>Light</effect>
+				<effect>Chameleon</effect>
+			</ingredient>
+			<ingredient>
+				<name>Withering Moon</name>
+				<effect>Restore Magicka</effect>
+				<effect>Shield</effect>
+				<effect>Cure Disease</effect>
+				<effect>Reflect Spell</effect>
+			</ingredient>
+			<ingredient>
+				<name>Worm's Head Cap</name>
+				<effect>Restore Luck</effect>
+				<effect>Night-Eye</effect>
+				<effect>Fortify Fatigue</effect>
+				<effect>Paralyze</effect>
+			</ingredient>
+		</package>
+	</game>
+</alchemy>

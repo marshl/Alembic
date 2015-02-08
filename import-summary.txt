@@ -1,0 +1,208 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .bzr\
+* .bzr\README
+* .bzr\branch-format
+* .bzr\branch\
+* .bzr\branch\branch.conf
+* .bzr\branch\format
+* .bzr\branch\last-revision
+* .bzr\branch\tags
+* .bzr\checkout\
+* .bzr\checkout\conflicts
+* .bzr\checkout\dirstate
+* .bzr\checkout\format
+* .bzr\checkout\merge-hashes
+* .bzr\checkout\views
+* .bzr\repository\
+* .bzr\repository\format
+* .bzr\repository\indices\
+* .bzr\repository\indices\1c5afb7783c4fda0b98848ca8e0b511e.cix
+* .bzr\repository\indices\1c5afb7783c4fda0b98848ca8e0b511e.iix
+* .bzr\repository\indices\1c5afb7783c4fda0b98848ca8e0b511e.rix
+* .bzr\repository\indices\1c5afb7783c4fda0b98848ca8e0b511e.six
+* .bzr\repository\indices\1c5afb7783c4fda0b98848ca8e0b511e.tix
+* .bzr\repository\indices\6ec2e8f7946856a9f216d2064d5af45b.cix
+* .bzr\repository\indices\6ec2e8f7946856a9f216d2064d5af45b.iix
+* .bzr\repository\indices\6ec2e8f7946856a9f216d2064d5af45b.rix
+* .bzr\repository\indices\6ec2e8f7946856a9f216d2064d5af45b.six
+* .bzr\repository\indices\6ec2e8f7946856a9f216d2064d5af45b.tix
+* .bzr\repository\indices\744b1b0541525f9c308eff19628a2719.cix
+* .bzr\repository\indices\744b1b0541525f9c308eff19628a2719.iix
+* .bzr\repository\indices\744b1b0541525f9c308eff19628a2719.rix
+* .bzr\repository\indices\744b1b0541525f9c308eff19628a2719.six
+* .bzr\repository\indices\744b1b0541525f9c308eff19628a2719.tix
+* .bzr\repository\indices\7ab22b8c50ac11b32a203c8b2c603367.cix
+* .bzr\repository\indices\7ab22b8c50ac11b32a203c8b2c603367.iix
+* .bzr\repository\indices\7ab22b8c50ac11b32a203c8b2c603367.rix
+* .bzr\repository\indices\7ab22b8c50ac11b32a203c8b2c603367.six
+* .bzr\repository\indices\7ab22b8c50ac11b32a203c8b2c603367.tix
+* .bzr\repository\indices\9de104f46e14cf07c52eae2dd3bc63b5.cix
+* .bzr\repository\indices\9de104f46e14cf07c52eae2dd3bc63b5.iix
+* .bzr\repository\indices\9de104f46e14cf07c52eae2dd3bc63b5.rix
+* .bzr\repository\indices\9de104f46e14cf07c52eae2dd3bc63b5.six
+* .bzr\repository\indices\9de104f46e14cf07c52eae2dd3bc63b5.tix
+* .bzr\repository\indices\bddfb48e51c7714f5d068541e1959cba.cix
+* .bzr\repository\indices\bddfb48e51c7714f5d068541e1959cba.iix
+* .bzr\repository\indices\bddfb48e51c7714f5d068541e1959cba.rix
+* .bzr\repository\indices\bddfb48e51c7714f5d068541e1959cba.six
+* .bzr\repository\indices\bddfb48e51c7714f5d068541e1959cba.tix
+* .bzr\repository\indices\cb9f4106b024d4c6b34c9cc8f8a7510b.cix
+* .bzr\repository\indices\cb9f4106b024d4c6b34c9cc8f8a7510b.iix
+* .bzr\repository\indices\cb9f4106b024d4c6b34c9cc8f8a7510b.rix
+* .bzr\repository\indices\cb9f4106b024d4c6b34c9cc8f8a7510b.six
+* .bzr\repository\indices\cb9f4106b024d4c6b34c9cc8f8a7510b.tix
+* .bzr\repository\indices\dd82d17e32441f297c4448e18713cfb6.cix
+* .bzr\repository\indices\dd82d17e32441f297c4448e18713cfb6.iix
+* .bzr\repository\indices\dd82d17e32441f297c4448e18713cfb6.rix
+* .bzr\repository\indices\dd82d17e32441f297c4448e18713cfb6.six
+* .bzr\repository\indices\dd82d17e32441f297c4448e18713cfb6.tix
+* .bzr\repository\indices\fc00ac5552dbc00002af0712398fd76b.cix
+* .bzr\repository\indices\fc00ac5552dbc00002af0712398fd76b.iix
+* .bzr\repository\indices\fc00ac5552dbc00002af0712398fd76b.rix
+* .bzr\repository\indices\fc00ac5552dbc00002af0712398fd76b.six
+* .bzr\repository\indices\fc00ac5552dbc00002af0712398fd76b.tix
+* .bzr\repository\obsolete_packs\
+* .bzr\repository\obsolete_packs\0c4b460d753e257501695a88ae7dfb5c.cix
+* .bzr\repository\obsolete_packs\0c4b460d753e257501695a88ae7dfb5c.iix
+* .bzr\repository\obsolete_packs\0c4b460d753e257501695a88ae7dfb5c.pack
+* .bzr\repository\obsolete_packs\0c4b460d753e257501695a88ae7dfb5c.rix
+* .bzr\repository\obsolete_packs\0c4b460d753e257501695a88ae7dfb5c.six
+* .bzr\repository\obsolete_packs\0c4b460d753e257501695a88ae7dfb5c.tix
+* .bzr\repository\obsolete_packs\0fa798449f93878d88d77bf73fd23e7f.cix
+* .bzr\repository\obsolete_packs\0fa798449f93878d88d77bf73fd23e7f.iix
+* .bzr\repository\obsolete_packs\0fa798449f93878d88d77bf73fd23e7f.pack
+* .bzr\repository\obsolete_packs\0fa798449f93878d88d77bf73fd23e7f.rix
+* .bzr\repository\obsolete_packs\0fa798449f93878d88d77bf73fd23e7f.six
+* .bzr\repository\obsolete_packs\0fa798449f93878d88d77bf73fd23e7f.tix
+* .bzr\repository\obsolete_packs\1ede4ce177da1d3e702d675b5355a56f.cix
+* .bzr\repository\obsolete_packs\1ede4ce177da1d3e702d675b5355a56f.iix
+* .bzr\repository\obsolete_packs\1ede4ce177da1d3e702d675b5355a56f.pack
+* .bzr\repository\obsolete_packs\1ede4ce177da1d3e702d675b5355a56f.rix
+* .bzr\repository\obsolete_packs\1ede4ce177da1d3e702d675b5355a56f.six
+* .bzr\repository\obsolete_packs\1ede4ce177da1d3e702d675b5355a56f.tix
+* .bzr\repository\obsolete_packs\2a4d7b9182a5b8b8b33745e668a7d6d2.cix
+* .bzr\repository\obsolete_packs\2a4d7b9182a5b8b8b33745e668a7d6d2.iix
+* .bzr\repository\obsolete_packs\2a4d7b9182a5b8b8b33745e668a7d6d2.pack
+* .bzr\repository\obsolete_packs\2a4d7b9182a5b8b8b33745e668a7d6d2.rix
+* .bzr\repository\obsolete_packs\2a4d7b9182a5b8b8b33745e668a7d6d2.six
+* .bzr\repository\obsolete_packs\2a4d7b9182a5b8b8b33745e668a7d6d2.tix
+* .bzr\repository\obsolete_packs\5abd5858024730d6fe5ea3b1145d6182.cix
+* .bzr\repository\obsolete_packs\5abd5858024730d6fe5ea3b1145d6182.iix
+* .bzr\repository\obsolete_packs\5abd5858024730d6fe5ea3b1145d6182.pack
+* .bzr\repository\obsolete_packs\5abd5858024730d6fe5ea3b1145d6182.rix
+* .bzr\repository\obsolete_packs\5abd5858024730d6fe5ea3b1145d6182.six
+* .bzr\repository\obsolete_packs\5abd5858024730d6fe5ea3b1145d6182.tix
+* .bzr\repository\obsolete_packs\91af97211003f05ca671b6ccb4952794.cix
+* .bzr\repository\obsolete_packs\91af97211003f05ca671b6ccb4952794.iix
+* .bzr\repository\obsolete_packs\91af97211003f05ca671b6ccb4952794.pack
+* .bzr\repository\obsolete_packs\91af97211003f05ca671b6ccb4952794.rix
+* .bzr\repository\obsolete_packs\91af97211003f05ca671b6ccb4952794.six
+* .bzr\repository\obsolete_packs\91af97211003f05ca671b6ccb4952794.tix
+* .bzr\repository\obsolete_packs\be7d5c7939b5b4034647746b0911131b.cix
+* .bzr\repository\obsolete_packs\be7d5c7939b5b4034647746b0911131b.iix
+* .bzr\repository\obsolete_packs\be7d5c7939b5b4034647746b0911131b.pack
+* .bzr\repository\obsolete_packs\be7d5c7939b5b4034647746b0911131b.rix
+* .bzr\repository\obsolete_packs\be7d5c7939b5b4034647746b0911131b.six
+* .bzr\repository\obsolete_packs\be7d5c7939b5b4034647746b0911131b.tix
+* .bzr\repository\obsolete_packs\c3d08e9c157954f8f51e1d3443ea9544.cix
+* .bzr\repository\obsolete_packs\c3d08e9c157954f8f51e1d3443ea9544.iix
+* .bzr\repository\obsolete_packs\c3d08e9c157954f8f51e1d3443ea9544.pack
+* .bzr\repository\obsolete_packs\c3d08e9c157954f8f51e1d3443ea9544.rix
+* .bzr\repository\obsolete_packs\c3d08e9c157954f8f51e1d3443ea9544.six
+* .bzr\repository\obsolete_packs\c3d08e9c157954f8f51e1d3443ea9544.tix
+* .bzr\repository\obsolete_packs\d954383ec9a71330b66652284d18f083.cix
+* .bzr\repository\obsolete_packs\d954383ec9a71330b66652284d18f083.iix
+* .bzr\repository\obsolete_packs\d954383ec9a71330b66652284d18f083.pack
+* .bzr\repository\obsolete_packs\d954383ec9a71330b66652284d18f083.rix
+* .bzr\repository\obsolete_packs\d954383ec9a71330b66652284d18f083.six
+* .bzr\repository\obsolete_packs\d954383ec9a71330b66652284d18f083.tix
+* .bzr\repository\obsolete_packs\e83683a6f696ff2fd0944a071c2b186c.cix
+* .bzr\repository\obsolete_packs\e83683a6f696ff2fd0944a071c2b186c.iix
+* .bzr\repository\obsolete_packs\e83683a6f696ff2fd0944a071c2b186c.pack
+* .bzr\repository\obsolete_packs\e83683a6f696ff2fd0944a071c2b186c.rix
+* .bzr\repository\obsolete_packs\e83683a6f696ff2fd0944a071c2b186c.six
+* .bzr\repository\obsolete_packs\e83683a6f696ff2fd0944a071c2b186c.tix
+* .bzr\repository\pack-names
+* .bzr\repository\packs\
+* .bzr\repository\packs\1c5afb7783c4fda0b98848ca8e0b511e.pack
+* .bzr\repository\packs\6ec2e8f7946856a9f216d2064d5af45b.pack
+* .bzr\repository\packs\744b1b0541525f9c308eff19628a2719.pack
+* .bzr\repository\packs\7ab22b8c50ac11b32a203c8b2c603367.pack
+* .bzr\repository\packs\9de104f46e14cf07c52eae2dd3bc63b5.pack
+* .bzr\repository\packs\bddfb48e51c7714f5d068541e1959cba.pack
+* .bzr\repository\packs\cb9f4106b024d4c6b34c9cc8f8a7510b.pack
+* .bzr\repository\packs\dd82d17e32441f297c4448e18713cfb6.pack
+* .bzr\repository\packs\fc00ac5552dbc00002af0712398fd76b.pack
+* .bzrignore
+* .hgignore
+* alchemy_symbol-web.png
+* ic_launcher-web.png
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+android-support-v7-appcompat.jar => com.android.support:appcompat-v7:18.0.0
+
+Replaced Libraries with Dependencies:
+-------------------------------------
+The importer recognized the following library projects as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the source files in your project were of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the library replacement in the import wizard and try
+again:
+
+android-support-v7-appcompat => [com.android.support:appcompat-v7:18.0.0]
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets\
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
