@@ -11,8 +11,8 @@ public class EffectListActivity extends Activity
 {
 	public static EffectListActivity instance;
 	
-    public ExpandableListView expListView;
-    public EffectExpandableListAdapter viewAdapter;
+    private ExpandableListView expListView;
+    private EffectExpandableListAdapter viewAdapter;
    
     @Override
     protected void onCreate( Bundle _savedInstanceState )

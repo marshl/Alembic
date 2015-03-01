@@ -17,7 +17,7 @@ import android.widget.ExpandableListView;
 public class MainActivity extends Activity
 {
 	public static MainActivity instance;
-	public ExpandableListView ingredientListView;
+	private ExpandableListView ingredientListView;
 	
 	public IngredientListAdapter ingredientListAdapter;
 	
@@ -83,7 +83,7 @@ public class MainActivity extends Activity
 	        case R.id.switch_game:
 	        {
 	        	AlchemyApplication.instance.switchGame();
-	        	this.ingredientListView.setScrollY(0);
+	        	this.ingredientListView.setScrollY( 0 );
 	        	this.ingredientListView.setScrollY( 0 );
 	        	for ( int i = 0; i < this.ingredientListAdapter.getGroupCount(); ++i )
 	        	{

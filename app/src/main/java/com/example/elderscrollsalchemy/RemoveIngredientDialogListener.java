@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 
 public class RemoveIngredientDialogListener implements DialogInterface.OnClickListener
 {
-	public Ingredient ingredient;
+	private final Ingredient ingredient;
 	
 	public RemoveIngredientDialogListener( Ingredient _ingredient )
 	{

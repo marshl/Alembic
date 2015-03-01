@@ -5,7 +5,7 @@
     android:versionName="1.1" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="17"
         android:targetSdkVersion="17" />
 
     <application
@@ -21,18 +21,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".DisplayMessageActivity"
-            android:label="@string/title_activity_display_message"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.elderscrollsalchemy.MainActivity" />
-        </activity>
-        <activity
-            android:name=".IngredientListAdapter"
-            android:label="@string/title_activity_my_simple_array_adapter" >
         </activity>
         <activity
             android:name=".EffectListActivity"

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class IngredientListAdapter extends BaseExpandableListAdapter
 {
-	private Activity context;
+	private final Activity context;
 
 	public IngredientListAdapter( Activity _context )
 	{
@@ -98,9 +98,9 @@ public class IngredientListAdapter extends BaseExpandableListAdapter
 		
 		if ( _convertView == null )
 		{
-			LayoutInflater infalInflater = (LayoutInflater)context
+			LayoutInflater layoutInflater = (LayoutInflater)context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE );
-			_convertView = infalInflater.inflate( R.layout.ingredient_group_row,
+			_convertView = layoutInflater.inflate( R.layout.ingredient_group_row,
 					_parent, false );
 		}
 		

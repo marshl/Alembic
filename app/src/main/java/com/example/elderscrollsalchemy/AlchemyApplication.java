@@ -11,7 +11,7 @@ public class AlchemyApplication
 	//public AlchemyGame morrowindAlchemy;
 	//public AlchemyGame oblivionAlchemy;
 	
-	public HashMap<String, AlchemyGame> gameMap = new HashMap<String, AlchemyGame>();
+	public final HashMap<String, AlchemyGame> gameMap = new HashMap<String, AlchemyGame>();
 	
 	public AlchemyGame currentGame;
 
@@ -22,8 +22,7 @@ public class AlchemyApplication
 		String imageName = _ingredient.name.toLowerCase().replace( ' ', '_').replace( "'", "" ).replace( "-", "_").replace( ".", "");
 		String prefix = _ingredient.parentPackage.parentGame.prefix;
 		imageName = prefix + "_" + imageName;
-		int imageID = _context.getResources().getIdentifier( imageName, "drawable", _context.getPackageName().toLowerCase() );
-		return imageID;
+        return _context.getResources().getIdentifier( imageName, "drawable", _context.getPackageName().toLowerCase() );
 	}
 	
 	public int getEffectIcon( Activity _context, String _effectName, String _prefix )

@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class AlchemyPackage
 {
 	public String name = "UNDEFINED";
-	public ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
+	public final ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
 	public AlchemyGame parentGame;
 	
 	public void toggleAllIngredients( boolean _selected )
 	{
-		for ( Ingredient ingred : this.ingredients )
+		for ( Ingredient ingredient : this.ingredients )
 		{
-			ingred.selected = _selected;
+			ingredient.selected = _selected;
 		}
 	}
 }

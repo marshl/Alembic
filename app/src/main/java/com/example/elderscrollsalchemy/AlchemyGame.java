@@ -9,7 +9,7 @@ public class AlchemyGame
 	public String name;
 	public String prefix;
 	
-	public ArrayList<AlchemyPackage> packages = new ArrayList<AlchemyPackage>();
+	public final ArrayList<AlchemyPackage> packages = new ArrayList<AlchemyPackage>();
 	public HashMap<String, ArrayList<Ingredient> > effectToIngredientMap;
 	public ArrayList<String> effectList;
 	

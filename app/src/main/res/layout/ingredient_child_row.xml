@@ -19,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_marginLeft="4dp"
-        android:gravity="start|left|center_vertical"
-        android:text="[Ingredient Name]" />
+        android:layout_marginStart="4dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/default_ingredient_name" />
   
 </LinearLayout>

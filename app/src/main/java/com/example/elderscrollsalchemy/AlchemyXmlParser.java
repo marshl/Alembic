@@ -10,11 +10,9 @@ import android.app.Activity;
 import android.util.Log;
 import android.util.Xml;
 
-public class AlchemyXmlParser
+class AlchemyXmlParser
 {
-	public String ns = null;
-	
-	public Activity context;
+    private Activity context;
 	
 	public void parseXml( Activity _context ) throws IOException, XmlPullParserException
 	{
