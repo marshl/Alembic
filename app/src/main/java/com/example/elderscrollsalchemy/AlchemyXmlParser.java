@@ -166,28 +166,4 @@ class AlchemyXmlParser
 		}
 		return result;
 	}
-	
-	
-	/*private void skip( XmlPullParser _parser ) throws XmlPullParserException, IOException
-	{
-		if ( _parser.getEventType() != XmlPullParser.START_TAG )
-		{
-			throw new IllegalStateException();
-		}
-		
-		int depth = 1;
-		
-		while ( depth != 0 )
-		{
-			switch ( _parser.next() )
-			{
-			case XmlPullParser.START_TAG:
-				++depth;
-				break;
-			case XmlPullParser.END_TAG:
-				--depth;
-				break;
-			}
-		}
-	}*/
 }

@@ -1,6 +1,7 @@
 package com.example.elderscrollsalchemy;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
@@ -22,7 +23,18 @@ class EffectOnChildClickListener implements OnChildClickListener
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder( _view.getContext() );
 		builder.setMessage( "Remove " + ingredient.name + "?" ).setPositiveButton("Yes", dialogListener)
-	        .setNegativeButton( "No", dialogListener ).show();
+	        .setNegativeButton( "No", dialogListener );
+
+        builder.setOnDismissListener( new DialogInterface.OnDismissListener()
+        {
+            @Override
+            public void onDismiss( DialogInterface dialogInterface )
+            {
+                AlchemyApplication.instance.ingredientToRemove = null;
+            }
+        });
+
+        builder.show();
 	
 		return true;
 	}
