@@ -6,6 +6,5 @@
 .DS_Store
 app/build
 
-*.png
 *.jar
 build/
