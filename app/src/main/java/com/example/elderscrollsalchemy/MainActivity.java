@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu _menu) {
-        String switchGameTitle = AlchemyApplication.instance.currentGame.prefix.equals("mw")
+        String switchGameTitle = AlchemyApplication.instance.currentGame.getPrefix().equals("mw")
                 ? "Oblivion" : "Morrowind";
         switchGameTitle = "Switch to " + switchGameTitle;
         MenuItem switchGameItem = _menu.findItem(R.id.switch_game);

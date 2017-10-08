@@ -83,7 +83,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         //AlchemyApplication app = (AlchemyApplication)this.context.getApplication();
 
         ImageView imageView = (ImageView) _convertView.findViewById(R.id.effect_image_view);
-        int imageID = AlchemyApplication.instance.getEffectIcon(this.context, effectName, this.currentGame.prefix);
+        int imageID = AlchemyApplication.instance.getEffectIcon(this.context, effectName, this.currentGame.getPrefix());
         imageView.setImageResource(imageID);
         _convertView.setId(_groupPosition);
         return _convertView;

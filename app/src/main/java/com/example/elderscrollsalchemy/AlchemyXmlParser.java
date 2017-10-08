@@ -9,6 +9,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 class AlchemyXmlParser {
     private Activity context;
@@ -37,8 +38,8 @@ class AlchemyXmlParser {
 
             if (name.equals("game")) {
                 AlchemyGame game = this.readGameNode(_parser);
-                AlchemyApplication.instance.gameMap.put(game.name, game);
-                Log.d("XML", "Added game \"" + game.name + "\"");
+                AlchemyApplication.instance.gameMap.put(game.getGameName(), game);
+                Log.d("XML", "Added game \"" + game.getGameName() + "\"");
             } else {
                 throw new IOException("Expecting \"game\" node: instead found " + name);
             }
@@ -46,7 +47,11 @@ class AlchemyXmlParser {
     }
 
     private AlchemyGame readGameNode(XmlPullParser _parser) throws IOException, XmlPullParserException {
-        AlchemyGame game = new AlchemyGame();
+
+        String gameName = null;
+        String gamePrefix = null;
+        ArrayList<AlchemyPackage> packages = new ArrayList<AlchemyPackage>();
+
         while (_parser.next() != XmlPullParser.END_TAG) {
             if (_parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
@@ -54,20 +59,27 @@ class AlchemyXmlParser {
 
             String nodeName = _parser.getName();
 
-            if (nodeName.equals("name")) {
-                game.name = this.readText(_parser);
-            } else if (nodeName.equals("prefix")) {
-                game.prefix = this.readText(_parser);
-            } else if (nodeName.equals("package")) {
-                AlchemyPackage alchemyPackage = this.readPackageNode(_parser);
-                game.packages.add(alchemyPackage);
-                alchemyPackage.parentGame = game;
-            } else {
-                throw new IOException("Unknown node type: \"" + nodeName + "\" when parsing root node");
+            switch (_parser.getName()) {
+                case "name":
+                    gameName = this.readText(_parser);
+                    break;
+                case "prefix":
+                    gamePrefix = this.readText(_parser);
+                    break;
+                case "package":
+                    AlchemyPackage alchemyPackage = this.readPackageNode(_parser);
+                    packages.add(alchemyPackage);
+                    break;
+                default:
+                    throw new IOException("Unknown node type: \"" + nodeName + "\" when parsing root node");
             }
         }
 
+        AlchemyGame game = new AlchemyGame(gameName, gamePrefix);
+        game.packages.addAll(packages);
+
         for (AlchemyPackage alchemyPackage : game.packages) {
+            alchemyPackage.parentGame = game;
             for (Ingredient ingredient : alchemyPackage.ingredients) {
                 ingredient.imageID = AlchemyApplication.instance.getIngredientImageID(this.context, ingredient);
             }

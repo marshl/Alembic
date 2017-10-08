@@ -6,10 +6,24 @@ import java.util.HashMap;
 
 public class AlchemyGame {
     public final ArrayList<AlchemyPackage> packages = new ArrayList<AlchemyPackage>();
-    public String name;
-    public String prefix;
     public HashMap<String, ArrayList<Ingredient>> effectToIngredientMap;
     public ArrayList<String> effectList;
+
+    private String name;
+    private String prefix;
+
+    public AlchemyGame(String name, String prefix) {
+        this.name = name;
+        this.prefix = prefix;
+    }
+
+    public String getGameName() {
+        return this.name;
+    }
+
+    public String getPrefix() {
+        return this.prefix;
+    }
 
     public void recalculateIngredientEffects() {
         this.effectToIngredientMap = new HashMap<String, ArrayList<Ingredient>>();

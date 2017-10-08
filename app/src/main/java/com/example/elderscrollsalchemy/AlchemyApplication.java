@@ -7,9 +7,6 @@ import java.util.HashMap;
 public class AlchemyApplication {
     public static AlchemyApplication instance;
 
-    //public AlchemyGame morrowindAlchemy;
-    //public AlchemyGame oblivionAlchemy;
-
     public final HashMap<String, AlchemyGame> gameMap = new HashMap<String, AlchemyGame>();
 
     public AlchemyGame currentGame;
@@ -18,7 +15,7 @@ public class AlchemyApplication {
 
     public int getIngredientImageID(Activity _context, Ingredient _ingredient) {
         String imageName = _ingredient.name.toLowerCase().replace(' ', '_').replace("'", "").replace("-", "_").replace(".", "");
-        String prefix = _ingredient.parentPackage.parentGame.prefix;
+        String prefix = _ingredient.parentPackage.parentGame.getPrefix();
         imageName = prefix + "_" + imageName;
         return _context.getResources().getIdentifier(imageName, "drawable", _context.getPackageName().toLowerCase());
     }
@@ -33,7 +30,7 @@ public class AlchemyApplication {
                 .replace("Strength", "Attribute")
                 .replace("Willpower", "Attribute");
 
-        if (this.currentGame.name.equals("Oblivion")) {
+        if (this.currentGame.getGameName().equals("Oblivion")) {
             if (_effectName.startsWith("Restore")) {
                 _effectName = "Restore";
             } else if (_effectName.startsWith("Cure")) {
@@ -56,7 +53,7 @@ public class AlchemyApplication {
     }
 
     public void switchGame() {
-        String otherName = this.currentGame.name.equals("Morrowind") ? "Oblivion" : "Morrowind";
+        String otherName = this.currentGame.getGameName().equals("Morrowind") ? "Oblivion" : "Morrowind";
         this.currentGame = this.gameMap.get(otherName);
     }
 
