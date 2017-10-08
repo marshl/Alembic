@@ -4,10 +4,6 @@
     android:versionCode="1"
     android:versionName="1.1" >
 
-    <uses-sdk
-        android:minSdkVersion="17"
-        android:targetSdkVersion="17" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/alchemy_symbol"
