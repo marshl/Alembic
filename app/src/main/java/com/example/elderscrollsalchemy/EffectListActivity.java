@@ -53,6 +53,6 @@ public class EffectListActivity extends Activity {
         }
 
         this.viewAdapter.notifyDataSetChanged();
-        MainActivity.instance.ingredientListAdapter.notifyDataSetChanged();
+        //TODO: MainActivity.instance.ingredientListAdapter.notifyDataSetChanged();
     }
 }

@@ -19,7 +19,7 @@ class EffectOnChildClickListener implements OnChildClickListener {
         RemoveIngredientDialogListener dialogListener = new RemoveIngredientDialogListener(ingredient);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(_view.getContext());
-        builder.setMessage("Remove " + ingredient.name + "?").setPositiveButton("Yes", dialogListener)
+        builder.setMessage("Remove " + ingredient.getName() + "?").setPositiveButton("Yes", dialogListener)
                 .setNegativeButton("No", dialogListener);
 
         builder.setOnDismissListener(new DialogInterface.OnDismissListener() {

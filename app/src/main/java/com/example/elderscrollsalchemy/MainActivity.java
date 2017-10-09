@@ -15,13 +15,11 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 
 public class MainActivity extends Activity {
-    public static MainActivity instance;
     public IngredientListAdapter ingredientListAdapter;
     private ExpandableListView ingredientListView;
 
     @Override
     protected void onCreate(Bundle _savedInstanceState) {
-        instance = this;
         super.onCreate(_savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
@@ -32,11 +30,10 @@ public class MainActivity extends Activity {
                 AlchemyXmlParser parser = new AlchemyXmlParser();
                 parser.parseXml(this);
                 Log.d("XML", "Xml Successfully parsed");
-            } catch (IOException _e) {
-                _e.printStackTrace();
-            } catch (XmlPullParserException _e) {
+            } catch (IOException | XmlPullParserException _e) {
                 _e.printStackTrace();
             }
+
             AlchemyApplication.instance.currentGame = AlchemyApplication.instance.gameMap.get("Morrowind");
         }
 
@@ -92,6 +89,7 @@ public class MainActivity extends Activity {
         AlchemyApplication.instance.currentGame.recalculateIngredientEffects();
 
         Intent intent = new Intent(this, EffectListActivity.class);
+
         startActivity(intent);
     }
 }

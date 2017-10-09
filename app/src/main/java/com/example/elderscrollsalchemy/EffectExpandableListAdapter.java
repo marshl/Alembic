@@ -40,7 +40,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         TextView label = (TextView) _convertView.findViewById(R.id.effect_sub_text);
         ImageView image = (ImageView) _convertView.findViewById(R.id.effect_sub_image);
 
-        label.setText(ingredient.name);
+        label.setText(ingredient.getName());
         image.setImageResource(ingredient.imageID);
 
         return _convertView;

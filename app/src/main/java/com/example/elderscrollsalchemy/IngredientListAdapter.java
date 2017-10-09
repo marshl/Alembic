@@ -43,7 +43,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         final AlchemyPackage alchemyPackage = game.packages.get(_groupPosition);
         final Ingredient ingredient = alchemyPackage.ingredients.get(_childPosition);
 
-        textView.setText(ingredient.name);
+        textView.setText(ingredient.getName());
         imageView.setImageResource(ingredient.imageID);
 
         if (ingredient.selected) {
@@ -107,59 +107,3 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         return true;
     }
 }
-
-/*
-public class IngredientListAdapter extends ArrayAdapter<Ingredient>
-{
-	private final Context context;
-	
-	public IngredientListAdapter( Context _context, AlchemyGame _game )
-	{
-		super( _context, R.layout.ingredient_row );//_game.ingredients );
-		this.context = _context;
-		_game.ingredientAdapter = this;
-	}
-	
-	@Override 
-	public Ingredient getItem( int _position )
-	{
-		AlchemyApplication app = (AlchemyApplication)this.context.getApplicationContext();
-		return app.currentGame.ingredients.get( _position );
-	}
-	
-	@Override
-	public View getView( int _position, View _convertView, ViewGroup _parent )
-	{
-		AlchemyApplication app = (AlchemyApplication)this.context.getApplicationContext();
-		if ( _convertView == null )
-		{
-			LayoutInflater inflater = (LayoutInflater)context
-					.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-			
-			_convertView = inflater.inflate( R.layout.ingredient_row,  _parent, false );
-		}
-		_convertView.setId( _position );
-		TextView textView = (TextView)_convertView.findViewById( R.id.label );
-		ImageView imageView = (ImageView)_convertView.findViewById( R.id.icon );
-		
-		Ingredient ingredient = app.currentGame.ingredients.get( _position );
-		textView.setText( ingredient.name );
-		
-		imageView.setImageResource( ingredient.imageID );
-		
-		textView.setSelected( ingredient.selected );
-		
-		if ( ingredient.selected )
-		{
-			_convertView.setBackgroundColor( 0xFFD7BC91 );
-			textView.setTextColor( 0xFF000000 );
-		}
-		else
-		{
-			_convertView.setBackgroundColor( 0x00000000 );
-			textView.setTextColor( 0xFFFFFFFF );
-		}
-		
-		return _convertView;
-	}
-}*/

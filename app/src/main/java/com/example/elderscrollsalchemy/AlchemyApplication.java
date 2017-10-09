@@ -14,7 +14,7 @@ public class AlchemyApplication {
     public Ingredient ingredientToRemove;
 
     public int getIngredientImageID(Activity _context, Ingredient _ingredient) {
-        String imageName = _ingredient.name.toLowerCase().replace(' ', '_').replace("'", "").replace("-", "_").replace(".", "");
+        String imageName = _ingredient.getName().toLowerCase().replace(' ', '_').replace("'", "").replace("-", "_").replace(".", "");
         String prefix = _ingredient.parentPackage.parentGame.getPrefix();
         imageName = prefix + "_" + imageName;
         return _context.getResources().getIdentifier(imageName, "drawable", _context.getPackageName().toLowerCase());

@@ -10,6 +10,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 class AlchemyXmlParser {
     private Activity context;
@@ -112,7 +113,9 @@ class AlchemyXmlParser {
 
 
     private Ingredient readIngredientNode(XmlPullParser _parser) throws IOException, XmlPullParserException {
-        Ingredient ingredient = new Ingredient();
+
+        String ingredientName = null;
+        List<String> ingredientEffects = new ArrayList<String>();
 
         while (_parser.next() != XmlPullParser.END_TAG) {
             if (_parser.getEventType() != XmlPullParser.START_TAG) {
@@ -120,16 +123,19 @@ class AlchemyXmlParser {
             }
             String nodeName = _parser.getName();
 
-            if (nodeName.equals("name")) {
-                ingredient.name = this.readText(_parser);
-            } else if (nodeName.equals("effect")) {
-                ingredient.effects.add(this.readText(_parser));
-            } else {
-                throw new XmlPullParserException("Unknown node type \"" + nodeName + "\" found in ingredient node");
+            switch (nodeName) {
+                case "name":
+                    ingredientName = this.readText(_parser);
+                    break;
+                case "effect":
+                    ingredientEffects.add(this.readText(_parser));
+                    break;
+                default:
+                    throw new XmlPullParserException("Unknown node type \"" + nodeName + "\" found in ingredient node");
             }
         }
 
-        return ingredient;
+        return new Ingredient(ingredientName, ingredientEffects);
     }
 
     private String readText(XmlPullParser _parser) throws IOException, XmlPullParserException {
