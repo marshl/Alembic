@@ -12,14 +12,16 @@ import android.widget.TextView;
 public class IngredientListAdapter extends BaseExpandableListAdapter {
     private final Activity context;
 
-    public IngredientListAdapter(Activity _context) {
+    private AlchemyGame alchemyGame;
+
+    public IngredientListAdapter(Activity _context, AlchemyGame alchemyGame) {
         super();
         this.context = _context;
+        this.alchemyGame = alchemyGame;
     }
 
     public Object getChild(int _groupPosition, int _childPosition) {
-        final AlchemyGame game = AlchemyApplication.instance.currentGame;
-        final AlchemyPackage alchemyPackage = game.packages.get(_groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
         return alchemyPackage.ingredients.get(_childPosition);
     }
 
@@ -29,7 +31,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
     public View getChildView(final int _groupPosition, final int _childPosition,
                              boolean _isLastChild, View _convertView, ViewGroup _parent) {
-        final AlchemyGame game = AlchemyApplication.instance.currentGame;
+
         if (_convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -40,7 +42,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         TextView textView = (TextView) _convertView.findViewById(R.id.label);
         ImageView imageView = (ImageView) _convertView.findViewById(R.id.icon);
 
-        final AlchemyPackage alchemyPackage = game.packages.get(_groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
         final Ingredient ingredient = alchemyPackage.ingredients.get(_childPosition);
 
         textView.setText(ingredient.getName());
@@ -58,19 +60,16 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
     }
 
     public int getChildrenCount(int _groupPosition) {
-        final AlchemyGame game = AlchemyApplication.instance.currentGame;
-        final AlchemyPackage alchemyPackage = game.packages.get(_groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
         return alchemyPackage.ingredients.size();
     }
 
     public Object getGroup(int _groupPosition) {
-        final AlchemyGame game = AlchemyApplication.instance.currentGame;
-        return game.packages.get(_groupPosition);
+        return this.alchemyGame.packages.get(_groupPosition);
     }
 
     public int getGroupCount() {
-        final AlchemyGame game = AlchemyApplication.instance.currentGame;
-        return game.packages.size();
+        return this.alchemyGame.packages.size();
     }
 
     public long getGroupId(int _groupPosition) {
@@ -79,8 +78,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
     public View getGroupView(int _groupPosition, boolean _isExpanded,
                              View _convertView, ViewGroup _parent) {
-        final AlchemyGame game = AlchemyApplication.instance.currentGame;
-        final AlchemyPackage alchemyPackage = game.packages.get(_groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
 
         if (_convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context
@@ -92,7 +90,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         _convertView.setId(_groupPosition);
 
         final TextView textView = (TextView) _convertView.findViewById(R.id.ingredient_group_text);
-        textView.setText(alchemyPackage.name + " Ingredients");
+        textView.setText(alchemyPackage.getPackageName() + " Ingredients");
 
         return _convertView;
     }

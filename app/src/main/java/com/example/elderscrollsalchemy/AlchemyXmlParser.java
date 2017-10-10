@@ -15,21 +15,24 @@ import java.util.List;
 class AlchemyXmlParser {
     private Activity context;
 
-    public void parseXml(Activity _context) throws IOException, XmlPullParserException {
+    public List<AlchemyGame> parseXml(Activity _context) throws IOException, XmlPullParserException {
         this.context = _context;
         InputStream fileStream = _context.getAssets().open("xml/ingredients.xml");
 
+        List<AlchemyGame> gameList = new ArrayList<AlchemyGame>();
 
         XmlPullParser parser = Xml.newPullParser();
         parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
         parser.setInput(fileStream, null);
         parser.nextTag();
-        this.readRootNode(parser);
+        this.readRootNode(parser, gameList);
 
         fileStream.close();
+
+        return gameList;
     }
 
-    private void readRootNode(XmlPullParser _parser) throws IOException, XmlPullParserException {
+    private void readRootNode(XmlPullParser _parser, List<AlchemyGame> gameList) throws IOException, XmlPullParserException {
         while (_parser.next() != XmlPullParser.END_TAG) {
             if (_parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
@@ -39,7 +42,7 @@ class AlchemyXmlParser {
 
             if (name.equals("game")) {
                 AlchemyGame game = this.readGameNode(_parser);
-                AlchemyApplication.instance.gameMap.put(game.getGameName(), game);
+                gameList.add(game);
                 Log.d("XML", "Added game \"" + game.getGameName() + "\"");
             } else {
                 throw new IOException("Expecting \"game\" node: instead found " + name);
@@ -80,16 +83,15 @@ class AlchemyXmlParser {
         game.packages.addAll(packages);
 
         for (AlchemyPackage alchemyPackage : game.packages) {
-            alchemyPackage.parentGame = game;
-            for (Ingredient ingredient : alchemyPackage.ingredients) {
-                ingredient.imageID = AlchemyApplication.instance.getIngredientImageID(this.context, ingredient);
-            }
+            alchemyPackage.setParentGame(game);
         }
         return game;
     }
 
     private AlchemyPackage readPackageNode(XmlPullParser _parser) throws IOException, XmlPullParserException {
-        AlchemyPackage alchemyPackage = new AlchemyPackage();
+
+        String packageName = null;
+        List<Ingredient> ingredients = new ArrayList<Ingredient>();
 
         while (_parser.next() != XmlPullParser.END_TAG) {
             if (_parser.getEventType() != XmlPullParser.START_TAG) {
@@ -98,16 +100,25 @@ class AlchemyXmlParser {
 
             String nodeName = _parser.getName();
 
-            if (nodeName.equals("name")) {
-                alchemyPackage.name = this.readText(_parser);
-            } else if (nodeName.equals("ingredient")) {
-                Ingredient ingredient = this.readIngredientNode(_parser);
-                alchemyPackage.ingredients.add(ingredient);
-                ingredient.parentPackage = alchemyPackage;
-            } else {
-                throw new XmlPullParserException("Unknown node type \"" + nodeName + "\" found in package node " + alchemyPackage.name);
+            switch (nodeName) {
+                case "name":
+                    packageName = this.readText(_parser);
+                    break;
+                case "ingredient":
+                    Ingredient ingredient = this.readIngredientNode(_parser);
+                    ingredients.add(ingredient);
+                    break;
+                default:
+                    throw new XmlPullParserException("Unknown node type \"" + nodeName + "\" found in package node " + packageName);
             }
         }
+
+        AlchemyPackage alchemyPackage = new AlchemyPackage(packageName);
+        for (Ingredient ingredient : ingredients) {
+            ingredient.parentPackage = alchemyPackage;
+            alchemyPackage.ingredients.add(ingredient);
+        }
+
         return alchemyPackage;
     }
 

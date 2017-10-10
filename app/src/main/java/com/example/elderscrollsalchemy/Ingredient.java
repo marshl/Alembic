@@ -1,8 +1,10 @@
 package com.example.elderscrollsalchemy;
 
+import android.app.Activity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class Ingredient implements Parcelable {
         }
     };
 
-    public List<String> effects;
+    public List<String> effects = new ArrayList<String>();
     public AlchemyPackage parentPackage;
     public int imageID;
     public boolean selected = false;
@@ -53,5 +55,8 @@ public class Ingredient implements Parcelable {
         parcel.writeInt(this.effects.size());
         parcel.writeStringArray(this.effects.toArray(new String[0]));
     }
+
+
+
 }
 

@@ -83,7 +83,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         //AlchemyApplication app = (AlchemyApplication)this.context.getApplication();
 
         ImageView imageView = (ImageView) _convertView.findViewById(R.id.effect_image_view);
-        int imageID = AlchemyApplication.instance.getEffectIcon(this.context, effectName, this.currentGame.getPrefix());
+        int imageID = this.currentGame.getEffectIcon(this.context, effectName, this.currentGame.getPrefix());
         imageView.setImageResource(imageID);
         _convertView.setId(_groupPosition);
         return _convertView;
@@ -96,6 +96,6 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int _groupPosition, int _childPosition) {
-        return AlchemyApplication.instance.ingredientToRemove == null;
+        return true;
     }
 }
