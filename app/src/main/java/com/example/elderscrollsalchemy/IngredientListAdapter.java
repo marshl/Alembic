@@ -2,6 +2,7 @@ package com.example.elderscrollsalchemy;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,6 +79,8 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
     public View getGroupView(int _groupPosition, boolean _isExpanded,
                              View _convertView, ViewGroup _parent) {
+
+        final Resources res = context.getResources();
         final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
 
         if (_convertView == null) {
@@ -90,7 +93,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         _convertView.setId(_groupPosition);
 
         final TextView textView = (TextView) _convertView.findViewById(R.id.ingredient_group_text);
-        textView.setText(alchemyPackage.getPackageName() + " Ingredients");
+        textView.setText(res.getString(R.string.ingredient_group_title, alchemyPackage.getPackageName()));
 
         return _convertView;
     }
