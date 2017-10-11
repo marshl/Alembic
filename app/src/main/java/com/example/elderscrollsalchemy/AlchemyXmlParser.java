@@ -13,10 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class AlchemyXmlParser {
-    private Activity context;
 
     public List<AlchemyGame> parseXml(Activity _context) throws IOException, XmlPullParserException {
-        this.context = _context;
         InputStream fileStream = _context.getAssets().open("xml/ingredients.xml");
 
         List<AlchemyGame> gameList = new ArrayList<AlchemyGame>();
