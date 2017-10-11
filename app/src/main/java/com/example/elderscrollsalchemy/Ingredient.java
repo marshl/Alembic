@@ -35,6 +35,8 @@ public class Ingredient implements Parcelable {
     public Ingredient(Parcel in) {
         super();
         this.name = in.readString();
+        this.selected = in.readInt() == 1;
+
         String[] tempEffects = new String[in.readInt()];
         in.readStringArray(tempEffects);
         this.effects.addAll(Arrays.asList(tempEffects));
@@ -52,6 +54,7 @@ public class Ingredient implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.name);
+        parcel.writeInt(this.selected ? 1 : 0);
         parcel.writeInt(this.effects.size());
         parcel.writeStringArray(this.effects.toArray(new String[0]));
     }
