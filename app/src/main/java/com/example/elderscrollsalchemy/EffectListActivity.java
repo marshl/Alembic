@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
@@ -39,11 +40,12 @@ public class EffectListActivity extends Activity implements DialogInterface.OnCl
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-
+                final Resources res = getResources();
                 selectedIngredient = (Ingredient)parent.getExpandableListAdapter().getChild(groupPosition,childPosition);
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                builder.setMessage("Remove " + selectedIngredient.getName() + "?").setPositiveButton("Yes", EffectListActivity.this)
-                        .setNegativeButton("No", EffectListActivity.this);
+                builder.setMessage(res.getString(R.string.remove_ingredient, selectedIngredient.getName()));
+                builder.setPositiveButton(res.getString(R.string.remove_ingredient_yes), EffectListActivity.this)
+                        .setNegativeButton(res.getString(R.string.remove_ingredient_no), EffectListActivity.this);
                 builder.show();
                 return true;
             }
