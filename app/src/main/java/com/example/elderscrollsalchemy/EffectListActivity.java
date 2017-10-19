@@ -21,10 +21,10 @@ public class EffectListActivity extends Activity implements DialogInterface.OnCl
     private Ingredient selectedIngredient = null;
 
     @Override
-    protected void onCreate(Bundle _savedInstanceState) {
         //instance = this;
+    protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(_savedInstanceState);
+        super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_effect_list);
 
         Intent intent = this.getIntent();

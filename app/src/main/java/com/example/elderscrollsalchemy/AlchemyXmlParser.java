@@ -14,8 +14,8 @@ import java.util.List;
 
 class AlchemyXmlParser {
 
-    public List<AlchemyGame> parseXml(Activity _context) throws IOException, XmlPullParserException {
-        InputStream fileStream = _context.getAssets().open("xml/ingredients.xml");
+    public List<AlchemyGame> parseXml(Activity context) throws IOException, XmlPullParserException {
+        InputStream fileStream = context.getAssets().open("xml/ingredients.xml");
 
         List<AlchemyGame> gameList = new ArrayList<AlchemyGame>();
 
@@ -30,16 +30,16 @@ class AlchemyXmlParser {
         return gameList;
     }
 
-    private void readRootNode(XmlPullParser _parser, List<AlchemyGame> gameList) throws IOException, XmlPullParserException {
-        while (_parser.next() != XmlPullParser.END_TAG) {
-            if (_parser.getEventType() != XmlPullParser.START_TAG) {
+    private void readRootNode(XmlPullParser parser, List<AlchemyGame> gameList) throws IOException, XmlPullParserException {
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
 
-            String name = _parser.getName();
+            String name = parser.getName();
 
             if (name.equals("game")) {
-                AlchemyGame game = this.readGameNode(_parser);
+                AlchemyGame game = this.readGameNode(parser);
                 gameList.add(game);
                 Log.d("XML", "Added game \"" + game.getGameName() + "\"");
             } else {
@@ -48,28 +48,28 @@ class AlchemyXmlParser {
         }
     }
 
-    private AlchemyGame readGameNode(XmlPullParser _parser) throws IOException, XmlPullParserException {
+    private AlchemyGame readGameNode(XmlPullParser parser) throws IOException, XmlPullParserException {
 
         String gameName = null;
         String gamePrefix = null;
         ArrayList<AlchemyPackage> packages = new ArrayList<AlchemyPackage>();
 
-        while (_parser.next() != XmlPullParser.END_TAG) {
-            if (_parser.getEventType() != XmlPullParser.START_TAG) {
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
 
-            String nodeName = _parser.getName();
+            String nodeName = parser.getName();
 
-            switch (_parser.getName()) {
+            switch (parser.getName()) {
                 case "name":
-                    gameName = this.readText(_parser);
+                    gameName = this.readText(parser);
                     break;
                 case "prefix":
-                    gamePrefix = this.readText(_parser);
+                    gamePrefix = this.readText(parser);
                     break;
                 case "package":
-                    AlchemyPackage alchemyPackage = this.readPackageNode(_parser);
+                    AlchemyPackage alchemyPackage = this.readPackageNode(parser);
                     packages.add(alchemyPackage);
                     break;
                 default:
@@ -86,24 +86,24 @@ class AlchemyXmlParser {
         return game;
     }
 
-    private AlchemyPackage readPackageNode(XmlPullParser _parser) throws IOException, XmlPullParserException {
+    private AlchemyPackage readPackageNode(XmlPullParser parser) throws IOException, XmlPullParserException {
 
         String packageName = null;
         List<Ingredient> ingredients = new ArrayList<Ingredient>();
 
-        while (_parser.next() != XmlPullParser.END_TAG) {
-            if (_parser.getEventType() != XmlPullParser.START_TAG) {
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
 
-            String nodeName = _parser.getName();
+            String nodeName = parser.getName();
 
             switch (nodeName) {
                 case "name":
-                    packageName = this.readText(_parser);
+                    packageName = this.readText(parser);
                     break;
                 case "ingredient":
-                    Ingredient ingredient = this.readIngredientNode(_parser);
+                    Ingredient ingredient = this.readIngredientNode(parser);
                     ingredients.add(ingredient);
                     break;
                 default:
@@ -121,23 +121,23 @@ class AlchemyXmlParser {
     }
 
 
-    private Ingredient readIngredientNode(XmlPullParser _parser) throws IOException, XmlPullParserException {
+    private Ingredient readIngredientNode(XmlPullParser parser) throws IOException, XmlPullParserException {
 
         String ingredientName = null;
         List<String> ingredientEffects = new ArrayList<String>();
 
-        while (_parser.next() != XmlPullParser.END_TAG) {
-            if (_parser.getEventType() != XmlPullParser.START_TAG) {
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
-            String nodeName = _parser.getName();
+            String nodeName = parser.getName();
 
             switch (nodeName) {
                 case "name":
-                    ingredientName = this.readText(_parser);
+                    ingredientName = this.readText(parser);
                     break;
                 case "effect":
-                    ingredientEffects.add(this.readText(_parser));
+                    ingredientEffects.add(this.readText(parser));
                     break;
                 default:
                     throw new XmlPullParserException("Unknown node type \"" + nodeName + "\" found in ingredient node");
@@ -147,11 +147,11 @@ class AlchemyXmlParser {
         return new Ingredient(ingredientName, ingredientEffects);
     }
 
-    private String readText(XmlPullParser _parser) throws IOException, XmlPullParserException {
+    private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
         String result = "";
-        if (_parser.next() == XmlPullParser.TEXT) {
-            result = _parser.getText();
-            _parser.nextTag();
+        if (parser.next() == XmlPullParser.TEXT) {
+            result = parser.getText();
+            parser.nextTag();
         }
         return result;
     }

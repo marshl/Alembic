@@ -104,8 +104,8 @@ public class AlchemyGame implements Parcelable {
     }
 
 
-    public int getEffectIcon(Activity _context, String _effectName, String _prefix) {
-        _effectName = _effectName.replace("Agility", "Attribute")
+    public int getEffectIcon(Activity context, String effectName, String prefix) {
+        effectName = effectName.replace("Agility", "Attribute")
                 .replace("Endurance", "Attribute")
                 .replace("Intelligence", "Attribute")
                 .replace("Luck", "Attribute")
@@ -115,30 +115,30 @@ public class AlchemyGame implements Parcelable {
                 .replace("Willpower", "Attribute");
 
         if (this.getGameName().equals("Oblivion")) {
-            if (_effectName.startsWith("Restore")) {
-                _effectName = "Restore";
-            } else if (_effectName.startsWith("Cure")) {
-                _effectName = "Cure";
-            } else if (_effectName.startsWith("Damage")) {
-                _effectName = "Damage";
-            } else if (_effectName.endsWith("Damage") && !_effectName.startsWith("Reflect")) {
-                _effectName = _effectName.replace(" Damage", "");
-            } else if (_effectName.startsWith("Fortify")) {
-                _effectName = "Fortify";
-            } else if (_effectName.startsWith("Resist")) {
-                _effectName = "Resist";
+            if (effectName.startsWith("Restore")) {
+                effectName = "Restore";
+            } else if (effectName.startsWith("Cure")) {
+                effectName = "Cure";
+            } else if (effectName.startsWith("Damage")) {
+                effectName = "Damage";
+            } else if (effectName.endsWith("Damage") && !effectName.startsWith("Reflect")) {
+                effectName = effectName.replace(" Damage", "");
+            } else if (effectName.startsWith("Fortify")) {
+                effectName = "Fortify";
+            } else if (effectName.startsWith("Resist")) {
+                effectName = "Resist";
             }
         }
 
-        String imageName = _effectName.toLowerCase().replace(' ', '_').replace("'", "").replace('-', '_').replace(".", "");
-        imageName = _prefix + "_" + imageName;
+        String imageName = effectName.toLowerCase().replace(' ', '_').replace("'", "").replace('-', '_').replace(".", "");
+        imageName = prefix + "_" + imageName;
 
-        return _context.getResources().getIdentifier(imageName, "drawable", _context.getPackageName().toLowerCase());
+        return context.getResources().getIdentifier(imageName, "drawable", context.getPackageName().toLowerCase());
     }
 
-    public int getIngredientImageID(Activity _context, Ingredient _ingredient) {
-        String imageName = _ingredient.getName().toLowerCase().replace(' ', '_').replace("'", "").replace("-", "_").replace(".", "");
+    public int getIngredientImageID(Activity context, Ingredient ingredient) {
+        String imageName = ingredient.getName().toLowerCase().replace(' ', '_').replace("'", "").replace("-", "_").replace(".", "");
         imageName = this.getPrefix() + "_" + imageName;
-        return _context.getResources().getIdentifier(imageName, "drawable", _context.getPackageName().toLowerCase());
+        return context.getResources().getIdentifier(imageName, "drawable", context.getPackageName().toLowerCase());
     }
 }

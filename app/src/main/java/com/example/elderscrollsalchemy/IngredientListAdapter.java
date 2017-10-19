@@ -15,87 +15,87 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
     private AlchemyGame alchemyGame;
 
-    public IngredientListAdapter(Activity _context, AlchemyGame alchemyGame) {
+    public IngredientListAdapter(Activity context, AlchemyGame alchemyGame) {
         super();
-        this.context = _context;
+        this.context = context;
         this.alchemyGame = alchemyGame;
     }
 
-    public Object getChild(int _groupPosition, int _childPosition) {
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
-        return alchemyPackage.ingredients.get(_childPosition);
+    public Object getChild(int groupPosition, int childPosition) {
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
+        return alchemyPackage.ingredients.get(childPosition);
     }
 
-    public long getChildId(int _groupPosition, int _childPosition) {
-        return _childPosition;
+    public long getChildId(int groupPosition, int childPosition) {
+        return childPosition;
     }
 
-    public View getChildView(final int _groupPosition, final int _childPosition,
-                             boolean _isLastChild, View _convertView, ViewGroup _parent) {
+    public View getChildView(final int groupPosition, final int childPosition,
+                             boolean isLastChild, View convertView, ViewGroup parent) {
 
-        if (_convertView == null) {
+        if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            _convertView = inflater.inflate(R.layout.ingredient_child_row, _parent, false);
+            convertView = inflater.inflate(R.layout.ingredient_child_row, parent, false);
         }
-        _convertView.setId(_childPosition);
-        TextView textView = (TextView) _convertView.findViewById(R.id.label);
-        ImageView imageView = (ImageView) _convertView.findViewById(R.id.icon);
+        convertView.setId(childPosition);
+        TextView textView = (TextView) convertView.findViewById(R.id.label);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.icon);
 
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
-        final Ingredient ingredient = alchemyPackage.ingredients.get(_childPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
+        final Ingredient ingredient = alchemyPackage.ingredients.get(childPosition);
 
         textView.setText(ingredient.getName());
         imageView.setImageResource(ingredient.imageID);
 
         if (ingredient.selected) {
-            _convertView.setBackgroundColor(0xFFD7BC91);
+            convertView.setBackgroundColor(0xFFD7BC91);
             textView.setTextColor(0xFF000000);
         } else {
-            _convertView.setBackgroundColor(0x00000000);
+            convertView.setBackgroundColor(0x00000000);
             textView.setTextColor(0xFFFFFFFF);
         }
 
-        return _convertView;
+        return convertView;
     }
 
-    public int getChildrenCount(int _groupPosition) {
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
+    public int getChildrenCount(int groupPosition) {
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
         return alchemyPackage.ingredients.size();
     }
 
-    public Object getGroup(int _groupPosition) {
-        return this.alchemyGame.packages.get(_groupPosition);
+    public Object getGroup(int groupPosition) {
+        return this.alchemyGame.packages.get(groupPosition);
     }
 
     public int getGroupCount() {
         return this.alchemyGame.packages.size();
     }
 
-    public long getGroupId(int _groupPosition) {
-        return _groupPosition;
+    public long getGroupId(int groupPosition) {
+        return groupPosition;
     }
 
-    public View getGroupView(int _groupPosition, boolean _isExpanded,
-                             View _convertView, ViewGroup _parent) {
+    public View getGroupView(int groupPosition, boolean isExpanded,
+                             View convertView, ViewGroup parent) {
 
         final Resources res = context.getResources();
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(_groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
 
-        if (_convertView == null) {
+        if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            _convertView = layoutInflater.inflate(R.layout.ingredient_group_row,
-                    _parent, false);
+            convertView = layoutInflater.inflate(R.layout.ingredient_group_row,
+                    parent, false);
         }
 
-        _convertView.setId(_groupPosition);
+        convertView.setId(groupPosition);
 
-        final TextView textView = (TextView) _convertView.findViewById(R.id.ingredient_group_text);
+        final TextView textView = (TextView) convertView.findViewById(R.id.ingredient_group_text);
         textView.setText(res.getString(R.string.ingredient_group_title, alchemyPackage.getPackageName()));
 
-        return _convertView;
+        return convertView;
     }
 
     @Override
@@ -104,7 +104,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public boolean isChildSelectable(int _groupPosition, int _childPosition) {
+    public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
     }
 }

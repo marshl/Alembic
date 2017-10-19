@@ -14,79 +14,76 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
     private final Activity context;
     private final AlchemyGame currentGame;
 
-    public EffectExpandableListAdapter(Activity _context, AlchemyGame _game) {
-        this.context = _context;
-        this.currentGame = _game;
+    public EffectExpandableListAdapter(Activity context, AlchemyGame game) {
+        this.context = context;
+        this.currentGame = game;
     }
 
-    public Object getChild(int _groupPosition, int _childPosition) {
-        return currentGame.effectToIngredientMap.get(currentGame.effectList.get(_groupPosition)).get(_childPosition);
+    public Object getChild(int groupPosition, int childPosition) {
+        return currentGame.effectToIngredientMap.get(currentGame.effectList.get(groupPosition)).get(childPosition);
     }
 
-    public long getChildId(int _groupPosition, int _childPosition) {
-        return _childPosition;
+    public long getChildId(int groupPosition, int childPosition) {
+        return childPosition;
     }
 
-    public View getChildView(final int _groupPosition, final int _childPosition,
-                             boolean _isLastChild, View _convertView, ViewGroup _parent) {
-        final Ingredient ingredient = (Ingredient) getChild(_groupPosition, _childPosition);
+    public View getChildView(final int groupPosition, final int childPosition,
+                             boolean isLastChild, View convertView, ViewGroup parent) {
+        final Ingredient ingredient = (Ingredient) getChild(groupPosition, childPosition);
         LayoutInflater inflater = context.getLayoutInflater();
 
-        if (_convertView == null) {
-            _convertView = inflater.inflate(R.layout.effect_child_item, _parent, false);
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.effect_child_item, parent, false);
         }
-        _convertView.setId(_childPosition);
+        convertView.setId(childPosition);
 
-        TextView label = (TextView) _convertView.findViewById(R.id.effect_sub_text);
-        ImageView image = (ImageView) _convertView.findViewById(R.id.effect_sub_image);
+        TextView label = (TextView) convertView.findViewById(R.id.effect_sub_text);
+        ImageView image = (ImageView) convertView.findViewById(R.id.effect_sub_image);
 
         label.setText(ingredient.getName());
         image.setImageResource(ingredient.imageID);
 
-        return _convertView;
+        return convertView;
     }
 
-    public int getChildrenCount(int _groupPosition) {
-        if (currentGame.effectList.size() <= _groupPosition) {
+    public int getChildrenCount(int groupPosition) {
+        if (currentGame.effectList.size() <= groupPosition) {
             return 0;
         }
-        String str = currentGame.effectList.get(_groupPosition);
+        String str = currentGame.effectList.get(groupPosition);
         return currentGame.effectToIngredientMap.get(str).size();
     }
 
-    public Object getGroup(int _groupPosition) {
-        return currentGame.effectList.get(_groupPosition);
+    public Object getGroup(int groupPosition) {
+        return currentGame.effectList.get(groupPosition);
     }
 
     public int getGroupCount() {
         return currentGame.effectList.size();
     }
 
-    public long getGroupId(int _groupPosition) {
-        return _groupPosition;
+    public long getGroupId(int groupPosition) {
+        return groupPosition;
     }
 
-    public View getGroupView(int _groupPosition, boolean _isExpanded,
-                             View _convertView, ViewGroup _parent) {
-        String effectName = (String) getGroup(_groupPosition);
-        if (_convertView == null) {
+    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+        String effectName = (String) getGroup(groupPosition);
+        if (convertView == null) {
             LayoutInflater layoutInflator = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            _convertView = layoutInflator.inflate(R.layout.effect_group_item,
-                    _parent, false);
+            convertView = layoutInflator.inflate(R.layout.effect_group_item,
+                    parent, false);
         }
 
-        TextView textView = (TextView) _convertView.findViewById(R.id.effect_text_view);
+        TextView textView = (TextView) convertView.findViewById(R.id.effect_text_view);
         textView.setTypeface(null, Typeface.BOLD);
         textView.setText(effectName);
 
-        //AlchemyApplication app = (AlchemyApplication)this.context.getApplication();
-
-        ImageView imageView = (ImageView) _convertView.findViewById(R.id.effect_image_view);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.effect_image_view);
         int imageID = this.currentGame.getEffectIcon(this.context, effectName, this.currentGame.getPrefix());
         imageView.setImageResource(imageID);
-        _convertView.setId(_groupPosition);
-        return _convertView;
+        convertView.setId(groupPosition);
+        return convertView;
     }
 
     @Override
@@ -95,7 +92,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public boolean isChildSelectable(int _groupPosition, int _childPosition) {
+    public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
     }
 }

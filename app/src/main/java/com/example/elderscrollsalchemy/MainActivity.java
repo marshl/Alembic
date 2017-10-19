@@ -21,8 +21,8 @@ public class MainActivity extends Activity {
     private ExpandableListView ingredientListView;
 
     @Override
-    protected void onCreate(Bundle _savedInstanceState) {
-        super.onCreate(_savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
 
@@ -60,24 +60,24 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu _menu) {
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.ingredient_menu, _menu);
+        inflater.inflate(R.menu.ingredient_menu, menu);
         return true;
     }
 
     @Override
-    public boolean onPrepareOptionsMenu(Menu _menu) {
+    public boolean onPrepareOptionsMenu(Menu menu) {
         String switchGameTitle = this.currentGame.getPrefix().equals("mw") ? "Oblivion" : "Morrowind";
         switchGameTitle = "Switch to " + switchGameTitle;
-        MenuItem switchGameItem = _menu.findItem(R.id.switch_game);
+        MenuItem switchGameItem = menu.findItem(R.id.switch_game);
         switchGameItem.setTitle(switchGameTitle);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem _item) {
-        switch (_item.getItemId()) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.switch_game: {
                 this.switchGame();
                 this.ingredientListView.setScrollY(0);
@@ -94,12 +94,12 @@ public class MainActivity extends Activity {
                 return true;
             }
             default: {
-                return super.onOptionsItemSelected(_item);
+                return super.onOptionsItemSelected(item);
             }
         }
     }
 
-    public void onMixIngredientButtonDown(View _view) {
+    public void onMixIngredientButtonDown(View view) {
         this.currentGame.recalculateIngredientEffects();
         Intent intent = new Intent(this, EffectListActivity.class);
         intent.putExtra(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME, this.currentGame);

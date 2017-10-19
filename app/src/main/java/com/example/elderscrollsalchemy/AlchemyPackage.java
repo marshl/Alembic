@@ -59,9 +59,9 @@ public class AlchemyPackage implements Parcelable {
     }
 
 
-    public void toggleAllIngredients(boolean _selected) {
+    public void toggleAllIngredients(boolean selected) {
         for (Ingredient ingredient : this.ingredients) {
-            ingredient.selected = _selected;
+            ingredient.selected = selected;
         }
     }
 }
