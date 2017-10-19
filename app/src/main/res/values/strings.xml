@@ -21,5 +21,4 @@
     <string name="effect_text_placeholder">[EFFECT]</string>
     <string name="title_activity_create_film">CreateFilmActivity</string>
     <string name="default_ingredient_name">[INGREDIENT_NAME]</string>
-    <string name="ingredient_group_title">%s Ingredients</string>
 </resources>

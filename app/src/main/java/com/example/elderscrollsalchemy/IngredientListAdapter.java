@@ -93,7 +93,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         convertView.setId(groupPosition);
 
         final TextView textView = (TextView) convertView.findViewById(R.id.ingredient_group_text);
-        textView.setText(res.getString(R.string.ingredient_group_title, alchemyPackage.getPackageName()));
+        textView.setText(alchemyPackage.getPackageName());
 
         return convertView;
     }
