@@ -23,7 +23,6 @@ public class Ingredient implements Parcelable {
 
     public List<String> effects = new ArrayList<String>();
     public AlchemyPackage parentPackage;
-    public int imageID;
     public boolean selected = false;
     private String name;
 

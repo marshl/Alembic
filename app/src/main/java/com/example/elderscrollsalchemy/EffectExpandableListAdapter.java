@@ -41,7 +41,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         ImageView image = (ImageView) convertView.findViewById(R.id.effect_sub_image);
 
         label.setText(ingredient.getName());
-        image.setImageResource(ingredient.imageID);
+        image.setImageResource(this.currentGame.getIngredientImageID(this.context, ingredient));
 
         return convertView;
     }

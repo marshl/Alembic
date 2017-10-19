@@ -47,7 +47,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         final Ingredient ingredient = alchemyPackage.ingredients.get(childPosition);
 
         textView.setText(ingredient.getName());
-        imageView.setImageResource(ingredient.imageID);
+        imageView.setImageResource(this.alchemyGame.getIngredientImageID(this.context, ingredient));
 
         if (ingredient.selected) {
             convertView.setBackgroundColor(0xFFD7BC91);
