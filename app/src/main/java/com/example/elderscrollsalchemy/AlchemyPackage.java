@@ -18,14 +18,12 @@ public class AlchemyPackage implements Parcelable {
         }
     };
     public final ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
-    private AlchemyGame parentGame;
     private String name = "UNDEFINED";
     public AlchemyPackage(Parcel in) {
         super();
         this.name = in.readString();
 
         Object[] ingredientArray = in.readArray(Ingredient.class.getClassLoader());
-        //this.ingredients.addAll(Arrays.asList(ingredientArray));
         for (Object ingredient : ingredientArray) {
             this.ingredients.add((Ingredient) ingredient);
         }
@@ -33,14 +31,6 @@ public class AlchemyPackage implements Parcelable {
 
     public AlchemyPackage(String name) {
         this.name = name;
-    }
-
-    public AlchemyGame getParentGame() {
-        return parentGame;
-    }
-
-    public void setParentGame(AlchemyGame parentGame) {
-        this.parentGame = parentGame;
     }
 
     public String getPackageName() {

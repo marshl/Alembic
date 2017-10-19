@@ -21,7 +21,6 @@ public class EffectListActivity extends Activity implements DialogInterface.OnCl
     private Ingredient selectedIngredient = null;
 
     @Override
-        //instance = this;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);

@@ -80,9 +80,6 @@ class AlchemyXmlParser {
         AlchemyGame game = new AlchemyGame(gameName, gamePrefix);
         game.packages.addAll(packages);
 
-        for (AlchemyPackage alchemyPackage : game.packages) {
-            alchemyPackage.setParentGame(game);
-        }
         return game;
     }
 

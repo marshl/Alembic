@@ -34,7 +34,7 @@ public class AlchemyGame implements Parcelable {
         this.prefix = in.readString();
 
         Object[] packageArray = in.readArray(AlchemyPackage.class.getClassLoader());
-        //this.packages.addAll(Arrays.asList(packageArray));
+
         for (Object pkg : packageArray) {
             this.packages.add((AlchemyPackage) pkg);
         }
