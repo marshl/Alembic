@@ -12,14 +12,12 @@ import android.widget.ExpandableListView;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends Activity {
-    private List<AlchemyGame> gameMap;
     public IngredientListAdapter ingredientListAdapter;
     public AlchemyGame currentGame;
+    private List<AlchemyGame> gameMap;
     private ExpandableListView ingredientListView;
 
     @Override
@@ -41,12 +39,23 @@ public class MainActivity extends Activity {
         this.ingredientListAdapter = new IngredientListAdapter(this, this.currentGame);
         this.ingredientListView.setAdapter(this.ingredientListAdapter);
 
-        this.ingredientListView.setOnChildClickListener(new IngredientOnChildClickListener());
+        this.ingredientListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                IngredientListAdapter adapter = (IngredientListAdapter) parent.getExpandableListAdapter();
+                Object obj = adapter.getChild(groupPosition, childPosition);
+
+                Ingredient ingredient = (Ingredient) obj;
+                ingredient.selected = !ingredient.selected;
+
+                adapter.notifyDataSetChanged();
+
+                return true;
+            }
+        });
     }
 
     public void switchGame() {
-        //String otherName = this.currentGame.getGameName().equals("Morrowind") ? "Oblivion" : "Morrowind";
-        //this.currentGame = this.gameMap.get(otherName);
         this.currentGame = this.currentGame == this.gameMap.get(0) ? this.gameMap.get(1) : this.gameMap.get(0);
     }
 

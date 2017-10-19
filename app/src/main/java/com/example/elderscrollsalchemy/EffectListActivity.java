@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class EffectListActivity extends Activity implements DialogInterface.OnClickListener {
-    //ublic static EffectListActivity instance;
+
     private ExpandableListView expListView;
     private EffectExpandableListAdapter viewAdapter;
 
@@ -28,48 +28,30 @@ public class EffectListActivity extends Activity implements DialogInterface.OnCl
         this.setContentView(R.layout.activity_effect_list);
 
         Intent intent = this.getIntent();
-
         this.currentGame = intent.getParcelableExtra(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);
         this.currentGame.recalculateIngredientEffects();
 
-        expListView = (ExpandableListView) findViewById(R.id.effect_list);
+        this.expListView = (ExpandableListView) findViewById(R.id.effect_list);
 
-        this.viewAdapter = new EffectExpandableListAdapter(
-                this, currentGame);
+        this.viewAdapter = new EffectExpandableListAdapter(this, currentGame);
         expListView.setAdapter(this.viewAdapter);
 
-        //expListView.setOnChildClickListener(new EffectOnChildClickListener());
+
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
                 selectedIngredient = (Ingredient)parent.getExpandableListAdapter().getChild(groupPosition,childPosition);
-                /*Ingredient ingredient = (Ingredient) parent.getExpandableListAdapter()
-                        .getChild(groupPosition, childPosition);
-*/
-                //RemoveIngredientDialogListener dialogListener = new RemoveIngredientDialogListener(ingredient);
-
-                //DialogInterface.OnClickListener dialogListener = new DialogInterface.OnClickListener()
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setMessage("Remove " + selectedIngredient.getName() + "?").setPositiveButton("Yes", EffectListActivity.this)
                         .setNegativeButton("No", EffectListActivity.this);
-
-                /*builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialogInterface) {
-                        AlchemyApplication.instance.ingredientToRemove = null;
-                    }
-                });*/
-
                 builder.show();
-
                 return true;
             }
         });
     }
 
-    public void removeIngredient(Ingredient _ingredient) {
+    public void removeIngredient(Ingredient ingredient) {
         ArrayList<String> openItems = new ArrayList<String>();
 
         for (int i = 0; i < this.currentGame.effectList.size(); ++i) {
@@ -78,7 +60,7 @@ public class EffectListActivity extends Activity implements DialogInterface.OnCl
             }
         }
 
-        _ingredient.selected = false;
+        ingredient.selected = false;
 
         this.currentGame.recalculateIngredientEffects();
 
@@ -97,8 +79,6 @@ public class EffectListActivity extends Activity implements DialogInterface.OnCl
 
     @Override
     public void onClick(DialogInterface dialog, int which) {
-
-
         switch (which) {
             case DialogInterface.BUTTON_POSITIVE: {
                 this.removeIngredient(this.selectedIngredient);
