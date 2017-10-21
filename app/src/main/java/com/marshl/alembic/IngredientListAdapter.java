@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class IngredientListAdapter extends BaseExpandableListAdapter {
+
     private final Activity context;
 
     private AlchemyGame alchemyGame;
@@ -32,12 +34,17 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         return alchemyPackage.ingredients.get(childPosition);
     }
 
+    @Override
     public long getChildId(int groupPosition, int childPosition) {
         return childPosition;
     }
 
+    @Override
     public View getChildView(final int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
+
+        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
+        final Ingredient ingredient = alchemyPackage.ingredients.get(childPosition);
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context
@@ -45,44 +52,41 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
             convertView = inflater.inflate(R.layout.ingredient_child_row, parent, false);
         }
-        convertView.setId(childPosition);
-        TextView textView = (TextView) convertView.findViewById(R.id.label);
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.icon);
 
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
-        final Ingredient ingredient = alchemyPackage.ingredients.get(childPosition);
+        convertView.setId(childPosition);
+        final TextView textView = (TextView) convertView.findViewById(R.id.label);
+        final ImageView imageView = (ImageView) convertView.findViewById(R.id.icon);
+        final CheckBox checkbox = (CheckBox) convertView.findViewById(R.id.ingredient_checkbox);
 
         textView.setText(ingredient.getName());
         imageView.setImageResource(this.alchemyGame.getIngredientImageID(this.context, ingredient));
-
-        if (ingredient.selected) {
-            convertView.setBackgroundColor(0xFFD7BC91);
-            textView.setTextColor(0xFF000000);
-        } else {
-            convertView.setBackgroundColor(0x00000000);
-            textView.setTextColor(0xFFFFFFFF);
-        }
+        checkbox.setChecked(ingredient.selected);
 
         return convertView;
     }
 
+    @Override
     public int getChildrenCount(int groupPosition) {
         final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
         return alchemyPackage.ingredients.size();
     }
 
+    @Override
     public Object getGroup(int groupPosition) {
         return this.alchemyGame.packages.get(groupPosition);
     }
 
+    @Override
     public int getGroupCount() {
         return this.alchemyGame.packages.size();
     }
 
+    @Override
     public long getGroupId(int groupPosition) {
         return groupPosition;
     }
 
+    @Override
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
 

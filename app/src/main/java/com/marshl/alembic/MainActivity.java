@@ -25,7 +25,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
-
         try {
             AlchemyXmlParser parser = new AlchemyXmlParser();
             this.gameMap = parser.parseXml(this);
@@ -50,6 +49,8 @@ public class MainActivity extends Activity {
 
                 adapter.notifyDataSetChanged();
 
+                int index = parent.getFlatListPosition(ExpandableListView.getPackedPositionForChild(groupPosition, childPosition));
+                parent.setItemChecked(index, true);
                 return true;
             }
         });

@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"   
-    android:layout_width="match_parent"  
-    android:layout_height="wrap_content" 
-    android:orientation="horizontal" > 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/icon"
-        android:contentDescription="@+id/icon"
-        android:layout_width="44dp"
-        android:layout_height="44dp" />
-        <!-- 
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="4dp" --> 
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_weight="0.2"
+        android:contentDescription="@+id/icon" />
 
     <TextView
         android:id="@+id/label"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/default_ingredient_name" />
-  
+        android:layout_weight="0.6"
+        android:text="@string/default_ingredient_name"
+        android:textAlignment="viewStart" />
+
+    <CheckBox
+        android:id="@+id/ingredient_checkbox"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_weight="0.2"
+        android:clickable="false"
+        android:focusable="false" />
+
 </LinearLayout>

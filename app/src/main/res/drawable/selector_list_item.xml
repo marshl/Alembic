@@ -1,0 +1,10 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:exitFadeDuration="@android:integer/config_shortAnimTime"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <item android:drawable="@android:color/holo_blue_bright" android:state_pressed="true"/>
+    <item android:drawable="@android:color/holo_blue_light" android:state_selected="true"/>
+    <item android:drawable="@android:color/holo_blue_dark" android:state_activated="true"/>
+
+</selector>
