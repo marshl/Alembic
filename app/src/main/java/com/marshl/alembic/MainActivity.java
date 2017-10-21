@@ -57,6 +57,12 @@ public class MainActivity extends Activity {
 
     public void switchGame() {
         this.currentGame = this.currentGame == this.gameMap.get(0) ? this.gameMap.get(1) : this.gameMap.get(0);
+        this.ingredientListAdapter.setGame(this.currentGame);
+        this.ingredientListView.setScrollY(0);
+        this.ingredientListView.setScrollY(0);
+        for (int i = 0; i < this.ingredientListAdapter.getGroupCount(); ++i) {
+            this.ingredientListView.collapseGroup(i);
+        }
     }
 
     @Override
@@ -80,12 +86,6 @@ public class MainActivity extends Activity {
         switch (item.getItemId()) {
             case R.id.switch_game: {
                 this.switchGame();
-                this.ingredientListView.setScrollY(0);
-                this.ingredientListView.setScrollY(0);
-                for (int i = 0; i < this.ingredientListAdapter.getGroupCount(); ++i) {
-                    this.ingredientListView.collapseGroup(i);
-                }
-                this.ingredientListAdapter.notifyDataSetChanged();
                 return true;
             }
             case R.id.remove_ingredients: {

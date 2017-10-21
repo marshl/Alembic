@@ -21,6 +21,12 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         this.alchemyGame = alchemyGame;
     }
 
+    public void setGame(AlchemyGame game) {
+        this.alchemyGame = game;
+        this.notifyDataSetChanged();
+    }
+
+    @Override
     public Object getChild(int groupPosition, int childPosition) {
         final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
         return alchemyPackage.ingredients.get(childPosition);
