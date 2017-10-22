@@ -171,12 +171,19 @@ public class MainActivity extends FragmentActivity {
 
     public void switchGame() {
         this.currentGame = this.currentGame == this.gameMap.get(0) ? this.gameMap.get(1) : this.gameMap.get(0);
-        this.ingredientListAdapter.setGame(this.currentGame);
+
+        this.ingredientListFragment.getArguments().remove(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);
+        this.ingredientListFragment.getArguments().putParcelable(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME, MainActivity.this.currentGame);
+        this.viewPager.setCurrentItem(0);
+        this.ingredientListFragment.refreshIngredients();
+        this.viewPager.setAdapter(this.pagerAdapter);
+
+        /*this.ingredientListAdapter.setGame(this.currentGame);
         this.ingredientListView.setScrollY(0);
         this.ingredientListView.setScrollY(0);
         for (int i = 0; i < this.ingredientListAdapter.getGroupCount(); ++i) {
             this.ingredientListView.collapseGroup(i);
-        }
+        }*/
     }
 
     @Override
@@ -204,7 +211,7 @@ public class MainActivity extends FragmentActivity {
             }
             case R.id.remove_ingredients: {
                 this.currentGame.removeAllIngredients();
-                this.ingredientListAdapter.notifyDataSetChanged();
+                this.ingredientListFragment.refreshIngredients();
                 return true;
             }
             default: {
