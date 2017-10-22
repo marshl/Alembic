@@ -1,8 +1,13 @@
 package com.marshl.alembic;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,16 +19,67 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
+    private static final int NUM_PAGES = 2;
     public IngredientListAdapter ingredientListAdapter;
     public AlchemyGame currentGame;
     private List<AlchemyGame> gameMap;
     private ExpandableListView ingredientListView;
+    private ViewPager viewPager;
+    private FragmentStatePagerAdapter pagerAdapter;
+
+    private EffectListFragment effectListFragment;
+    private IngredientListFragment ingredientListFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
+
+        this.viewPager = (ViewPager) this.findViewById(R.id.pager);
+        this.pagerAdapter = new IngredientListPagerAdapter(this.getSupportFragmentManager());
+        this.viewPager.setAdapter(this.pagerAdapter);
+
+        this.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                Fragment fragment = null;
+
+                if (position == 0 && MainActivity.this.ingredientListFragment != null) {
+                    fragment = MainActivity.this.ingredientListFragment;
+                } else if (position == 1 && MainActivity.this.effectListFragment != null) {
+                    fragment = MainActivity.this.effectListFragment;
+                }
+
+                if (fragment != null) {
+                    MainActivity.this.currentGame.recalculateIngredientEffects();
+                    fragment.getArguments().remove(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);
+                    fragment.getArguments().putParcelable(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME, MainActivity.this.currentGame);
+
+                    if (fragment == MainActivity.this.effectListFragment) {
+                        MainActivity.this.effectListFragment.refreshEffects();
+                    } else if (fragment == MainActivity.this.ingredientListFragment)
+                    {
+                        MainActivity.this.ingredientListFragment.refreshIngredients();
+                    }
+                }
+
+                MainActivity.this.pagerAdapter.notifyDataSetChanged();
+                Log.d("!!!", "onPageSelected: " + position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
 
         try {
             AlchemyXmlParser parser = new AlchemyXmlParser();
@@ -33,7 +89,7 @@ public class MainActivity extends Activity {
         }
 
         this.currentGame = this.gameMap.get(0);
-
+/*
         this.ingredientListView = (ExpandableListView) this.findViewById(R.id.ingredient_listview);
         this.ingredientListAdapter = new IngredientListAdapter(this, this.currentGame);
         this.ingredientListView.setAdapter(this.ingredientListAdapter);
@@ -53,7 +109,16 @@ public class MainActivity extends Activity {
                 parent.setItemChecked(index, true);
                 return true;
             }
-        });
+        });*/
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (this.viewPager.getCurrentItem() == 0) {
+            super.onBackPressed();
+        } else {
+            this.viewPager.setCurrentItem(this.viewPager.getCurrentItem() - 1);
+        }
     }
 
     public void switchGame() {
@@ -73,7 +138,7 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         String switchGameTitle = this.currentGame.getPrefix().equals("mw") ? "Oblivion" : "Morrowind";
         switchGameTitle = "Switch to " + switchGameTitle;
@@ -81,7 +146,7 @@ public class MainActivity extends Activity {
         switchGameItem.setTitle(switchGameTitle);
         return true;
     }
-
+*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -105,5 +170,33 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, EffectListActivity.class);
         intent.putExtra(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME, this.currentGame);
         startActivity(intent);
+    }
+
+    private class IngredientListPagerAdapter extends FragmentStatePagerAdapter {
+        public IngredientListPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+
+            Log.d("MainActivity", "Page " + position);
+            switch (position) {
+                case 0:
+                    MainActivity.this.ingredientListFragment = IngredientListFragment.newInstance(MainActivity.this.currentGame);
+                    return MainActivity.this.ingredientListFragment;
+                case 1:
+                    MainActivity.this.effectListFragment = EffectListFragment.newInstance(MainActivity.this.currentGame);
+                    return MainActivity.this.effectListFragment;
+                default:
+                    throw new IllegalArgumentException("Unknown position " + position);
+
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return NUM_PAGES;
+        }
     }
 }
