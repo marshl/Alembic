@@ -1,6 +1,5 @@
 package com.marshl.alembic;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,12 +7,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ExpandableListView;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -22,17 +18,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static android.R.attr.fragment;
 
 public class MainActivity extends FragmentActivity {
     private static final int NUM_PAGES = 2;
     private static final String GAME_NAME_KEY = "GAME_NAME";
     private static final String SELECTED_INGREDIENTS_KEY = "SELECTED_INGREDIENTS";
     private final static String SHARED_PREFERENCE_KEY = "ALEMBIC_SHARED_PREFS";
-    //public IngredientListAdapter ingredientListAdapter;
-    public AlchemyGame currentGame;
+
+    private AlchemyGame currentGame;
     private List<AlchemyGame> gameMap;
-    //private ExpandableListView ingredientListView;
     private ViewPager viewPager;
     private FragmentStatePagerAdapter pagerAdapter;
     private EffectListFragment effectListFragment;
@@ -77,7 +71,6 @@ public class MainActivity extends FragmentActivity {
                 }
 
                 MainActivity.this.pagerAdapter.notifyDataSetChanged();
-                Log.d("!!!", "onPageSelected: " + position);
             }
 
             @Override
@@ -113,28 +106,6 @@ public class MainActivity extends FragmentActivity {
                 }
             }
         }
-
-/*
-        this.ingredientListView = (ExpandableListView) this.findViewById(R.id.ingredient_listview);
-        this.ingredientListAdapter = new IngredientListAdapter(this, this.currentGame);
-        this.ingredientListView.setAdapter(this.ingredientListAdapter);
-
-        this.ingredientListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                IngredientListAdapter adapter = (IngredientListAdapter) parent.getExpandableListAdapter();
-                Object obj = adapter.getChild(groupPosition, childPosition);
-
-                Ingredient ingredient = (Ingredient) obj;
-                ingredient.selected = !ingredient.selected;
-
-                adapter.notifyDataSetChanged();
-
-                int index = parent.getFlatListPosition(ExpandableListView.getPackedPositionForChild(groupPosition, childPosition));
-                parent.setItemChecked(index, true);
-                return true;
-            }
-        });*/
     }
 
     @Override
@@ -178,12 +149,6 @@ public class MainActivity extends FragmentActivity {
         this.ingredientListFragment.refreshIngredients();
         this.viewPager.setAdapter(this.pagerAdapter);
 
-        /*this.ingredientListAdapter.setGame(this.currentGame);
-        this.ingredientListView.setScrollY(0);
-        this.ingredientListView.setScrollY(0);
-        for (int i = 0; i < this.ingredientListAdapter.getGroupCount(); ++i) {
-            this.ingredientListView.collapseGroup(i);
-        }*/
     }
 
     @Override
@@ -193,15 +158,6 @@ public class MainActivity extends FragmentActivity {
         return true;
     }
 
-    /*@Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        String switchGameTitle = this.currentGame.getPrefix().equals("mw") ? "Oblivion" : "Morrowind";
-        switchGameTitle = "Switch to " + switchGameTitle;
-        MenuItem switchGameItem = menu.findItem(R.id.switch_game);
-        switchGameItem.setTitle(switchGameTitle);
-        return true;
-    }
-*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -231,8 +187,6 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-
-            Log.d("MainActivity", "Page " + position);
             switch (position) {
                 case 0:
                     MainActivity.this.ingredientListFragment = IngredientListFragment.newInstance(MainActivity.this.currentGame);
@@ -242,7 +196,6 @@ public class MainActivity extends FragmentActivity {
                     return MainActivity.this.effectListFragment;
                 default:
                     throw new IllegalArgumentException("Unknown position " + position);
-
             }
         }
 

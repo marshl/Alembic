@@ -94,7 +94,6 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
         }
 
         this.viewAdapter.notifyDataSetChanged();
-        //TODO: MainActivity.instance.ingredientListAdapter.notifyDataSetChanged();
     }
 
     @Override
