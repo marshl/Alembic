@@ -1,6 +1,7 @@
 package com.marshl.alembic;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -17,17 +18,23 @@ import android.widget.ExpandableListView;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
+import static android.R.attr.fragment;
 
 public class MainActivity extends FragmentActivity {
     private static final int NUM_PAGES = 2;
-    public IngredientListAdapter ingredientListAdapter;
+    private static final String GAME_NAME_KEY = "GAME_NAME";
+    private static final String SELECTED_INGREDIENTS_KEY = "SELECTED_INGREDIENTS";
+    private final static String SHARED_PREFERENCE_KEY = "ALEMBIC_SHARED_PREFS";
+    //public IngredientListAdapter ingredientListAdapter;
     public AlchemyGame currentGame;
     private List<AlchemyGame> gameMap;
-    private ExpandableListView ingredientListView;
+    //private ExpandableListView ingredientListView;
     private ViewPager viewPager;
     private FragmentStatePagerAdapter pagerAdapter;
-
     private EffectListFragment effectListFragment;
     private IngredientListFragment ingredientListFragment;
 
@@ -64,8 +71,7 @@ public class MainActivity extends FragmentActivity {
 
                     if (fragment == MainActivity.this.effectListFragment) {
                         MainActivity.this.effectListFragment.refreshEffects();
-                    } else if (fragment == MainActivity.this.ingredientListFragment)
-                    {
+                    } else if (fragment == MainActivity.this.ingredientListFragment) {
                         MainActivity.this.ingredientListFragment.refreshIngredients();
                     }
                 }
@@ -80,7 +86,6 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-
         try {
             AlchemyXmlParser parser = new AlchemyXmlParser();
             this.gameMap = parser.parseXml(this);
@@ -88,7 +93,27 @@ public class MainActivity extends FragmentActivity {
             throw new RuntimeException(ex);
         }
 
-        this.currentGame = this.gameMap.get(0);
+
+        SharedPreferences settings = this.getSharedPreferences(SHARED_PREFERENCE_KEY, 0);
+
+        String gameName = settings.getString(GAME_NAME_KEY, null);
+        if (gameName != null) {
+            this.currentGame = gameName.equals("mw") ? this.gameMap.get(0) : this.gameMap.get(1);
+        } else {
+            this.currentGame = this.gameMap.get(0);
+        }
+
+        Set<String> selectedIngredients = settings.getStringSet(SELECTED_INGREDIENTS_KEY, null);
+        if (selectedIngredients != null) {
+            for (AlchemyPackage pack : this.currentGame.packages) {
+                for (Ingredient ingredient : pack.ingredients) {
+                    if (selectedIngredients.contains(ingredient.getName())) {
+                        ingredient.selected = true;
+                    }
+                }
+            }
+        }
+
 /*
         this.ingredientListView = (ExpandableListView) this.findViewById(R.id.ingredient_listview);
         this.ingredientListAdapter = new IngredientListAdapter(this, this.currentGame);
@@ -111,6 +136,29 @@ public class MainActivity extends FragmentActivity {
             }
         });*/
     }
+
+    @Override
+    public void onDestroy() {
+
+        SharedPreferences settings = this.getSharedPreferences(SHARED_PREFERENCE_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+
+        editor.putString(GAME_NAME_KEY, this.currentGame.getPrefix());
+
+        Set<String> selectedIngredients = new HashSet<>();
+        for (AlchemyPackage pack : this.currentGame.packages) {
+            for (Ingredient ingred : pack.ingredients) {
+                if (ingred.selected) {
+                    selectedIngredients.add(ingred.getName());
+                }
+            }
+        }
+        editor.putStringSet(SELECTED_INGREDIENTS_KEY, selectedIngredients);
+
+        editor.apply();
+        super.onDestroy();
+    }
+
 
     @Override
     public void onBackPressed() {
