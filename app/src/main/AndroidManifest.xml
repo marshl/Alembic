@@ -17,29 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.marshl.alembic.EffectListActivity"
-            android:label="@string/title_activity_effect_list" >
-        </activity>
     </application>
-<!--
-    <application
-        android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo"
-        android:supportsRtl="true">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EffectListActivity"
-            android:label="@string/title_activity_effect_list" >
-        </activity>
-    </application>
--->
 </manifest>

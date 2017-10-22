@@ -7,10 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
-/**
- * Created by Liam on 21/10/2017.
- */
-
 public class IngredientListFragment extends Fragment {
 
     private AlchemyGame game;

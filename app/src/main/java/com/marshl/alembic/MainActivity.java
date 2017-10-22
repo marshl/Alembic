@@ -188,8 +188,8 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.ingredient_menu, menu);
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.ingredient_menu, menu);
         return true;
     }
 
@@ -221,10 +221,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void onMixIngredientButtonDown(View view) {
-        this.currentGame.recalculateIngredientEffects();
-        Intent intent = new Intent(this, EffectListActivity.class);
-        intent.putExtra(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME, this.currentGame);
-        startActivity(intent);
+        this.viewPager.setCurrentItem(1);
     }
 
     private class IngredientListPagerAdapter extends FragmentStatePagerAdapter {
