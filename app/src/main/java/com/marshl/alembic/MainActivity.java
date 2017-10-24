@@ -16,6 +16,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -26,7 +27,7 @@ public class MainActivity extends FragmentActivity {
     private final static String SHARED_PREFERENCE_KEY = "ALEMBIC_SHARED_PREFS";
 
     private AlchemyGame currentGame;
-    private List<AlchemyGame> gameMap;
+    private Map<String, AlchemyGame> gameMap;
     private ViewPager viewPager;
     private FragmentStatePagerAdapter pagerAdapter;
     private EffectListFragment effectListFragment;
@@ -90,11 +91,7 @@ public class MainActivity extends FragmentActivity {
         SharedPreferences settings = this.getSharedPreferences(SHARED_PREFERENCE_KEY, 0);
 
         String gameName = settings.getString(GAME_NAME_KEY, null);
-        if (gameName != null) {
-            this.currentGame = gameName.equals("mw") ? this.gameMap.get(0) : this.gameMap.get(1);
-        } else {
-            this.currentGame = this.gameMap.get(0);
-        }
+        this.currentGame = gameMap.get(gameName);
 
         Set<String> selectedIngredients = settings.getStringSet(SELECTED_INGREDIENTS_KEY, null);
         if (selectedIngredients != null) {
@@ -140,8 +137,8 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    public void switchGame() {
-        this.currentGame = this.currentGame == this.gameMap.get(0) ? this.gameMap.get(1) : this.gameMap.get(0);
+    public void switchGame(String prefix) {
+        this.currentGame = this.gameMap.get(prefix);
 
         this.ingredientListFragment.getArguments().remove(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);
         this.ingredientListFragment.getArguments().putParcelable(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME, MainActivity.this.currentGame);
@@ -161,8 +158,16 @@ public class MainActivity extends FragmentActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.switch_game: {
-                this.switchGame();
+            case R.id.switch_to_morrowind: {
+                this.switchGame("mw");
+                return true;
+            }
+            case R.id.switch_to_oblivion: {
+                this.switchGame("ob");
+                return true;
+            }
+            case R.id.switch_to_skyrim: {
+                this.switchGame("sr");
                 return true;
             }
             case R.id.remove_ingredients: {

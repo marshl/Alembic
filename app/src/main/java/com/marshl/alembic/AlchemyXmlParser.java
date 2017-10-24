@@ -10,14 +10,16 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 class AlchemyXmlParser {
 
-    public List<AlchemyGame> parseXml(Activity context) throws IOException, XmlPullParserException {
+    public HashMap<String, AlchemyGame> parseXml(Activity context) throws IOException, XmlPullParserException {
         InputStream fileStream = context.getAssets().open("xml/ingredients.xml");
 
-        List<AlchemyGame> gameList = new ArrayList<AlchemyGame>();
+        HashMap<String, AlchemyGame> gameList = new HashMap<>();
 
         XmlPullParser parser = Xml.newPullParser();
         parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
@@ -30,7 +32,7 @@ class AlchemyXmlParser {
         return gameList;
     }
 
-    private void readRootNode(XmlPullParser parser, List<AlchemyGame> gameList) throws IOException, XmlPullParserException {
+    private void readRootNode(XmlPullParser parser, Map<String, AlchemyGame> gameList) throws IOException, XmlPullParserException {
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
@@ -40,8 +42,7 @@ class AlchemyXmlParser {
 
             if (name.equals("game")) {
                 AlchemyGame game = this.readGameNode(parser);
-                gameList.add(game);
-                Log.d("XML", "Added game \"" + game.getGameName() + "\"");
+                gameList.put(game.getPrefix(), game);
             } else {
                 throw new IOException("Expecting \"game\" node: instead found " + name);
             }
