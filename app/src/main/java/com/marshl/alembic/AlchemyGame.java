@@ -28,6 +28,8 @@ public class AlchemyGame implements Parcelable {
     private String name;
     private String prefix;
 
+    public Map<String, AlchemyEffect> effects = new HashMap<>();
+
     public AlchemyGame(Parcel in) {
         super();
         this.name = in.readString();
@@ -37,6 +39,12 @@ public class AlchemyGame implements Parcelable {
 
         for (Object pkg : packageArray) {
             this.packages.add((AlchemyPackage) pkg);
+        }
+
+        Object[] effectArray = in.readArray(AlchemyEffect.class.getClassLoader());
+        for (Object obj : effectArray) {
+            AlchemyEffect effect = (AlchemyEffect) obj;
+            this.effects.put(effect.getCode(), effect);
         }
     }
 
@@ -55,6 +63,7 @@ public class AlchemyGame implements Parcelable {
         parcel.writeString(this.name);
         parcel.writeString(this.prefix);
         parcel.writeArray(this.packages.toArray());
+        parcel.writeArray(this.effects.values().toArray());
     }
 
     public String getGameName() {
@@ -71,11 +80,11 @@ public class AlchemyGame implements Parcelable {
 
         for (AlchemyPackage alchemyPackage : this.packages) {
             for (Ingredient ingredient : alchemyPackage.ingredients) {
-                if (!ingredient.selected) {
+                if (!ingredient.isSelected()) {
                     continue;
                 }
 
-                for (String effect : ingredient.effects) {
+                for (String effect : ingredient.effectCodes) {
                     if (this.effectToIngredientMap.get(effect) == null) {
                         this.effectToIngredientMap.put(effect, new ArrayList<Ingredient>());
                         this.effectList.add(effect);
@@ -104,7 +113,7 @@ public class AlchemyGame implements Parcelable {
     }
 
 
-    public int getEffectIcon(Activity context, String effectName, String prefix) {
+    /*public int getEffectIcon(Activity context, String effectName, String prefix) {
         effectName = effectName.replace("Agility", "Attribute")
                 .replace("Endurance", "Attribute")
                 .replace("Intelligence", "Attribute")
@@ -134,11 +143,20 @@ public class AlchemyGame implements Parcelable {
         imageName = prefix + "_" + imageName;
 
         return context.getResources().getIdentifier(imageName, "drawable", context.getPackageName().toLowerCase());
+    }*/
+
+    public int getEffectImageResource(String effectCode, Activity context) {
+        AlchemyEffect effect = this.effects.get(effectCode);
+        return context.getResources().getIdentifier(effect.getImage(), "drawable", context.getPackageName().toLowerCase());
     }
 
-    public int getIngredientImageID(Activity context, Ingredient ingredient) {
+    /*public int getIngredientImageID(Activity context, Ingredient ingredient) {
         String imageName = ingredient.getName().toLowerCase().replace(' ', '_').replace("'", "").replace("-", "_").replace(".", "");
         imageName = this.getPrefix() + "_" + imageName;
         return context.getResources().getIdentifier(imageName, "drawable", context.getPackageName().toLowerCase());
+    }*/
+
+    public int getIngredientImageResource(Ingredient ingredient, Activity context) {
+        return context.getResources().getIdentifier(ingredient.getImage(), "drawable", context.getPackageName().toLowerCase());
     }
 }

@@ -80,7 +80,7 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
             }
         }
 
-        ingredient.selected = false;
+        ingredient.setSelected(false);
 
         this.game.recalculateIngredientEffects();
 

@@ -15,7 +15,6 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -98,7 +97,7 @@ public class MainActivity extends FragmentActivity {
             for (AlchemyPackage pack : this.currentGame.packages) {
                 for (Ingredient ingredient : pack.ingredients) {
                     if (selectedIngredients.contains(ingredient.getName())) {
-                        ingredient.selected = true;
+                        ingredient.setSelected(true);
                     }
                 }
             }
@@ -116,7 +115,7 @@ public class MainActivity extends FragmentActivity {
         Set<String> selectedIngredients = new HashSet<>();
         for (AlchemyPackage pack : this.currentGame.packages) {
             for (Ingredient ingred : pack.ingredients) {
-                if (ingred.selected) {
+                if (ingred.isSelected()) {
                     selectedIngredients.add(ingred.getName());
                 }
             }

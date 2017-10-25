@@ -1,7 +1,6 @@
 package com.marshl.alembic;
 
 import android.app.Activity;
-import android.util.Log;
 import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -53,7 +52,8 @@ class AlchemyXmlParser {
 
         String gameName = null;
         String gamePrefix = null;
-        ArrayList<AlchemyPackage> packages = new ArrayList<AlchemyPackage>();
+        ArrayList<AlchemyPackage> packages = new ArrayList<>();
+        ArrayList<AlchemyEffect> effects = new ArrayList<>();
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -73,6 +73,10 @@ class AlchemyXmlParser {
                     AlchemyPackage alchemyPackage = this.readPackageNode(parser);
                     packages.add(alchemyPackage);
                     break;
+                case "effect":
+                    AlchemyEffect effect = this.readEffectNode(parser);
+                    effects.add(effect);
+                    break;
                 default:
                     throw new IOException("Unknown node type: \"" + nodeName + "\" when parsing root node");
             }
@@ -80,8 +84,40 @@ class AlchemyXmlParser {
 
         AlchemyGame game = new AlchemyGame(gameName, gamePrefix);
         game.packages.addAll(packages);
+        for (AlchemyEffect effect : effects) {
+            game.effects.put(effect.getCode(), effect);
+        }
 
         return game;
+    }
+
+    private AlchemyEffect readEffectNode(XmlPullParser parser) throws IOException, XmlPullParserException {
+        String effectCode = null;
+        String effectName = null;
+        String effectImage = null;
+
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            String nodeName = parser.getName();
+
+            switch (nodeName) {
+                case "code":
+                    effectCode = this.readText(parser);
+                    break;
+                case "name":
+                    effectName = this.readText(parser);
+                    break;
+                case "image":
+                    effectImage = this.readText(parser);
+                    break;
+                default:
+                    throw new XmlPullParserException("Unknown node type \"" + nodeName + "\" found in effect node");
+            }
+        }
+
+        return new AlchemyEffect(effectCode, effectName, effectImage);
     }
 
     private AlchemyPackage readPackageNode(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -111,7 +147,6 @@ class AlchemyXmlParser {
 
         AlchemyPackage alchemyPackage = new AlchemyPackage(packageName);
         for (Ingredient ingredient : ingredients) {
-            ingredient.parentPackage = alchemyPackage;
             alchemyPackage.ingredients.add(ingredient);
         }
 
@@ -122,6 +157,7 @@ class AlchemyXmlParser {
     private Ingredient readIngredientNode(XmlPullParser parser) throws IOException, XmlPullParserException {
 
         String ingredientName = null;
+        String ingredientImage = null;
         List<String> ingredientEffects = new ArrayList<String>();
 
         while (parser.next() != XmlPullParser.END_TAG) {
@@ -137,12 +173,15 @@ class AlchemyXmlParser {
                 case "effect":
                     ingredientEffects.add(this.readText(parser));
                     break;
+                case "image":
+                    ingredientImage = this.readText(parser);
+                    break;
                 default:
                     throw new XmlPullParserException("Unknown node type \"" + nodeName + "\" found in ingredient node");
             }
         }
 
-        return new Ingredient(ingredientName, ingredientEffects);
+        return new Ingredient(ingredientName, ingredientImage, ingredientEffects);
     }
 
     private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {

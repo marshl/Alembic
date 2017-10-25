@@ -1,5 +1,5 @@
 package com.marshl.alembic;
-import android.app.Activity;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -20,24 +20,36 @@ public class Ingredient implements Parcelable {
         }
     };
 
-    public List<String> effects = new ArrayList<String>();
-    public AlchemyPackage parentPackage;
-    public boolean selected = false;
+    public List<String> effectCodes = new ArrayList<String>();
+    private boolean selected = false;
     private String name;
-
-    public Ingredient(String name, List<String> effects) {
+    private String image;
+    public Ingredient(String name, String imageName, List<String> effectCodes) {
         this.name = name;
-        this.effects = effects;
+        this.effectCodes = effectCodes;
+        this.image = imageName;
     }
-
     public Ingredient(Parcel in) {
         super();
         this.name = in.readString();
+        this.image = in.readString();
         this.selected = in.readInt() == 1;
 
         String[] tempEffects = new String[in.readInt()];
         in.readStringArray(tempEffects);
-        this.effects.addAll(Arrays.asList(tempEffects));
+        this.effectCodes.addAll(Arrays.asList(tempEffects));
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public String getName() {
@@ -52,11 +64,11 @@ public class Ingredient implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.name);
+        parcel.writeString(this.image);
         parcel.writeInt(this.selected ? 1 : 0);
-        parcel.writeInt(this.effects.size());
-        parcel.writeStringArray(this.effects.toArray(new String[0]));
+        parcel.writeInt(this.effectCodes.size());
+        parcel.writeStringArray(this.effectCodes.toArray(new String[0]));
     }
-
 
 
 }

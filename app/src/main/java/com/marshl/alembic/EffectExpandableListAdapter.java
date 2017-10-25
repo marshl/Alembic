@@ -41,7 +41,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         ImageView image = (ImageView) convertView.findViewById(R.id.effect_sub_image);
 
         label.setText(ingredient.getName());
-        image.setImageResource(this.currentGame.getIngredientImageID(this.context, ingredient));
+        image.setImageResource(this.currentGame.getIngredientImageResource(ingredient, this.context));
 
         return convertView;
     }
@@ -67,7 +67,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        String effectName = (String) getGroup(groupPosition);
+
         if (convertView == null) {
             LayoutInflater layoutInflator = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -75,12 +75,15 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
                     parent, false);
         }
 
+        String effectKey = (String) getGroup(groupPosition);
+        AlchemyEffect effect = this.currentGame.effects.get(effectKey);
+
         TextView textView = (TextView) convertView.findViewById(R.id.effect_text_view);
         textView.setTypeface(null, Typeface.BOLD);
-        textView.setText(effectName);
+        textView.setText(effect.getName());
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.effect_image_view);
-        int imageID = this.currentGame.getEffectIcon(this.context, effectName, this.currentGame.getPrefix());
+        int imageID = this.currentGame.getEffectImageResource(effectKey, this.context);
         imageView.setImageResource(imageID);
         convertView.setId(groupPosition);
         return convertView;

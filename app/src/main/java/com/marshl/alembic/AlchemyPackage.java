@@ -51,7 +51,7 @@ public class AlchemyPackage implements Parcelable {
 
     public void toggleAllIngredients(boolean selected) {
         for (Ingredient ingredient : this.ingredients) {
-            ingredient.selected = selected;
+            ingredient.setSelected(selected);
         }
     }
 }

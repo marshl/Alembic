@@ -73,7 +73,7 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
                 Object obj = adapter.getChild(groupPosition, childPosition);
 
                 Ingredient ingredient = (Ingredient) obj;
-                ingredient.selected = !ingredient.selected;
+                ingredient.setSelected(!ingredient.isSelected());
 
                 adapter.notifyDataSetChanged();
 
@@ -108,7 +108,7 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
     private void setAllIngredientSelection(boolean selected) {
         for (AlchemyPackage pack : this.game.packages) {
             for (Ingredient ingred : pack.ingredients) {
-                ingred.selected = selected;
+                ingred.setSelected(selected);
             }
         }
 

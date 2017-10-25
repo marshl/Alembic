@@ -59,8 +59,8 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         final CheckBox checkbox = (CheckBox) convertView.findViewById(R.id.ingredient_checkbox);
 
         textView.setText(ingredient.getName());
-        imageView.setImageResource(this.alchemyGame.getIngredientImageID(this.context, ingredient));
-        checkbox.setChecked(ingredient.selected);
+        imageView.setImageResource(this.alchemyGame.getIngredientImageResource(ingredient, this.context));
+        checkbox.setChecked(ingredient.isSelected());
 
         return convertView;
     }
