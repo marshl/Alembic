@@ -3531,182 +3531,182 @@
         <effect>
             <code>weakness_to_frost</code>
             <name>Weakness to Frost</name>
-            <image>sr_weakness_to_frost</image>
+            <image>sr_ice</image>
         </effect>
         <effect>
             <code>fortify_sneak</code>
             <name>Fortify Sneak</name>
-            <image>sr_fortify_sneak</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>weakness_to_poison</code>
             <name>Weakness to Poison</name>
-            <image>sr_weakness_to_poison</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_restoration</code>
             <name>Fortify Restoration</name>
-            <image>sr_fortify_restoration</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>restore_stamina</code>
             <name>Restore Stamina</name>
-            <image>sr_restore_stamina</image>
+            <image>sr_heal</image>
         </effect>
         <effect>
             <code>fortify_health</code>
             <name>Fortify Health</name>
-            <image>sr_fortify_health</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_one_handed</code>
             <name>Fortify One-handed</name>
-            <image>sr_fortify_one_handed</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>damage_magicka_regen</code>
             <name>Damage Magicka Regen</name>
-            <image>sr_damage_magicka_regen</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>ravage_stamina</code>
             <name>Ravage Stamina</name>
-            <image>sr_ravage_stamina</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>regenerate_stamina</code>
             <name>Regenerate Stamina</name>
-            <image>sr_regenerate_stamina</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>weakness_to_shock</code>
             <name>Weakness to Shock</name>
-            <image>sr_weakness_to_shock</image>
+            <image>sr_shock</image>
         </effect>
         <effect>
             <code>resist_poison</code>
             <name>Resist Poison</name>
-            <image>sr_resist_poison</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_light_armor</code>
             <name>Fortify Light Armor</name>
-            <image>sr_fortify_light_armor</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_destruction</code>
             <name>Fortify Destruction</name>
-            <image>sr_fortify_destruction</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>weakness_to_fire</code>
             <name>Weakness to Fire</name>
-            <image>sr_weakness_to_fire</image>
+            <image>sr_fire</image>
         </effect>
         <effect>
             <code>fortify_block</code>
             <name>Fortify Block</name>
-            <image>sr_fortify_block</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>resist_magic</code>
             <name>Resist Magic</name>
-            <image>sr_resist_magic</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>damage_stamina</code>
             <name>Damage Stamina</name>
-            <image>sr_damage_stamina</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>frenzy</code>
             <name>Frenzy</name>
-            <image>sr_frenzy</image>
+            <image>sr_illusion_dark</image>
         </effect>
         <effect>
             <code>restore_health</code>
             <name>Restore Health</name>
-            <image>sr_restore_health</image>
+            <image>sr_heal</image>
         </effect>
         <effect>
             <code>fortify_smithing</code>
             <name>Fortify Smithing</name>
-            <image>sr_fortify_smithing</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_conjuration</code>
             <name>Fortify Conjuration</name>
-            <image>sr_fortify_conjuration</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_enchanting</code>
             <name>Fortify Enchanting</name>
-            <image>sr_fortify_enchanting</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>resist_shock</code>
             <name>Resist Shock</name>
-            <image>sr_resist_shock</image>
+            <image>sr_shock</image>
         </effect>
         <effect>
             <code>fortify_pickpocket</code>
             <name>Fortify Pickpocket</name>
-            <image>sr_fortify_pickpocket</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fear</code>
             <name>Fear</name>
-            <image>sr_fear</image>
+            <image>sr_illusion_dark</image>
         </effect>
         <effect>
             <code>resist_fire</code>
             <name>Resist Fire</name>
-            <image>sr_resist_fire</image>
+            <image>sr_fire</image>
         </effect>
         <effect>
             <code>restore_magicka</code>
             <name>Restore Magicka</name>
-            <image>sr_restore_magicka</image>
+            <image>sr_heal</image>
         </effect>
         <effect>
             <code>paralysis</code>
             <name>Paralysis</name>
-            <image>sr_paralysis</image>
+            <image>sr_paralyze</image>
         </effect>
         <effect>
             <code>fortify_magicka</code>
             <name>Fortify Magicka</name>
-            <image>sr_fortify_magicka</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_barter</code>
             <name>Fortify Barter</name>
-            <image>sr_fortify_barter</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>lingering_damage_stamina</code>
             <name>Lingering Damage Stamina</name>
-            <image>sr_lingering_damage_stamina</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>damage_magicka</code>
             <name>Damage Magicka</name>
-            <image>sr_damage_magicka</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_marksman</code>
             <name>Fortify Marksman</name>
-            <image>sr_fortify_marksman</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>cure_disease</code>
             <name>Cure Disease</name>
-            <image>sr_cure_disease</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_stamina</code>
             <name>Fortify Stamina</name>
-            <image>sr_fortify_stamina</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>invisibility</code>
@@ -3716,92 +3716,92 @@
         <effect>
             <code>waterbreathing</code>
             <name>Waterbreathing</name>
-            <image>sr_waterbreathing</image>
+            <image>sr_alteration</image>
         </effect>
         <effect>
             <code>damage_stamina_regen</code>
             <name>Damage Stamina Regen</name>
-            <image>sr_damage_stamina_regen</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_carry_weight</code>
             <name>Fortify Carry Weight</name>
-            <image>sr_fortify_carry_weight</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>weakness_to_magic</code>
             <name>Weakness to Magic</name>
-            <image>sr_weakness_to_magic</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>damage_health</code>
             <name>Damage Health</name>
-            <image>sr_damage_health</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>ravage_health</code>
             <name>Ravage Health</name>
-            <image>sr_ravage_health</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>slow</code>
             <name>Slow</name>
-            <image>sr_slow</image>
+            <image>sr_ice</image>
         </effect>
         <effect>
             <code>fortify_illusion</code>
             <name>Fortify Illusion</name>
-            <image>sr_fortify_illusion</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_two_handed</code>
             <name>Fortify Two-handed</name>
-            <image>sr_fortify_two_handed</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>regenerate_magicka</code>
             <name>Regenerate Magicka</name>
-            <image>sr_regenerate_magicka</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_lockpicking</code>
             <name>Fortify Lockpicking</name>
-            <image>sr_fortify_lockpicking</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>resist_frost</code>
             <name>Resist Frost</name>
-            <image>sr_resist_frost</image>
+            <image>sr_ice</image>
         </effect>
         <effect>
             <code>ravage_magicka</code>
             <name>Ravage Magicka</name>
-            <image>sr_ravage_magicka</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>regenerate_health</code>
             <name>Regenerate Health</name>
-            <image>sr_regenerate_health</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_alteration</code>
             <name>Fortify Alteration</name>
-            <image>sr_fortify_alteration</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>lingering_damage_magicka</code>
             <name>Lingering Damage Magicka</name>
-            <image>sr_lingering_damage_magicka</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_heavy_armor</code>
             <name>Fortify Heavy Armor</name>
-            <image>sr_fortify_heavy_armor</image>
+            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>lingering_damage_health</code>
             <name>Lingering Damage Health</name>
-            <image>sr_lingering_damage_health</image>
+            <image>sr_magic_hat</image>
         </effect>
     </game>
 </alchemy>
