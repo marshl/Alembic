@@ -2,7 +2,6 @@ package com.marshl.alembic;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,7 +89,6 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
 
-        final Resources res = context.getResources();
         final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
 
         if (convertView == null) {

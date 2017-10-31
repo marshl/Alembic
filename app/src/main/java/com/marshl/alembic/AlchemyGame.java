@@ -23,9 +23,9 @@ public class AlchemyGame implements Parcelable {
         }
     };
 
-    public final ArrayList<AlchemyPackage> packages = new ArrayList<AlchemyPackage>();
-    public Map<String, List<Ingredient>> effectToIngredientMap = new HashMap<String, List<Ingredient>>();
-    public List<String> effectList = new ArrayList<String>();
+    public final ArrayList<AlchemyPackage> packages = new ArrayList<>();
+    public Map<String, List<Ingredient>> effectToIngredientMap = new HashMap<>();
+    public List<String> effectList = new ArrayList<>();
     public final Map<String, AlchemyEffect> effects = new HashMap<>();
     private final String name;
     private final String prefix;

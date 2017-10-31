@@ -69,9 +69,9 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 
         if (convertView == null) {
-            LayoutInflater layoutInflator = (LayoutInflater) context
+            LayoutInflater layoutInflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflator.inflate(R.layout.effect_group_item,
+            convertView = layoutInflater.inflate(R.layout.effect_group_item,
                     parent, false);
         }
 

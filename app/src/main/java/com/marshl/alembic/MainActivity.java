@@ -18,12 +18,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-
 public class MainActivity extends FragmentActivity {
     private static final int NUM_PAGES = 2;
     private static final String GAME_NAME_KEY = "GAME_NAME";
     private static final String SELECTED_INGREDIENTS_KEY = "SELECTED_INGREDIENTS";
-    private final static String SHARED_PREFERENCE_KEY = "ALEMBIC_SHARED_PREFS";
+    private static final String SHARED_PREFERENCE_KEY = "ALEMBIC_SHARED_PREFS";
 
     private AlchemyGame currentGame;
     private Map<String, AlchemyGame> gameMap;
@@ -136,7 +135,7 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    public void switchGame(String prefix) {
+    private void switchGame(String prefix) {
         this.currentGame = this.gameMap.get(prefix);
 
         this.ingredientListFragment.getArguments().remove(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);

@@ -13,7 +13,7 @@
     tools:context=".MainActivity">
 
     <ExpandableListView
-        android:id="@+id/ingredient_listview"
+        android:id="@+id/ingredient_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

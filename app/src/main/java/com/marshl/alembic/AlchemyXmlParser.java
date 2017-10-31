@@ -123,7 +123,7 @@ class AlchemyXmlParser {
     private AlchemyPackage readPackageNode(XmlPullParser parser) throws IOException, XmlPullParserException {
 
         String packageName = null;
-        List<Ingredient> ingredients = new ArrayList<Ingredient>();
+        List<Ingredient> ingredients = new ArrayList<>();
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -158,7 +158,7 @@ class AlchemyXmlParser {
 
         String ingredientName = null;
         String ingredientImage = null;
-        List<String> ingredientEffects = new ArrayList<String>();
+        List<String> ingredientEffects = new ArrayList<>();
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {

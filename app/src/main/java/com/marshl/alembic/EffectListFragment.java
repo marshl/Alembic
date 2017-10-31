@@ -70,7 +70,7 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
     }
 
     private void removeIngredient(Ingredient ingredient) {
-        ArrayList<String> openItems = new ArrayList<String>();
+        ArrayList<String> openItems = new ArrayList<>();
 
         for (int i = 0; i < this.game.effectList.size(); ++i) {
             if (this.expListView.isGroupExpanded(i)) {

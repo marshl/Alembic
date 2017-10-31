@@ -34,7 +34,7 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.ingredient_list_fragment, container, false);
 
-        ExpandableListView ingredientListView = (ExpandableListView) rootView.findViewById(R.id.ingredient_listview);
+        ExpandableListView ingredientListView = (ExpandableListView) rootView.findViewById(R.id.ingredient_list);
         this.ingredientListAdapter = new IngredientListAdapter(this.getActivity(), this.game);
         ingredientListView.setAdapter(this.ingredientListAdapter);
 

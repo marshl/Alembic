@@ -17,7 +17,7 @@ public class AlchemyPackage implements Parcelable {
             return new AlchemyPackage[size];
         }
     };
-    public final ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
+    public final ArrayList<Ingredient> ingredients = new ArrayList<>();
     private String name = "UNDEFINED";
     public AlchemyPackage(Parcel in) {
         super();

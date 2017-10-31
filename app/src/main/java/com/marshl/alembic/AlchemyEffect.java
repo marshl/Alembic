@@ -14,6 +14,7 @@ public class AlchemyEffect implements Parcelable {
             return new AlchemyEffect[size];
         }
     };
+
     private final String code;
     private final String image;
     private final String name;

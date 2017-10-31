@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class Ingredient implements Parcelable {
-    public static final String INGREDIENT_PARCEL_NAME = "PARAMS";
+    public static final String INGREDIENT_PARCEL_NAME = "INGREDIENT";
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Ingredient createFromParcel(Parcel in) {
             return new Ingredient(in);
@@ -19,16 +19,17 @@ public class Ingredient implements Parcelable {
             return new Ingredient[size];
         }
     };
-
-    public List<String> effectCodes = new ArrayList<String>();
-    private boolean selected = false;
     private final String name;
     private final String image;
+    public List<String> effectCodes = new ArrayList<>();
+    private boolean selected = false;
+
     public Ingredient(String name, String imageName, List<String> effectCodes) {
         this.name = name;
         this.effectCodes = effectCodes;
         this.image = imageName;
     }
+
     public Ingredient(Parcel in) {
         super();
         this.name = in.readString();
