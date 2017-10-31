@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity {
 
         SharedPreferences settings = this.getSharedPreferences(SHARED_PREFERENCE_KEY, 0);
 
-        String gameName = settings.getString(GAME_NAME_KEY, null);
+        String gameName = settings.getString(GAME_NAME_KEY, "mw");
         this.currentGame = gameMap.get(gameName);
 
         Set<String> selectedIngredients = settings.getStringSet(SELECTED_INGREDIENTS_KEY, null);
