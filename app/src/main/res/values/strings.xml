@@ -2,25 +2,14 @@
 <resources>
     <string name="app_name">Alembic</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="edit_message">Enter a message</string>
-    <string name="button_send">Send</string>
-    <string name="title_activity_display_message">My Message</string>
-    <string name="title_activity_my_simple_array_adapter">MySimpleArrayAdapter</string>
-    <string name="icon_content_desc">ICON</string>
-    <string name="title_activity_effect_list">Effects</string>
-    <string name="open_effects_menu_button">Effects</string>
-    <string name="menu_button_select_all">Select All</string>
-    <string name="menu_button_select_none">Select None</string>
-    <string name="menu_button_switch_game">Switch Game</string>
-    <string name="menu_button_remove_ingredients">Remove All</string>
-    <string name="red_cross">Red Cross</string>
     <string name="ingredients_mix_button">Mix Ingredients</string>
     <string name="effect_icon_description">Effect Icon</string>
     <string name="effect_text_placeholder">[EFFECT]</string>
-    <string name="title_activity_create_film">CreateFilmActivity</string>
     <string name="default_ingredient_name">[INGREDIENT_NAME]</string>
     <string name="remove_ingredient">Remove %s?</string>
     <string name="remove_ingredient_yes">Yes</string>
     <string name="remove_ingredient_no">No</string>
+    <string name="morrowind">Morrowind</string>
+    <string name="oblivion">Oblivion</string>
+    <string name="skyrim">Skyrim</string>
 </resources>

@@ -169,11 +169,6 @@ public class MainActivity extends FragmentActivity {
                 this.switchGame("sr");
                 return true;
             }
-            case R.id.remove_ingredients: {
-                this.currentGame.removeAllIngredients();
-                this.ingredientListFragment.refreshIngredients();
-                return true;
-            }
             default: {
                 return super.onOptionsItemSelected(item);
             }

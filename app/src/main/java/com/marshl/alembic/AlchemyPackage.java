@@ -47,11 +47,4 @@ public class AlchemyPackage implements Parcelable {
         parcel.writeString(this.name);
         parcel.writeArray(this.ingredients.toArray());
     }
-
-
-    public void toggleAllIngredients(boolean selected) {
-        for (Ingredient ingredient : this.ingredients) {
-            ingredient.setSelected(selected);
-        }
-    }
 }

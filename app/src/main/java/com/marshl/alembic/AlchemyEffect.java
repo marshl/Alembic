@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class AlchemyEffect implements Parcelable {
-    public static final String EFFECT_PARCEL_NAME = "ALCHEMY_EFFECT";
+
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public AlchemyEffect createFromParcel(Parcel in) {
             return new AlchemyEffect(in);
@@ -14,9 +14,9 @@ public class AlchemyEffect implements Parcelable {
             return new AlchemyEffect[size];
         }
     };
-    private String code;
-    private String image;
-    private String name;
+    private final String code;
+    private final String image;
+    private final String name;
 
     public AlchemyEffect(String code, String name, String image) {
         this.code = code;

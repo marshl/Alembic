@@ -22,8 +22,8 @@ public class Ingredient implements Parcelable {
 
     public List<String> effectCodes = new ArrayList<String>();
     private boolean selected = false;
-    private String name;
-    private String image;
+    private final String name;
+    private final String image;
     public Ingredient(String name, String imageName, List<String> effectCodes) {
         this.name = name;
         this.effectCodes = effectCodes;

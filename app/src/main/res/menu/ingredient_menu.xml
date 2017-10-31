@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/switch_to_morrowind"
-          android:title="Morrowind"
+          android:title="@string/morrowind"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content" />
     <item android:id="@+id/switch_to_oblivion"
-        android:title="Oblivion"
+        android:title="@string/oblivion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <item android:id="@+id/switch_to_skyrim"
-        android:title="Skyrim"
+        android:title="@string/skyrim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    
-    <item android:id="@+id/remove_ingredients"
-          android:title="@string/menu_button_remove_ingredients"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" />
 </menu>
 

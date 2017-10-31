@@ -71,7 +71,7 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
         return rootView;
     }
 
-    public void removeIngredient(Ingredient ingredient) {
+    private void removeIngredient(Ingredient ingredient) {
         ArrayList<String> openItems = new ArrayList<String>();
 
         for (int i = 0; i < this.game.effectList.size(); ++i) {

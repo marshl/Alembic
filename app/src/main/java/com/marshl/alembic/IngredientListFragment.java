@@ -11,12 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
+import android.widget.ListView;
 
 public class IngredientListFragment extends Fragment implements DialogInterface.OnClickListener {
 
     private AlchemyGame game;
     private IngredientListAdapter ingredientListAdapter;
-    private ExpandableListView ingredientListView;
 
     public static IngredientListFragment newInstance(AlchemyGame game) {
         IngredientListFragment fragment = new IngredientListFragment();
@@ -37,19 +37,15 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.ingredient_list_fragment, container, false);
 
-        this.ingredientListView = (ExpandableListView) rootView.findViewById(R.id.ingredient_listview);
+        ExpandableListView ingredientListView = (ExpandableListView) rootView.findViewById(R.id.ingredient_listview);
         this.ingredientListAdapter = new IngredientListAdapter(this.getActivity(), this.game);
-        this.ingredientListView.setAdapter(this.ingredientListAdapter);
+        ingredientListView.setAdapter(this.ingredientListAdapter);
 
-        this.ingredientListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        ingredientListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
                 if (ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
-                    int groupPosition = ExpandableListView.getPackedPositionGroup(id);
-                    int childPosition = ExpandableListView.getPackedPositionChild(id);
-
-                    final Resources res = getResources();
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                     builder.setMessage("Select an Option");
@@ -57,8 +53,6 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
                             .setNeutralButton("Select None", IngredientListFragment.this)
                             .setNegativeButton("Cancel", IngredientListFragment.this);
                     builder.show();
-
-
                     return true;
                 }
 
@@ -66,7 +60,7 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
             }
         });
 
-        this.ingredientListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+        ingredientListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 IngredientListAdapter adapter = (IngredientListAdapter) parent.getExpandableListAdapter();

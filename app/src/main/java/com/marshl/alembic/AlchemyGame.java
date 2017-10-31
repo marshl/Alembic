@@ -22,15 +22,15 @@ public class AlchemyGame implements Parcelable {
             return new AlchemyGame[size];
         }
     };
+
     public final ArrayList<AlchemyPackage> packages = new ArrayList<AlchemyPackage>();
     public Map<String, List<Ingredient>> effectToIngredientMap = new HashMap<String, List<Ingredient>>();
     public List<String> effectList = new ArrayList<String>();
-    private String name;
-    private String prefix;
+    public final Map<String, AlchemyEffect> effects = new HashMap<>();
+    private final String name;
+    private final String prefix;
 
-    public Map<String, AlchemyEffect> effects = new HashMap<>();
-
-    public AlchemyGame(Parcel in) {
+    private AlchemyGame(Parcel in) {
         super();
         this.name = in.readString();
         this.prefix = in.readString();
@@ -106,55 +106,10 @@ public class AlchemyGame implements Parcelable {
         Collections.sort(this.effectList);
     }
 
-    public void removeAllIngredients() {
-        for (AlchemyPackage pack : this.packages) {
-            pack.toggleAllIngredients(false);
-        }
-    }
-
-
-    /*public int getEffectIcon(Activity context, String effectName, String prefix) {
-        effectName = effectName.replace("Agility", "Attribute")
-                .replace("Endurance", "Attribute")
-                .replace("Intelligence", "Attribute")
-                .replace("Luck", "Attribute")
-                .replace("Personality", "Attribute")
-                .replace("Speed", "Attribute")
-                .replace("Strength", "Attribute")
-                .replace("Willpower", "Attribute");
-
-        if (this.getGameName().equals("Oblivion")) {
-            if (effectName.startsWith("Restore")) {
-                effectName = "Restore";
-            } else if (effectName.startsWith("Cure")) {
-                effectName = "Cure";
-            } else if (effectName.startsWith("Damage")) {
-                effectName = "Damage";
-            } else if (effectName.endsWith("Damage") && !effectName.startsWith("Reflect")) {
-                effectName = effectName.replace(" Damage", "");
-            } else if (effectName.startsWith("Fortify")) {
-                effectName = "Fortify";
-            } else if (effectName.startsWith("Resist")) {
-                effectName = "Resist";
-            }
-        }
-
-        String imageName = effectName.toLowerCase().replace(' ', '_').replace("'", "").replace('-', '_').replace(".", "");
-        imageName = prefix + "_" + imageName;
-
-        return context.getResources().getIdentifier(imageName, "drawable", context.getPackageName().toLowerCase());
-    }*/
-
     public int getEffectImageResource(String effectCode, Activity context) {
         AlchemyEffect effect = this.effects.get(effectCode);
         return context.getResources().getIdentifier(effect.getImage(), "drawable", context.getPackageName().toLowerCase());
     }
-
-    /*public int getIngredientImageID(Activity context, Ingredient ingredient) {
-        String imageName = ingredient.getName().toLowerCase().replace(' ', '_').replace("'", "").replace("-", "_").replace(".", "");
-        imageName = this.getPrefix() + "_" + imageName;
-        return context.getResources().getIdentifier(imageName, "drawable", context.getPackageName().toLowerCase());
-    }*/
 
     public int getIngredientImageResource(Ingredient ingredient, Activity context) {
         return context.getResources().getIdentifier(ingredient.getImage(), "drawable", context.getPackageName().toLowerCase());
