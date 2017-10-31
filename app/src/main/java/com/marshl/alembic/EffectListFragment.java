@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +52,6 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
         this.viewAdapter = new EffectExpandableListAdapter(this.getActivity(), game);
         expListView.setAdapter(this.viewAdapter);
 
-        Log.d("onCreateView", "onCreateView");
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {

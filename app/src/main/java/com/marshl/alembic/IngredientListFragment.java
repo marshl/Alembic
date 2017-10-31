@@ -2,16 +2,13 @@ package com.marshl.alembic;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
-import android.widget.ListView;
 
 public class IngredientListFragment extends Fragment implements DialogInterface.OnClickListener {
 
@@ -86,7 +83,6 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
 
     @Override
     public void onClick(DialogInterface dialog, int which) {
-        Log.d("Alembic", "Which: " + which);
         switch (which) {
             case DialogInterface.BUTTON_POSITIVE:
                 this.setAllIngredientSelection(true);
