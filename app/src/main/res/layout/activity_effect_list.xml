@@ -6,6 +6,6 @@
         android:id="@+id/effect_list"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:listSelector="@drawable/selector_list_item" />
+        android:listSelector="@layout/selector_list_item" />
 
 </RelativeLayout>
