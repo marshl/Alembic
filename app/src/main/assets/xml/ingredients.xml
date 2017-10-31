@@ -61,7 +61,7 @@
             </ingredient>
             <ingredient>
                 <name>Bloat</name>
-                <image>mw_bloat</image>
+                <image>mw_ash_salts</image>
                 <effect>drain_magicka</effect>
                 <effect>fortify_intelligence</effect>
                 <effect>fortify_willpower</effect>
@@ -305,7 +305,7 @@
             </ingredient>
             <ingredient>
                 <name>Large Kwama Egg</name>
-                <image>mw_large_kwama_egg</image>
+                <image>mw_kwama_egg</image>
                 <effect>restore_fatigue</effect>
                 <effect>paralyze</effect>
                 <effect>frost_shield</effect>
@@ -502,7 +502,7 @@
             </ingredient>
             <ingredient>
                 <name>Small Kwama Egg</name>
-                <image>mw_small_kwama_egg</image>
+                <image>mw_kwama_egg</image>
                 <effect>restore_fatigue</effect>
             </ingredient>
             <ingredient>
@@ -728,7 +728,7 @@
             </ingredient>
             <ingredient>
                 <name>Ripened Belladonna Berries</name>
-                <image>mw_ripened_belladonna_berries</image>
+                <image>mw_belladonna_berries</image>
                 <effect>resist_magicka</effect>
                 <effect>restore_magicka</effect>
                 <effect>fortify_magicka</effect>
@@ -752,7 +752,7 @@
             </ingredient>
             <ingredient>
                 <name>Unripened Belladonna Berries</name>
-                <image>mw_unripened_belladonna_berries</image>
+                <image>mw_belladonna_berries</image>
                 <effect>resist_magicka</effect>
                 <effect>restore_magicka</effect>
                 <effect>fortify_magicka</effect>
@@ -1200,7 +1200,7 @@
             </ingredient>
             <ingredient>
                 <name>Beef</name>
-                <image>ob_beef</image>
+                <image>ob_venison_steak</image>
                 <effect>restore_fatigue</effect>
                 <effect>shield</effect>
                 <effect>fortify_agility</effect>
@@ -1232,7 +1232,7 @@
             </ingredient>
             <ingredient>
                 <name>Boar Meat</name>
-                <image>ob_boar_meat</image>
+                <image>ob_venison_steak</image>
                 <effect>restore_health</effect>
                 <effect>damage_speed</effect>
                 <effect>fortify_health</effect>
@@ -1392,7 +1392,7 @@
             </ingredient>
             <ingredient>
                 <name>Dreugh Wax</name>
-                <image>ob_dreugh_wax</image>
+                <image>ob_wax</image>
                 <effect>damage_fatigue</effect>
                 <effect>resist_poison</effect>
                 <effect>water_breathing</effect>
@@ -1408,7 +1408,7 @@
             </ingredient>
             <ingredient>
                 <name>Ectoplasm</name>
-                <image>ob_ectoplasm</image>
+                <image>ob_wax</image>
                 <effect>shock_damage</effect>
                 <effect>dispel</effect>
                 <effect>fortify_magicka</effect>
@@ -1472,7 +1472,7 @@
             </ingredient>
             <ingredient>
                 <name>Foxglove Nectar</name>
-                <image>ob_foxglove_nectar</image>
+                <image>ob_wax</image>
                 <effect>resist_poison</effect>
                 <effect>resist_paralysis</effect>
                 <effect>restore_luck</effect>
@@ -1512,7 +1512,7 @@
             </ingredient>
             <ingredient>
                 <name>Glow Dust</name>
-                <image>ob_glow_dust</image>
+                <image>ob_wax</image>
                 <effect>restore_speed</effect>
                 <effect>light</effect>
                 <effect>reflect_spell</effect>
@@ -1866,7 +1866,7 @@
             </ingredient>
             <ingredient>
                 <name>St. Jahn's Wort Nectar</name>
-                <image>ob_st__jahns_wort_nectar</image>
+                <image>ob_wax</image>
                 <effect>resist_shock</effect>
                 <effect>damage_health</effect>
                 <effect>cure_poison</effect>
@@ -1930,7 +1930,7 @@
             </ingredient>
             <ingredient>
                 <name>Tiger Lily Nectar</name>
-                <image>ob_tiger_lily_nectar</image>
+                <image>ob_wax</image>
                 <effect>restore_endurance</effect>
                 <effect>damage_strength</effect>
                 <effect>water_walking</effect>
@@ -1978,7 +1978,7 @@
             </ingredient>
             <ingredient>
                 <name>Venison</name>
-                <image>ob_venison</image>
+                <image>ob_venison_steak</image>
                 <effect>restore_health</effect>
                 <effect>feather</effect>
                 <effect>damage_health</effect>
@@ -2002,7 +2002,7 @@
             </ingredient>
             <ingredient>
                 <name>Water Hyacinth Nectar</name>
-                <image>ob_water_hyacinth_nectar</image>
+                <image>ob_wax</image>
                 <effect>damage_luck</effect>
                 <effect>damage_fatigue</effect>
                 <effect>restore_magicka</effect>
