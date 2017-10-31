@@ -1208,7 +1208,7 @@
             </ingredient>
             <ingredient>
                 <name>Bergamot Seeds</name>
-                <image>ob_bergamot_seeds</image>
+                <image>ob_seeds</image>
                 <effect>resist_disease</effect>
                 <effect>dispel</effect>
                 <effect>damage_magicka</effect>
@@ -1328,7 +1328,7 @@
             </ingredient>
             <ingredient>
                 <name>Columbine Root Pulp</name>
-                <image>ob_columbine_root_pulp</image>
+                <image>ob_root_pulp</image>
                 <effect>restore_personality</effect>
                 <effect>resist_frost</effect>
                 <effect>fortify_magicka</effect>
@@ -1432,7 +1432,7 @@
             </ingredient>
             <ingredient>
                 <name>Fennel Seeds</name>
-                <image>ob_fennel_seeds</image>
+                <image>ob_seeds</image>
                 <effect>restore_fatigue</effect>
                 <effect>damage_intelligence</effect>
                 <effect>damage_magicka</effect>
@@ -1448,7 +1448,7 @@
             </ingredient>
             <ingredient>
                 <name>Flax Seeds</name>
-                <image>ob_flax_seeds</image>
+                <image>ob_seeds</image>
                 <effect>restore_magicka</effect>
                 <effect>feather</effect>
                 <effect>shield</effect>
@@ -1560,7 +1560,7 @@
             </ingredient>
             <ingredient>
                 <name>Imp Gall</name>
-                <image>ob_imp_gall</image>
+                <image>ob_daedra_venin</image>
                 <effect>fortify_personality</effect>
                 <effect>cure_paralysis</effect>
                 <effect>damage_health</effect>
@@ -1592,7 +1592,7 @@
             </ingredient>
             <ingredient>
                 <name>Lavender Sprig</name>
-                <image>ob_lavender_sprig</image>
+                <image>ob_rice</image>
                 <effect>restore_personality</effect>
                 <effect>fortify_willpower</effect>
                 <effect>restore_health</effect>
@@ -1629,7 +1629,7 @@
             </ingredient>
             <ingredient>
                 <name>Milk Thistle Seeds</name>
-                <image>ob_milk_thistle_seeds</image>
+                <image>ob_seeds</image>
                 <effect>light</effect>
                 <effect>frost_damage</effect>
                 <effect>cure_paralysis</effect>
@@ -1645,7 +1645,7 @@
             </ingredient>
             <ingredient>
                 <name>Monkshood Root Pulp</name>
-                <image>ob_monkshood_root_pulp</image>
+                <image>ob_root_pulp</image>
                 <effect>restore_strength</effect>
                 <effect>damage_intelligence</effect>
                 <effect>fortify_endurance</effect>
@@ -1653,7 +1653,7 @@
             </ingredient>
             <ingredient>
                 <name>Morning Glory Root Pulp</name>
-                <image>ob_morning_glory_root_pulp</image>
+                <image>ob_root_pulp</image>
                 <effect>burden</effect>
                 <effect>damage_willpower</effect>
                 <effect>frost_shield</effect>
@@ -1677,12 +1677,12 @@
             </ingredient>
             <ingredient>
                 <name>Mugwort Seeds</name>
-                <image>ob_mugwort_seeds</image>
+                <image>ob_seeds</image>
                 <effect>restore_health</effect>
             </ingredient>
             <ingredient>
                 <name>Mutton</name>
-                <image>ob_mutton</image>
+                <image>ob_ham</image>
                 <effect>fortify_health</effect>
                 <effect>damage_fatigue</effect>
                 <effect>dispel</effect>
@@ -1730,7 +1730,7 @@
             </ingredient>
             <ingredient>
                 <name>Peony Seeds</name>
-                <image>ob_peony_seeds</image>
+                <image>ob_seeds</image>
                 <effect>restore_strength</effect>
                 <effect>damage_health</effect>
                 <effect>damage_speed</effect>
@@ -1778,7 +1778,7 @@
             </ingredient>
             <ingredient>
                 <name>Rat Meat</name>
-                <image>ob_rat_meat</image>
+                <image>ob_ham</image>
                 <effect>damage_fatigue</effect>
                 <effect>detect_life</effect>
                 <effect>damage_magicka</effect>
@@ -1810,7 +1810,7 @@
             </ingredient>
             <ingredient>
                 <name>Sacred Lotus Seeds</name>
-                <image>ob_sacred_lotus_seeds</image>
+                <image>ob_seeds</image>
                 <effect>resist_frost</effect>
                 <effect>damage_health</effect>
                 <effect>feather</effect>
@@ -1842,7 +1842,7 @@
             </ingredient>
             <ingredient>
                 <name>S'jirra's Famous Potato Bread</name>
-                <image>ob_sjirras_famous_potato_bread</image>
+                <image>ob_bread_loaf</image>
                 <effect>detect_life</effect>
                 <effect>restore_health</effect>
                 <effect>damage_agility</effect>
@@ -1922,7 +1922,7 @@
             </ingredient>
             <ingredient>
                 <name>Taproot</name>
-                <image>ob_taproot</image>
+                <image>ob_arrowroot</image>
                 <effect>restore_luck</effect>
                 <effect>damage_endurance</effect>
                 <effect>resist_poison</effect>
@@ -2061,7 +2061,7 @@
             </ingredient>
             <ingredient>
                 <name>Ashen Remains</name>
-                <image>ob_ashen_remains</image>
+                <image>ob_bonemeal</image>
                 <effect>fortify_fatigue</effect>
                 <effect>damage_luck</effect>
                 <effect>silence</effect>
