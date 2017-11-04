@@ -50,9 +50,10 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
         this.expListView = (ExpandableListView) rootView.findViewById(R.id.effect_list);
 
         this.viewAdapter = new EffectExpandableListAdapter(this.getActivity(), game);
-        expListView.setAdapter(this.viewAdapter);
+        this.expListView.setAdapter(this.viewAdapter);
+        this.expListView.setEmptyView(rootView.findViewById(R.id.empty_effect_view));
 
-        expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+        this.expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 final Resources res = getResources();

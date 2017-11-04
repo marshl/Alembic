@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Alembic</string>
     <string name="action_settings">Settings</string>
-    <string name="ingredients_mix_button">Mix Ingredients</string>
+    <string name="ingredients_mix_button">Show Available Effects</string>
     <string name="effect_icon_description">Effect Icon</string>
     <string name="effect_text_placeholder">[EFFECT]</string>
     <string name="default_ingredient_name">[INGREDIENT_NAME]</string>
@@ -12,4 +12,5 @@
     <string name="morrowind">Morrowind</string>
     <string name="oblivion">Oblivion</string>
     <string name="skyrim">Skyrim</string>
+    <string name="no_effects">No effects</string>
 </resources>

@@ -143,7 +143,6 @@ public class MainActivity extends FragmentActivity {
         this.viewPager.setCurrentItem(0);
         this.ingredientListFragment.refreshIngredients();
         this.viewPager.setAdapter(this.pagerAdapter);
-
     }
 
     @Override
