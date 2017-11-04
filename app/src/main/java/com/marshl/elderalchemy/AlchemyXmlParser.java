@@ -1,4 +1,4 @@
-package com.marshl.alembic;
+package com.marshl.elderalchemy;
 
 import android.app.Activity;
 import android.util.Xml;

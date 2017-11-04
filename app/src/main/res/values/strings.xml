@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Alembic</string>
+    <string name="app_name">Elder Alchemy</string>
     <string name="action_settings">Settings</string>
     <string name="ingredients_mix_button">Show Available Effects</string>
     <string name="effect_icon_description">Effect Icon</string>
