@@ -22,7 +22,7 @@ public class MainActivity extends FragmentActivity {
     private static final int NUM_PAGES = 2;
     private static final String GAME_NAME_KEY = "GAME_NAME";
     private static final String SELECTED_INGREDIENTS_KEY = "SELECTED_INGREDIENTS";
-    private static final String SHARED_PREFERENCE_KEY = "ALEMBIC_SHARED_PREFS";
+    private static final String SHARED_PREFERENCE_KEY = "ELDERALCHEMY_SHARED_PREFS";
 
     private AlchemyGame currentGame;
     private Map<String, AlchemyGame> gameMap;
