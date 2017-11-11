@@ -34,13 +34,14 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
     }
 
     public void refreshEffects() {
+        List<String> expandedEffects = this.getExpandedEffectCodes();
         this.viewAdapter.notifyDataSetChanged();
+        this.setExpandedEffects(expandedEffects);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         this.game = this.getArguments().getParcelable(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);
     }
 
@@ -71,7 +72,7 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
         return rootView;
     }
 
-    private void removeIngredient(Ingredient ingredient) {
+    private List<String> getExpandedEffectCodes() {
         List<String> expandedEffects = new ArrayList<>();
 
         for (int i = 0; i < this.game.getAvailableEffectCount(); ++i) {
@@ -79,18 +80,25 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
                 expandedEffects.add(this.game.getEffectByIndex(i).getCode());
             }
         }
+        return expandedEffects;
+    }
 
-        ingredient.setSelected(false);
-        this.game.recalculateIngredientEffects();
-
+    private void setExpandedEffects(List<String> effectList) {
         for (int i = 0; i < this.game.getAvailableEffectCount(); ++i) {
             AlchemyEffect effect = this.game.getEffectByIndex(i);
-            if (Collections.frequency(expandedEffects, effect.getCode()) > 0) {
+            if (Collections.frequency(effectList, effect.getCode()) > 0) {
                 expListView.expandGroup(i);
             } else {
                 expListView.collapseGroup(i);
             }
         }
+    }
+
+    private void removeIngredient(Ingredient ingredient) {
+        List<String> expandedEffects = getExpandedEffectCodes();
+        ingredient.setSelected(false);
+        this.game.recalculateIngredientEffects();
+        this.setExpandedEffects(expandedEffects);
 
         this.viewAdapter.notifyDataSetChanged();
     }
