@@ -10,6 +10,8 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
     private final Activity context;
     private final AlchemyGame currentGame;
@@ -20,7 +22,10 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     public Object getChild(int groupPosition, int childPosition) {
-        return currentGame.effectToIngredientMap.get(currentGame.effectList.get(groupPosition)).get(childPosition);
+
+        AlchemyEffect effect = this.currentGame.getEffectByIndex(groupPosition);
+        List<Ingredient> ingredients = this.currentGame.getIngredientsForEffect(effect.getCode());
+        return ingredients.get(childPosition);
     }
 
     public long getChildId(int groupPosition, int childPosition) {
@@ -47,19 +52,20 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     public int getChildrenCount(int groupPosition) {
-        if (currentGame.effectList.size() <= groupPosition) {
+        if (this.currentGame.getAvailableEffectCount() <= groupPosition) {
             return 0;
         }
-        String str = currentGame.effectList.get(groupPosition);
-        return currentGame.effectToIngredientMap.get(str).size();
+
+        AlchemyEffect effect = this.currentGame.getEffectByIndex(groupPosition);
+        return this.currentGame.getIngredientsForEffect(effect.getCode()).size();
     }
 
     public Object getGroup(int groupPosition) {
-        return currentGame.effectList.get(groupPosition);
+        return this.currentGame.getEffectByIndex(groupPosition);
     }
 
     public int getGroupCount() {
-        return currentGame.effectList.size();
+        return this.currentGame.getAvailableEffectCount();
     }
 
     public long getGroupId(int groupPosition) {
@@ -75,15 +81,14 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
                     parent, false);
         }
 
-        String effectKey = (String) getGroup(groupPosition);
-        AlchemyEffect effect = this.currentGame.effects.get(effectKey);
+        AlchemyEffect effect =this.currentGame.getEffectByIndex(groupPosition);
 
         TextView textView = (TextView) convertView.findViewById(R.id.effect_text_view);
         textView.setTypeface(null, Typeface.BOLD);
         textView.setText(effect.getName());
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.effect_image_view);
-        int imageID = this.currentGame.getEffectImageResource(effectKey, this.context);
+        int imageID = this.currentGame.getEffectImageResource(effect.getCode(), this.context);
         imageView.setImageResource(imageID);
         convertView.setId(groupPosition);
         return convertView;

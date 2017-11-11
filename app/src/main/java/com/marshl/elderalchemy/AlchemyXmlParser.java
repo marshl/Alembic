@@ -83,9 +83,12 @@ class AlchemyXmlParser {
         }
 
         AlchemyGame game = new AlchemyGame(gameName, gamePrefix);
-        game.packages.addAll(packages);
+        for (AlchemyPackage pkg : packages) {
+            game.addPackage(pkg);
+        }
+
         for (AlchemyEffect effect : effects) {
-            game.effects.put(effect.getCode(), effect);
+            game.addEffect(effect);
         }
 
         return game;

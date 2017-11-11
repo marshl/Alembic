@@ -96,12 +96,7 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
     }
 
     private void setAllIngredientSelection(boolean selected) {
-        for (AlchemyPackage pack : this.game.packages) {
-            for (Ingredient ingred : pack.ingredients) {
-                ingred.setSelected(selected);
-            }
-        }
-
+        this.game.setIngredientSelection(selected);
         this.ingredientListAdapter.notifyDataSetChanged();
     }
 }

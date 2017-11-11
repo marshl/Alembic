@@ -12,6 +12,7 @@ import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class EffectListFragment extends Fragment implements DialogInterface.OnClickListener {
 
@@ -71,21 +72,20 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
     }
 
     private void removeIngredient(Ingredient ingredient) {
-        ArrayList<String> openItems = new ArrayList<>();
+        List<String> expandedEffects = new ArrayList<>();
 
-        for (int i = 0; i < this.game.effectList.size(); ++i) {
+        for (int i = 0; i < this.game.getAvailableEffectCount(); ++i) {
             if (this.expListView.isGroupExpanded(i)) {
-                openItems.add(this.game.effectList.get(i));
+                expandedEffects.add(this.game.getEffectByIndex(i).getCode());
             }
         }
 
         ingredient.setSelected(false);
-
         this.game.recalculateIngredientEffects();
 
-        for (int i = 0; i < this.game.effectList.size(); ++i) {
-            String effectName = this.game.effectList.get(i);
-            if (Collections.frequency(openItems, effectName) > 0) {
+        for (int i = 0; i < this.game.getAvailableEffectCount(); ++i) {
+            AlchemyEffect effect = this.game.getEffectByIndex(i);
+            if (Collections.frequency(expandedEffects, effect.getCode()) > 0) {
                 expListView.expandGroup(i);
             } else {
                 expListView.collapseGroup(i);

@@ -85,22 +85,17 @@ public class MainActivity extends FragmentActivity {
             throw new RuntimeException(ex);
         }
 
+        this.loadFromPreferences();
+    }
 
+    private void loadFromPreferences()
+    {
         SharedPreferences settings = this.getSharedPreferences(SHARED_PREFERENCE_KEY, 0);
-
         String gameName = settings.getString(GAME_NAME_KEY, "mw");
         this.currentGame = gameMap.get(gameName);
 
         Set<String> selectedIngredients = settings.getStringSet(SELECTED_INGREDIENTS_KEY, null);
-        if (selectedIngredients != null) {
-            for (AlchemyPackage pack : this.currentGame.packages) {
-                for (Ingredient ingredient : pack.ingredients) {
-                    if (selectedIngredients.contains(ingredient.getName())) {
-                        ingredient.setSelected(true);
-                    }
-                }
-            }
-        }
+        this.currentGame.loadSelectedIngredients(selectedIngredients);
     }
 
     @Override
@@ -111,14 +106,7 @@ public class MainActivity extends FragmentActivity {
 
         editor.putString(GAME_NAME_KEY, this.currentGame.getPrefix());
 
-        Set<String> selectedIngredients = new HashSet<>();
-        for (AlchemyPackage pack : this.currentGame.packages) {
-            for (Ingredient ingred : pack.ingredients) {
-                if (ingred.isSelected()) {
-                    selectedIngredients.add(ingred.getName());
-                }
-            }
-        }
+        Set<String> selectedIngredients = this.currentGame.getselectedIngredientSet();
         editor.putStringSet(SELECTED_INGREDIENTS_KEY, selectedIngredients);
 
         editor.apply();

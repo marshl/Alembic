@@ -7,8 +7,10 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class AlchemyGame implements Parcelable {
 
@@ -23,12 +25,12 @@ public class AlchemyGame implements Parcelable {
         }
     };
 
-    public final ArrayList<AlchemyPackage> packages = new ArrayList<>();
-    public Map<String, List<Ingredient>> effectToIngredientMap = new HashMap<>();
-    public List<String> effectList = new ArrayList<>();
-    public final Map<String, AlchemyEffect> effects = new HashMap<>();
+    private final ArrayList<AlchemyPackage> packages = new ArrayList<>();
+    private final Map<String, AlchemyEffect> effectMap = new HashMap<>();
     private final String name;
     private final String prefix;
+    private Map<String, List<Ingredient>> effectToIngredientMap = new HashMap<>();
+    private List<String> availableEffects = new ArrayList<>();
 
     private AlchemyGame(Parcel in) {
         super();
@@ -44,13 +46,45 @@ public class AlchemyGame implements Parcelable {
         Object[] effectArray = in.readArray(AlchemyEffect.class.getClassLoader());
         for (Object obj : effectArray) {
             AlchemyEffect effect = (AlchemyEffect) obj;
-            this.effects.put(effect.getCode(), effect);
+            this.effectMap.put(effect.getCode(), effect);
         }
     }
 
     public AlchemyGame(String name, String prefix) {
         this.name = name;
         this.prefix = prefix;
+    }
+
+    public void addPackage(AlchemyPackage pkg) {
+        this.packages.add(pkg);
+    }
+
+    public int getPackageCount() {
+        return this.packages.size();
+    }
+
+    public AlchemyPackage getPackage(int index) {
+        return this.packages.get(index);
+    }
+
+    public void addEffect(AlchemyEffect effect) {
+        this.effectMap.put(effect.getCode(), effect);
+    }
+
+    public int getAvailableEffectCount() {
+        return this.availableEffects.size();
+    }
+
+    public AlchemyEffect getEffectByIndex(int index) {
+        return this.getEffect(this.availableEffects.get(index));
+    }
+
+    public AlchemyEffect getEffect(String code) {
+        return this.effectMap.get(code);
+    }
+
+    public List<Ingredient> getIngredientsForEffect(String effectCode) {
+        return this.effectToIngredientMap.get(effectCode);
     }
 
     @Override
@@ -63,7 +97,7 @@ public class AlchemyGame implements Parcelable {
         parcel.writeString(this.name);
         parcel.writeString(this.prefix);
         parcel.writeArray(this.packages.toArray());
-        parcel.writeArray(this.effects.values().toArray());
+        parcel.writeArray(this.effectMap.values().toArray());
     }
 
     public String getGameName() {
@@ -76,7 +110,7 @@ public class AlchemyGame implements Parcelable {
 
     public void recalculateIngredientEffects() {
         this.effectToIngredientMap = new HashMap<>();
-        this.effectList = new ArrayList<>();
+        this.availableEffects = new ArrayList<>();
 
         for (AlchemyPackage alchemyPackage : this.packages) {
             for (Ingredient ingredient : alchemyPackage.ingredients) {
@@ -87,31 +121,60 @@ public class AlchemyGame implements Parcelable {
                 for (String effect : ingredient.effectCodes) {
                     if (this.effectToIngredientMap.get(effect) == null) {
                         this.effectToIngredientMap.put(effect, new ArrayList<Ingredient>());
-                        this.effectList.add(effect);
+                        this.availableEffects.add(effect);
                     }
                     this.effectToIngredientMap.get(effect).add(ingredient);
                 }
             }
         }
 
-        for (int i = 0; i < effectList.size(); ) {
-            String effect = this.effectList.get(i);
+        for (int i = 0; i < this.availableEffects.size(); ) {
+            String effect = this.availableEffects.get(i);
             if (this.effectToIngredientMap.get(effect).size() < 2) {
                 this.effectToIngredientMap.remove(effect);
-                this.effectList.remove(i);
+                this.availableEffects.remove(i);
             } else {
                 ++i;
             }
         }
-        Collections.sort(this.effectList);
+        Collections.sort(this.availableEffects);
     }
 
     public int getEffectImageResource(String effectCode, Activity context) {
-        AlchemyEffect effect = this.effects.get(effectCode);
+        AlchemyEffect effect = this.effectMap.get(effectCode);
         return context.getResources().getIdentifier(effect.getImage(), "drawable", context.getPackageName().toLowerCase());
     }
 
     public int getIngredientImageResource(Ingredient ingredient, Activity context) {
         return context.getResources().getIdentifier(ingredient.getImage(), "drawable", context.getPackageName().toLowerCase());
+    }
+
+    public void setIngredientSelection(boolean selected) {
+        for (AlchemyPackage pack : this.packages) {
+            for (Ingredient ingred : pack.ingredients) {
+                ingred.setSelected(selected);
+            }
+        }
+    }
+
+    public void loadSelectedIngredients(Set<String> ingredients) {
+        for (AlchemyPackage pack : this.packages) {
+            for (Ingredient ingredient : pack.ingredients) {
+                ingredient.setSelected(ingredients.contains(ingredient.getName()));
+            }
+        }
+    }
+
+    public Set<String> getselectedIngredientSet() {
+        Set<String> selectedIngredients = new HashSet<>();
+        for (AlchemyPackage pack : this.packages) {
+            for (Ingredient ingred : pack.ingredients) {
+                if (ingred.isSelected()) {
+                    selectedIngredients.add(ingred.getName());
+                }
+            }
+        }
+
+        return selectedIngredients;
     }
 }

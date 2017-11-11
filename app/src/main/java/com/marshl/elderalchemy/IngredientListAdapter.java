@@ -29,7 +29,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.getPackage(groupPosition);
         return alchemyPackage.ingredients.get(childPosition);
     }
 
@@ -42,7 +42,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
     public View getChildView(final int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
 
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.getPackage(groupPosition);
         final Ingredient ingredient = alchemyPackage.ingredients.get(childPosition);
 
         if (convertView == null) {
@@ -66,18 +66,18 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.getPackage(groupPosition);
         return alchemyPackage.ingredients.size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return this.alchemyGame.packages.get(groupPosition);
+        return this.alchemyGame.getPackage(groupPosition);
     }
 
     @Override
     public int getGroupCount() {
-        return this.alchemyGame.packages.size();
+        return this.alchemyGame.getPackageCount();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
 
-        final AlchemyPackage alchemyPackage = this.alchemyGame.packages.get(groupPosition);
+        final AlchemyPackage alchemyPackage = this.alchemyGame.getPackage(groupPosition);
 
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context
