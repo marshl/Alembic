@@ -2,6 +2,7 @@ package com.marshl.elderalchemy;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,7 +102,8 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         convertView.setId(groupPosition);
 
         final TextView textView = (TextView) convertView.findViewById(R.id.ingredient_group_text);
-        textView.setText(alchemyPackage.getPackageName());
+        final Resources res = context.getResources();
+        textView.setText(res.getString(R.string.ingredient_group_title, alchemyPackage.getPackageName()));
 
         return convertView;
     }
