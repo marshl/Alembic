@@ -584,7 +584,7 @@
                 <image>mw_durzog_meat</image>
                 <effect>fortify_agility</effect>
                 <effect>fortify_strength</effect>
-                <effect>blind_blind</effect>
+                <effect>blind</effect>
                 <effect>damage_magicka</effect>
             </ingredient>
             <ingredient>
