@@ -18,7 +18,8 @@ public class AlchemyPackage implements Parcelable {
         }
     };
     public final ArrayList<Ingredient> ingredients = new ArrayList<>();
-    private String name = "UNDEFINED";
+    private final String name;
+
     public AlchemyPackage(Parcel in) {
         super();
         this.name = in.readString();

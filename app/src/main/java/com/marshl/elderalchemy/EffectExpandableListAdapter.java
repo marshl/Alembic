@@ -10,6 +10,8 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.marshl.util.ImageViewUtils;
+
 import java.util.List;
 
 public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
@@ -46,7 +48,13 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         ImageView image = (ImageView) convertView.findViewById(R.id.effect_sub_image);
 
         label.setText(ingredient.getName());
+        label.setTypeface(null, ingredient.isSelected() ? Typeface.BOLD : Typeface.NORMAL);
         image.setImageResource(this.currentGame.getIngredientImageResource(ingredient, this.context));
+        if (ingredient.isSelected()) {
+            ImageViewUtils.setUnlocked(image);
+        } else {
+            ImageViewUtils.setLocked(image);
+        }
 
         return convertView;
     }
@@ -81,15 +89,21 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
                     parent, false);
         }
 
-        AlchemyEffect effect =this.currentGame.getEffectByIndex(groupPosition);
+        AlchemyEffect effect = this.currentGame.getEffectByIndex(groupPosition);
 
         TextView textView = (TextView) convertView.findViewById(R.id.effect_text_view);
-        textView.setTypeface(null, Typeface.BOLD);
+        textView.setTypeface(null, effect.getIsCraftable() ? Typeface.BOLD : Typeface.NORMAL);
         textView.setText(effect.getName());
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.effect_image_view);
         int imageID = this.currentGame.getEffectImageResource(effect.getCode(), this.context);
         imageView.setImageResource(imageID);
+
+        if (effect.getIsCraftable()) {
+            ImageViewUtils.setUnlocked(imageView);
+        } else {
+            ImageViewUtils.setLocked(imageView);
+        }
         convertView.setId(groupPosition);
         return convertView;
     }

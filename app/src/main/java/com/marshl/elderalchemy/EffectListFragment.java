@@ -1,8 +1,5 @@
 package com.marshl.elderalchemy;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,15 +11,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class EffectListFragment extends Fragment implements DialogInterface.OnClickListener {
+public class EffectListFragment extends Fragment {
 
     private ExpandableListView expListView;
     private EffectExpandableListAdapter viewAdapter;
-
     private AlchemyGame game;
-
-    private Ingredient selectedIngredient = null;
-
 
     public static EffectListFragment newInstance(AlchemyGame game) {
         EffectListFragment fragment = new EffectListFragment();
@@ -58,13 +51,8 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
         this.expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                final Resources res = getResources();
-                selectedIngredient = (Ingredient) parent.getExpandableListAdapter().getChild(groupPosition, childPosition);
-                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                builder.setMessage(res.getString(R.string.remove_ingredient, selectedIngredient.getName()));
-                builder.setPositiveButton(res.getString(R.string.remove_ingredient_yes), EffectListFragment.this)
-                        .setNegativeButton(res.getString(R.string.remove_ingredient_no), EffectListFragment.this);
-                builder.show();
+                Ingredient ing = (Ingredient) parent.getExpandableListAdapter().getChild(groupPosition, childPosition);
+                toggleIngredient(ing);
                 return true;
             }
         });
@@ -94,23 +82,11 @@ public class EffectListFragment extends Fragment implements DialogInterface.OnCl
         }
     }
 
-    private void removeIngredient(Ingredient ingredient) {
-        List<String> expandedEffects = getExpandedEffectCodes();
-        ingredient.setSelected(false);
+    private void toggleIngredient(Ingredient ing) {
+        ing.setSelected(!ing.isSelected());
+        List<String> expandedEffects = this.getExpandedEffectCodes();
         this.game.recalculateIngredientEffects();
-        this.setExpandedEffects(expandedEffects);
-
         this.viewAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onClick(DialogInterface dialog, int which) {
-        switch (which) {
-            case DialogInterface.BUTTON_POSITIVE: {
-                this.removeIngredient(this.selectedIngredient);
-                break;
-            }
-        }
-        this.selectedIngredient = null;
+        this.setExpandedEffects(expandedEffects);
     }
 }

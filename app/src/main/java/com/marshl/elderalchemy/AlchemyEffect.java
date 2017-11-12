@@ -19,6 +19,8 @@ public class AlchemyEffect implements Parcelable {
     private final String image;
     private final String name;
 
+    private boolean isCraftable = false;
+
     public AlchemyEffect(String code, String name, String image) {
         this.code = code;
         this.name = name;
@@ -42,6 +44,14 @@ public class AlchemyEffect implements Parcelable {
 
     public String getName() {
         return name;
+    }
+
+    public void setCraftable(boolean craftable) {
+        this.isCraftable = craftable;
+    }
+
+    public boolean getIsCraftable() {
+        return this.isCraftable;
     }
 
     @Override

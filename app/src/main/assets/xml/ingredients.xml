@@ -2618,27 +2618,27 @@
         <effect>
             <code>weakness_to_fire</code>
             <name>Weakness to Fire</name>
-            <image>ob_weakness_to_fire</image>
+            <image>ob_fire</image>
         </effect>
         <effect>
             <code>drain_fatigue</code>
             <name>Drain Fatigue</name>
-            <image>ob_drain_fatigue</image>
+            <image>ob_drain</image>
         </effect>
         <effect>
             <code>drain_health</code>
             <name>Drain Health</name>
-            <image>ob_drain_health</image>
+            <image>ob_drain</image>
         </effect>
         <effect>
             <code>drain_magicka</code>
             <name>Drain Magicka</name>
-            <image>ob_drain_magicka</image>
+            <image>ob_drain</image>
         </effect>
         <effect>
             <code>drain_intelligence</code>
             <name>Drain Intelligence</name>
-            <image>ob_drain_intelligence</image>
+            <image>ob_drain</image>
         </effect>
     </game>
     <game>

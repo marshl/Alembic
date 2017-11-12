@@ -14,7 +14,6 @@ import android.view.View;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -88,8 +87,7 @@ public class MainActivity extends FragmentActivity {
         this.loadFromPreferences();
     }
 
-    private void loadFromPreferences()
-    {
+    private void loadFromPreferences() {
         SharedPreferences settings = this.getSharedPreferences(SHARED_PREFERENCE_KEY, 0);
         String gameName = settings.getString(GAME_NAME_KEY, "mw");
         this.currentGame = gameMap.get(gameName);

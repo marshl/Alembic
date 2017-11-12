@@ -6,6 +6,7 @@ import android.os.Parcelable;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -25,7 +26,7 @@ public class AlchemyGame implements Parcelable {
         }
     };
 
-    private final ArrayList<AlchemyPackage> packages = new ArrayList<>();
+    private final List<AlchemyPackage> packages = new ArrayList<>();
     private final Map<String, AlchemyEffect> effectMap = new HashMap<>();
     private final String name;
     private final String prefix;
@@ -114,10 +115,6 @@ public class AlchemyGame implements Parcelable {
 
         for (AlchemyPackage alchemyPackage : this.packages) {
             for (Ingredient ingredient : alchemyPackage.ingredients) {
-                if (!ingredient.isSelected()) {
-                    continue;
-                }
-
                 for (String effect : ingredient.effectCodes) {
                     if (this.effectToIngredientMap.get(effect) == null) {
                         this.effectToIngredientMap.put(effect, new ArrayList<Ingredient>());
@@ -128,16 +125,38 @@ public class AlchemyGame implements Parcelable {
             }
         }
 
-        for (int i = 0; i < this.availableEffects.size(); ) {
-            String effect = this.availableEffects.get(i);
-            if (this.effectToIngredientMap.get(effect).size() < 2) {
-                this.effectToIngredientMap.remove(effect);
-                this.availableEffects.remove(i);
-            } else {
-                ++i;
+        for (Map.Entry<String, List<Ingredient>> entry : this.effectToIngredientMap.entrySet()) {
+
+            AlchemyEffect effect = this.getEffect(entry.getKey());
+            List<Ingredient> ingredients = entry.getValue();
+            effect.setCraftable(ingredients.size() >= 2);
+            int selectedIngredientCount = 0;
+            for (Ingredient ing : ingredients) {
+                if (ing.isSelected()) {
+                    ++selectedIngredientCount;
+                }
             }
+            effect.setCraftable(selectedIngredientCount >= 2);
+
+            Collections.sort(entry.getValue(), new Comparator<Ingredient>() {
+                @Override
+                public int compare(Ingredient a, Ingredient b) {
+                    return (a.isSelected() == b.isSelected()) ? a.getName().compareTo(b.getName()) : -(Boolean.compare(a.isSelected(), b.isSelected()));
+                }
+            });
         }
-        Collections.sort(this.availableEffects);
+
+        Collections.sort(this.availableEffects, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                AlchemyEffect e1 = AlchemyGame.this.getEffect(o1);
+                AlchemyEffect e2 = AlchemyGame.this.getEffect(o2);
+
+                return e1.getIsCraftable() == e2.getIsCraftable() ?
+                        e1.getName().compareTo(e2.getName()) :
+                        -(Boolean.compare(e1.getIsCraftable(), e2.getIsCraftable()));
+            }
+        });
     }
 
     public int getEffectImageResource(String effectCode, Activity context) {
