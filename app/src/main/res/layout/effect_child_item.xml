@@ -5,7 +5,9 @@
     android:clickable="false"
     android:focusable="false"
     android:orientation="horizontal"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
 
     <ImageView
         android:id="@+id/effect_sub_image"
