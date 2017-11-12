@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Elder Alchemy</string>
     <string name="action_settings">Settings</string>
-    <string name="ingredients_mix_button">Show Available Effects</string>
+    <string name="ingredients_mix_button">Show Effects</string>
     <string name="effect_icon_description">Effect Icon</string>
     <string name="effect_text_placeholder">[EFFECT]</string>
     <string name="default_ingredient_name">[INGREDIENT_NAME]</string>
@@ -13,4 +13,5 @@
     <string name="oblivion">Oblivion</string>
     <string name="skyrim">Skyrim</string>
     <string name="no_effects">No effects</string>
+    <string name="ingredient_group_title">%s Ingredients</string>
 </resources>
