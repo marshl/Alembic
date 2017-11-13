@@ -93,7 +93,9 @@ public class MainActivity extends FragmentActivity {
         this.currentGame = gameMap.get(gameName);
 
         Set<String> selectedIngredients = settings.getStringSet(SELECTED_INGREDIENTS_KEY, null);
-        this.currentGame.loadSelectedIngredients(selectedIngredients);
+        if (selectedIngredients != null) {
+            this.currentGame.loadSelectedIngredients(selectedIngredients);
+        }
     }
 
     @Override
