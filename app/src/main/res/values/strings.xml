@@ -14,4 +14,7 @@
     <string name="skyrim">Skyrim</string>
     <string name="no_effects">No effects</string>
     <string name="ingredient_group_title">%s Ingredients</string>
+    <string name="switch_game">Switch Game</string>
+    <string name="set_skill">Set Skill</string>
+    <string name="pick_game">Choose a game</string>
 </resources>

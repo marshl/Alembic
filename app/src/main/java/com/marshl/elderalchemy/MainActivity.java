@@ -124,6 +124,10 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void switchGame(String prefix) {
+        if (this.currentGame.getPrefix().equals(prefix)) {
+            return;
+        }
+
         this.currentGame = this.gameMap.get(prefix);
 
         this.ingredientListFragment.getArguments().remove(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);
@@ -143,22 +147,36 @@ public class MainActivity extends FragmentActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.switch_to_morrowind: {
-                this.switchGame("mw");
-                return true;
-            }
-            case R.id.switch_to_oblivion: {
-                this.switchGame("ob");
-                return true;
-            }
-            case R.id.switch_to_skyrim: {
-                this.switchGame("sr");
+            case R.id.switch_game: {
+                this.showSwitchGameDialog();
                 return true;
             }
             default: {
                 return super.onOptionsItemSelected(item);
             }
         }
+    }
+
+    private void showSwitchGameDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.pick_game)
+                .setItems(R.array.games, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        switch (which) {
+                            case 0:
+                                MainActivity.this.switchGame("mw");
+                                break;
+                            case 1:
+                                MainActivity.this.switchGame("ob");
+                                break;
+                            case 2:
+                                MainActivity.this.switchGame("sr");
+                                break;
+                        }
+                    }
+                });
+        builder.show();
     }
 
     public void onMixIngredientButtonDown(View view) {
