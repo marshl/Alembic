@@ -1,12 +1,15 @@
 package com.marshl.elderalchemy;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +20,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
     private static final int NUM_PAGES = 2;
     private static final String GAME_NAME_KEY = "GAME_NAME";
     private static final String SELECTED_INGREDIENTS_KEY = "SELECTED_INGREDIENTS";
@@ -34,6 +37,10 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        setSupportActionBar(myToolbar);
+
 
         this.viewPager = (ViewPager) this.findViewById(R.id.pager);
         this.pagerAdapter = new IngredientListPagerAdapter(this.getSupportFragmentManager());
