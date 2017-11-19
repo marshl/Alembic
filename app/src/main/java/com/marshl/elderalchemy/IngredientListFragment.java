@@ -45,10 +45,9 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
                 if (ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                    builder.setMessage("Select an Option");
+                    builder.setMessage("Choose one");
                     builder.setPositiveButton("Select all", IngredientListFragment.this)
-                            .setNeutralButton("Select None", IngredientListFragment.this)
-                            .setNegativeButton("Cancel", IngredientListFragment.this);
+                            .setNeutralButton("Select None", IngredientListFragment.this);
                     builder.show();
                     return true;
                 }
