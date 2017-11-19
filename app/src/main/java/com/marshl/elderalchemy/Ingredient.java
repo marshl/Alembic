@@ -71,6 +71,12 @@ public class Ingredient implements Parcelable {
         parcel.writeStringArray(this.effectCodes.toArray(new String[0]));
     }
 
+    public List<String> getFirstEffects(int effectCount) {
+        if (effectCount == 0) {
+            return this.effectCodes;
+        }
 
+        return this.effectCodes.subList(0, Math.min(effectCount, this.effectCodes.size()));
+    }
 }
 

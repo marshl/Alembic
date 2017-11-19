@@ -13,10 +13,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String GAME_NAME_KEY = "GAME_NAME";
     private static final String SELECTED_INGREDIENTS_KEY = "SELECTED_INGREDIENTS";
     private static final String SHARED_PREFERENCE_KEY = "ELDERALCHEMY_SHARED_PREFS";
+    private static final String GAME_LEVEL_KEY = "CURRENT_GAME_LEVEL";
 
     private AlchemyGame currentGame;
     private Map<String, AlchemyGame> gameMap;
@@ -55,28 +58,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
 
-                Fragment fragment = null;
-
-                if (position == 0 && MainActivity.this.ingredientListFragment != null) {
-                    fragment = MainActivity.this.ingredientListFragment;
-                } else if (position == 1 && MainActivity.this.effectListFragment != null) {
-                    fragment = MainActivity.this.effectListFragment;
-                }
-
-                if (fragment != null) {
-                    MainActivity.this.currentGame.recalculateIngredientEffects();
-                    fragment.getArguments().remove(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);
-                    fragment.getArguments().putParcelable(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME, MainActivity.this.currentGame);
-
-                    if (fragment == MainActivity.this.effectListFragment) {
-                        MainActivity.this.effectListFragment.refreshEffects();
-                    } else if (fragment == MainActivity.this.ingredientListFragment) {
-                        MainActivity.this.ingredientListFragment.refreshIngredients();
-                    }
-                }
-
-                MainActivity.this.pagerAdapter.notifyDataSetChanged();
+                refreshCurrentPage();
             }
+
 
             @Override
             public void onPageScrollStateChanged(int state) {
@@ -94,10 +78,36 @@ public class MainActivity extends AppCompatActivity {
         this.loadFromPreferences();
     }
 
+    private void refreshCurrentPage() {
+        Fragment fragment = null;
+        int position = this.viewPager.getCurrentItem();
+
+        if (position == 0 && MainActivity.this.ingredientListFragment != null) {
+            fragment = MainActivity.this.ingredientListFragment;
+        } else if (position == 1 && MainActivity.this.effectListFragment != null) {
+            fragment = MainActivity.this.effectListFragment;
+        }
+
+        if (fragment != null) {
+            MainActivity.this.currentGame.recalculateIngredientEffects();
+            fragment.getArguments().remove(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME);
+            fragment.getArguments().putParcelable(AlchemyGame.ALCHEMY_GAME_PARCEL_NAME, MainActivity.this.currentGame);
+
+            if (fragment == MainActivity.this.effectListFragment) {
+                MainActivity.this.effectListFragment.refreshEffects();
+            } else if (fragment == MainActivity.this.ingredientListFragment) {
+                MainActivity.this.ingredientListFragment.refreshIngredients();
+            }
+        }
+
+        MainActivity.this.pagerAdapter.notifyDataSetChanged();
+    }
+
     private void loadFromPreferences() {
         SharedPreferences settings = this.getSharedPreferences(SHARED_PREFERENCE_KEY, 0);
         String gameName = settings.getString(GAME_NAME_KEY, "mw");
         this.currentGame = gameMap.get(gameName);
+        this.currentGame.setCurrentLevel(settings.getInt(GAME_LEVEL_KEY, -1));
 
         Set<String> selectedIngredients = settings.getStringSet(SELECTED_INGREDIENTS_KEY, null);
         if (selectedIngredients != null) {
@@ -112,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
 
         editor.putString(GAME_NAME_KEY, this.currentGame.getPrefix());
+        editor.putInt(GAME_LEVEL_KEY, this.currentGame.getCurrentLevelIndex());
 
         Set<String> selectedIngredients = this.currentGame.getselectedIngredientSet();
         editor.putStringSet(SELECTED_INGREDIENTS_KEY, selectedIngredients);
@@ -142,12 +153,14 @@ public class MainActivity extends AppCompatActivity {
         this.viewPager.setCurrentItem(0);
         this.ingredientListFragment.refreshIngredients();
         this.viewPager.setAdapter(this.pagerAdapter);
+        this.invalidateOptionsMenu();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.ingredient_menu, menu);
+        menu.getItem(1).setEnabled(this.currentGame.hasSkillLevels());
         return true;
     }
 
@@ -158,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
                 this.showSwitchGameDialog();
                 return true;
             }
+            case R.id.set_skill:
+                this.showSkillDialog();
+                return true;
             default: {
                 return super.onOptionsItemSelected(item);
             }
@@ -183,6 +199,27 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+        builder.show();
+    }
+
+    private void showSkillDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Set Alchemy skill");
+
+        List<String> levels = this.currentGame.getLevels();
+        CharSequence[] cs = levels.toArray(new CharSequence[levels.size()]);
+
+        int selectedLevel = this.currentGame.getCurrentLevelIndex();
+        builder.setSingleChoiceItems(cs, selectedLevel, null);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ListView lw = ((AlertDialog) dialog).getListView();
+                currentGame.setCurrentLevel(lw.getCheckedItemPosition());
+                refreshCurrentPage();
+            }
+        });
+        builder.setNegativeButton("Cancel", null);
         builder.show();
     }
 

@@ -5,6 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -32,6 +33,8 @@ public class AlchemyGame implements Parcelable {
     private final String prefix;
     private Map<String, List<Ingredient>> effectToIngredientMap = new HashMap<>();
     private List<String> availableEffects = new ArrayList<>();
+    private List<String> levels;
+    private int currentLevelIndex;
 
     private AlchemyGame(Parcel in) {
         super();
@@ -49,11 +52,26 @@ public class AlchemyGame implements Parcelable {
             AlchemyEffect effect = (AlchemyEffect) obj;
             this.effectMap.put(effect.getCode(), effect);
         }
+
+        String[] lvls = null;
+        in.readStringArray(lvls);
+        if (lvls != null) {
+            this.levels = Arrays.asList(lvls);
+        }
+
+        this.currentLevelIndex = in.readInt();
     }
 
-    public AlchemyGame(String name, String prefix) {
+    public AlchemyGame(String name, String prefix, List<String> levels) {
         this.name = name;
         this.prefix = prefix;
+        this.levels = levels;
+        if (this.levels != null) {
+            this.currentLevelIndex = this.levels.size() - 1;
+        } else {
+            this.currentLevelIndex = -1;
+        }
+
     }
 
     public void addPackage(AlchemyPackage pkg) {
@@ -99,6 +117,8 @@ public class AlchemyGame implements Parcelable {
         parcel.writeString(this.prefix);
         parcel.writeArray(this.packages.toArray());
         parcel.writeArray(this.effectMap.values().toArray());
+        parcel.writeStringArray(this.levels != null ? this.levels.toArray(new String[this.levels.size()]) : null);
+        parcel.writeInt(this.currentLevelIndex);
     }
 
     public String getGameName() {
@@ -115,12 +135,12 @@ public class AlchemyGame implements Parcelable {
 
         for (AlchemyPackage alchemyPackage : this.packages) {
             for (Ingredient ingredient : alchemyPackage.ingredients) {
-                for (String effect : ingredient.effectCodes) {
-                    if (this.effectToIngredientMap.get(effect) == null) {
-                        this.effectToIngredientMap.put(effect, new ArrayList<Ingredient>());
-                        this.availableEffects.add(effect);
+                for (String effectCode : ingredient.getFirstEffects(this.currentLevelIndex + 1)) {
+                    if (this.effectToIngredientMap.get(effectCode) == null) {
+                        this.effectToIngredientMap.put(effectCode, new ArrayList<Ingredient>());
+                        this.availableEffects.add(effectCode);
                     }
-                    this.effectToIngredientMap.get(effect).add(ingredient);
+                    this.effectToIngredientMap.get(effectCode).add(ingredient);
                 }
             }
         }
@@ -195,5 +215,27 @@ public class AlchemyGame implements Parcelable {
         }
 
         return selectedIngredients;
+    }
+
+    public boolean hasSkillLevels() {
+        return this.levels != null;
+    }
+
+    public List<String> getLevels() {
+        return levels;
+    }
+
+    public int getCurrentLevelIndex() {
+        return currentLevelIndex;
+    }
+
+    public void setCurrentLevel(int level) {
+        if (level == -1 && this.levels != null) {
+            this.currentLevelIndex = this.levels.size();
+        } else {
+            this.currentLevelIndex = level;
+        }
+
+        this.recalculateIngredientEffects();
     }
 }

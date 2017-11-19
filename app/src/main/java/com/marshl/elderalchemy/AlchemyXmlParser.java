@@ -54,6 +54,7 @@ class AlchemyXmlParser {
         String gamePrefix = null;
         ArrayList<AlchemyPackage> packages = new ArrayList<>();
         ArrayList<AlchemyEffect> effects = new ArrayList<>();
+        List<String> levels = null;
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -77,12 +78,15 @@ class AlchemyXmlParser {
                     AlchemyEffect effect = this.readEffectNode(parser);
                     effects.add(effect);
                     break;
+                case "levels":
+                    levels = this.readLevelsNode(parser);
+                    break;
                 default:
                     throw new IOException("Unknown node type: \"" + nodeName + "\" when parsing root node");
             }
         }
 
-        AlchemyGame game = new AlchemyGame(gameName, gamePrefix);
+        AlchemyGame game = new AlchemyGame(gameName, gamePrefix, levels);
         for (AlchemyPackage pkg : packages) {
             game.addPackage(pkg);
         }
@@ -92,6 +96,19 @@ class AlchemyXmlParser {
         }
 
         return game;
+    }
+
+    private List<String> readLevelsNode(XmlPullParser parser) throws IOException, XmlPullParserException {
+        List<String> levels = new ArrayList<>();
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            String nodeName = parser.getName();
+            levels.add(this.readText(parser));
+        }
+
+        return levels;
     }
 
     private AlchemyEffect readEffectNode(XmlPullParser parser) throws IOException, XmlPullParserException {

@@ -2,6 +2,12 @@
     <game>
         <name>Morrowind</name>
         <prefix>mw</prefix>
+        <levels>
+            <name>15-29 (1 effect)</name>
+            <name>30-44 (2 effects)</name>
+            <name>45-59 (3 effects)</name>
+            <name>60-100 (all effects)</name>
+        </levels>
         <package>
             <name>Morrowind</name>
             <ingredient>
@@ -1159,6 +1165,12 @@
     <game>
         <name>Oblivion</name>
         <prefix>ob</prefix>
+        <levels>
+            <name>1-24: Novice (1 effect)</name>
+            <name>25-49: Apprentice (2 effects)</name>
+            <name>50-74: Journeyman (3 effects)</name>
+            <name>75-100: Expert/Master (all effects)</name>
+        </levels>
         <package>
             <name>Oblivion</name>
             <ingredient>
