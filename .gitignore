@@ -10,3 +10,5 @@
 .idea/
 signing.properties
 *.apk
+/app/release/
+*.py
