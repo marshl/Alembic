@@ -40,7 +40,7 @@ public class EffectListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_effect_list, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.effect_list_fragment, container, false);
 
         this.expListView = (ExpandableListView) rootView.findViewById(R.id.effect_list);
 

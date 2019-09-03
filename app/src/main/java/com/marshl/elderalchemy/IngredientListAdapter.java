@@ -50,7 +50,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            convertView = inflater.inflate(R.layout.ingredient_child_row, parent, false);
+            convertView = inflater.inflate(R.layout.ingredient_child_item, parent, false);
         }
 
         convertView.setId(childPosition);
@@ -96,7 +96,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.ingredient_group_row,
+            convertView = layoutInflater.inflate(R.layout.ingredient_group_item,
                     parent, false);
         }
 
