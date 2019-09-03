@@ -161,7 +161,15 @@ public class AlchemyGame implements Parcelable {
             Collections.sort(entry.getValue(), new Comparator<Ingredient>() {
                 @Override
                 public int compare(Ingredient a, Ingredient b) {
-                    return (a.isSelected() == b.isSelected()) ? a.getName().compareTo(b.getName()) : -(Boolean.compare(a.isSelected(), b.isSelected()));
+                    if (a.isSelected() && !b.isSelected()) {
+                        return -1;
+                    }
+
+                    if (b.isSelected() && !a.isSelected()) {
+                        return 1;
+                    }
+
+                    return a.getName().compareTo(b.getName());
                 }
             });
         }
@@ -171,10 +179,15 @@ public class AlchemyGame implements Parcelable {
             public int compare(String o1, String o2) {
                 AlchemyEffect e1 = AlchemyGame.this.getEffect(o1);
                 AlchemyEffect e2 = AlchemyGame.this.getEffect(o2);
+                if (e1.getIsCraftable() && !e2.getIsCraftable()) {
+                    return -1;
+                }
 
-                return e1.getIsCraftable() == e2.getIsCraftable() ?
-                        e1.getName().compareTo(e2.getName()) :
-                        -(Boolean.compare(e1.getIsCraftable(), e2.getIsCraftable()));
+                if (e2.getIsCraftable() && !e1.getIsCraftable()) {
+                    return 1;
+                }
+
+                return e1.getName().compareTo(e2.getName());
             }
         });
     }
