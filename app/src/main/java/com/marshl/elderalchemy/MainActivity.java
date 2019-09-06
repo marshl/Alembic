@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class IngredientListPagerAdapter extends FragmentStatePagerAdapter {
-        public IngredientListPagerAdapter(FragmentManager fm) {
+        private IngredientListPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 

@@ -6,8 +6,7 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 
 public class AlchemyPackage implements Parcelable {
-
-    public static final String ALCHEMY_PACKAGE_PARCEL_NAME = "ALCHEMY_PACKAGE";
+    
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public AlchemyPackage createFromParcel(Parcel in) {
             return new AlchemyPackage(in);
@@ -17,10 +16,10 @@ public class AlchemyPackage implements Parcelable {
             return new AlchemyPackage[size];
         }
     };
-    public final ArrayList<Ingredient> ingredients = new ArrayList<>();
+    final ArrayList<Ingredient> ingredients = new ArrayList<>();
     private final String name;
 
-    public AlchemyPackage(Parcel in) {
+    private AlchemyPackage(Parcel in) {
         super();
         this.name = in.readString();
 
@@ -30,11 +29,11 @@ public class AlchemyPackage implements Parcelable {
         }
     }
 
-    public AlchemyPackage(String name) {
+    AlchemyPackage(String name) {
         this.name = name;
     }
 
-    public String getPackageName() {
+    String getPackageName() {
         return this.name;
     }
 

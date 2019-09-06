@@ -149,14 +149,14 @@ public class AlchemyGame implements Parcelable {
 
             AlchemyEffect effect = this.getEffect(entry.getKey());
             List<Ingredient> ingredients = entry.getValue();
-            effect.setCraftable(ingredients.size() >= 2);
+            effect.setCanBeCrafted(ingredients.size() >= 2);
             int selectedIngredientCount = 0;
             for (Ingredient ing : ingredients) {
                 if (ing.isSelected()) {
                     ++selectedIngredientCount;
                 }
             }
-            effect.setCraftable(selectedIngredientCount >= 2);
+            effect.setCanBeCrafted(selectedIngredientCount >= 2);
 
             Collections.sort(entry.getValue(), new Comparator<Ingredient>() {
                 @Override
@@ -179,11 +179,11 @@ public class AlchemyGame implements Parcelable {
             public int compare(String o1, String o2) {
                 AlchemyEffect e1 = AlchemyGame.this.getEffect(o1);
                 AlchemyEffect e2 = AlchemyGame.this.getEffect(o2);
-                if (e1.getIsCraftable() && !e2.getIsCraftable()) {
+                if (e1.getCanBeCrafted() && !e2.getCanBeCrafted()) {
                     return -1;
                 }
 
-                if (e2.getIsCraftable() && !e1.getIsCraftable()) {
+                if (e2.getCanBeCrafted() && !e1.getCanBeCrafted()) {
                     return 1;
                 }
 
@@ -192,16 +192,16 @@ public class AlchemyGame implements Parcelable {
         });
     }
 
-    public int getEffectImageResource(String effectCode, Activity context) {
+    int getEffectImageResource(String effectCode, Activity context) {
         AlchemyEffect effect = this.effectMap.get(effectCode);
         return context.getResources().getIdentifier(effect.getImage(), "drawable", context.getPackageName().toLowerCase());
     }
 
-    public int getIngredientImageResource(Ingredient ingredient, Activity context) {
+    int getIngredientImageResource(Ingredient ingredient, Activity context) {
         return context.getResources().getIdentifier(ingredient.getImage(), "drawable", context.getPackageName().toLowerCase());
     }
 
-    public void setIngredientSelection(boolean selected) {
+    void setIngredientSelection(boolean selected) {
         for (AlchemyPackage pack : this.packages) {
             for (Ingredient ingred : pack.ingredients) {
                 ingred.setSelected(selected);
@@ -209,7 +209,7 @@ public class AlchemyGame implements Parcelable {
         }
     }
 
-    public void loadSelectedIngredients(Set<String> ingredients) {
+    void loadSelectedIngredients(Set<String> ingredients) {
         for (AlchemyPackage pack : this.packages) {
             for (Ingredient ingredient : pack.ingredients) {
                 ingredient.setSelected(ingredients.contains(ingredient.getName()));
@@ -217,7 +217,7 @@ public class AlchemyGame implements Parcelable {
         }
     }
 
-    public Set<String> getselectedIngredientSet() {
+    Set<String> getselectedIngredientSet() {
         Set<String> selectedIngredients = new HashSet<>();
         for (AlchemyPackage pack : this.packages) {
             for (Ingredient ingred : pack.ingredients) {
@@ -230,19 +230,19 @@ public class AlchemyGame implements Parcelable {
         return selectedIngredients;
     }
 
-    public boolean hasSkillLevels() {
+    boolean hasSkillLevels() {
         return this.levels != null;
     }
 
-    public List<String> getLevels() {
+    List<String> getLevels() {
         return levels;
     }
 
-    public int getCurrentLevelIndex() {
+    int getCurrentLevelIndex() {
         return currentLevelIndex;
     }
 
-    public void setCurrentLevel(int level) {
+    void setCurrentLevel(int level) {
         if (level == -1 && this.levels != null) {
             this.currentLevelIndex = this.levels.size();
         } else {

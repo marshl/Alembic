@@ -9,7 +9,6 @@ import java.util.List;
 
 
 public class Ingredient implements Parcelable {
-    public static final String INGREDIENT_PARCEL_NAME = "INGREDIENT";
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Ingredient createFromParcel(Parcel in) {
             return new Ingredient(in);
@@ -21,16 +20,16 @@ public class Ingredient implements Parcelable {
     };
     private final String name;
     private final String image;
-    public List<String> effectCodes = new ArrayList<>();
+    private List<String> effectCodes = new ArrayList<>();
     private boolean selected = false;
 
-    public Ingredient(String name, String imageName, List<String> effectCodes) {
+    Ingredient(String name, String imageName, List<String> effectCodes) {
         this.name = name;
         this.effectCodes = effectCodes;
         this.image = imageName;
     }
 
-    public Ingredient(Parcel in) {
+    private Ingredient(Parcel in) {
         super();
         this.name = in.readString();
         this.image = in.readString();
@@ -41,15 +40,15 @@ public class Ingredient implements Parcelable {
         this.effectCodes.addAll(Arrays.asList(tempEffects));
     }
 
-    public boolean isSelected() {
+    boolean isSelected() {
         return selected;
     }
 
-    public void setSelected(boolean selected) {
+    void setSelected(boolean selected) {
         this.selected = selected;
     }
 
-    public String getImage() {
+    String getImage() {
         return image;
     }
 
@@ -71,7 +70,7 @@ public class Ingredient implements Parcelable {
         parcel.writeStringArray(this.effectCodes.toArray(new String[0]));
     }
 
-    public List<String> getFirstEffects(int effectCount) {
+    List<String> getFirstEffects(int effectCount) {
         if (effectCount == 0) {
             return this.effectCodes;
         }

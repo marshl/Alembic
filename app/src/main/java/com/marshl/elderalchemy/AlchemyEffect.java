@@ -19,26 +19,26 @@ public class AlchemyEffect implements Parcelable {
     private final String image;
     private final String name;
 
-    private boolean isCraftable = false;
+    private boolean canBeCrafted = false;
 
-    public AlchemyEffect(String code, String name, String image) {
+    AlchemyEffect(String code, String name, String image) {
         this.code = code;
         this.name = name;
         this.image = image;
     }
 
-    public AlchemyEffect(Parcel in) {
+    private AlchemyEffect(Parcel in) {
         super();
         this.code = in.readString();
         this.name = in.readString();
         this.image = in.readString();
     }
 
-    public String getCode() {
+    String getCode() {
         return code;
     }
 
-    public String getImage() {
+    String getImage() {
         return image;
     }
 
@@ -46,12 +46,12 @@ public class AlchemyEffect implements Parcelable {
         return name;
     }
 
-    public void setCraftable(boolean craftable) {
-        this.isCraftable = craftable;
+    void setCanBeCrafted(boolean canBeCrafted) {
+        this.canBeCrafted = canBeCrafted;
     }
 
-    public boolean getIsCraftable() {
-        return this.isCraftable;
+    boolean getCanBeCrafted() {
+        return this.canBeCrafted;
     }
 
     @Override

@@ -18,15 +18,10 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
     private AlchemyGame alchemyGame;
 
-    public IngredientListAdapter(Activity context, AlchemyGame alchemyGame) {
+    IngredientListAdapter(Activity context, AlchemyGame alchemyGame) {
         super();
         this.context = context;
         this.alchemyGame = alchemyGame;
-    }
-
-    public void setGame(AlchemyGame game) {
-        this.alchemyGame = game;
-        this.notifyDataSetChanged();
     }
 
     @Override

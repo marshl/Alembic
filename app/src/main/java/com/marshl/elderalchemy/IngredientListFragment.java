@@ -46,7 +46,7 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
                     AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                     builder.setMessage("Choose one");
                     builder.setPositiveButton("Select all", IngredientListFragment.this)
-                            .setNeutralButton("Select None", IngredientListFragment.this);
+                            .setNegativeButton("Select None", IngredientListFragment.this);
                     builder.show();
                     return true;
                 }
@@ -84,9 +84,9 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
                 this.setAllIngredientSelection(true);
                 break;
             case DialogInterface.BUTTON_NEUTRAL:
-                this.setAllIngredientSelection(false);
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
+                this.setAllIngredientSelection(false);
                 break;
         }
     }

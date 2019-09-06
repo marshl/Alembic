@@ -15,7 +15,7 @@ import java.util.Map;
 
 class AlchemyXmlParser {
 
-    public HashMap<String, AlchemyGame> parseXml(Activity context) throws IOException, XmlPullParserException {
+    HashMap<String, AlchemyGame> parseXml(Activity context) throws IOException, XmlPullParserException {
         InputStream fileStream = context.getAssets().open("xml/ingredients.xml");
 
         HashMap<String, AlchemyGame> gameList = new HashMap<>();
@@ -104,7 +104,6 @@ class AlchemyXmlParser {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
-            String nodeName = parser.getName();
             levels.add(this.readText(parser));
         }
 
@@ -166,9 +165,7 @@ class AlchemyXmlParser {
         }
 
         AlchemyPackage alchemyPackage = new AlchemyPackage(packageName);
-        for (Ingredient ingredient : ingredients) {
-            alchemyPackage.ingredients.add(ingredient);
-        }
+        alchemyPackage.ingredients.addAll(ingredients);
 
         return alchemyPackage;
     }

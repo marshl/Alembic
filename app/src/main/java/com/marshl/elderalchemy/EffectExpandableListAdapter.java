@@ -95,14 +95,14 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         AlchemyEffect effect = this.currentGame.getEffectByIndex(groupPosition);
 
         TextView textView = convertView.findViewById(R.id.effect_text_view);
-        textView.setTypeface(null, effect.getIsCraftable() ? Typeface.BOLD : Typeface.ITALIC);
+        textView.setTypeface(null, effect.getCanBeCrafted() ? Typeface.BOLD : Typeface.ITALIC);
         textView.setText(effect.getName());
 
         ImageView imageView = convertView.findViewById(R.id.effect_image_view);
         int imageID = this.currentGame.getEffectImageResource(effect.getCode(), this.context);
         imageView.setImageResource(imageID);
 
-        if (effect.getIsCraftable()) {
+        if (effect.getCanBeCrafted()) {
             ImageViewUtils.setUnlocked(imageView);
         } else {
             ImageViewUtils.setLocked(imageView);
