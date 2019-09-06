@@ -34,14 +34,13 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.ingredient_list_fragment, container, false);
 
-        ExpandableListView ingredientListView = (ExpandableListView) rootView.findViewById(R.id.ingredient_list);
+        ExpandableListView ingredientListView = rootView.findViewById(R.id.ingredient_list);
         this.ingredientListAdapter = new IngredientListAdapter(this.getActivity(), this.game);
         ingredientListView.setAdapter(this.ingredientListAdapter);
 
         ingredientListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
                 if (ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
@@ -60,9 +59,7 @@ public class IngredientListFragment extends Fragment implements DialogInterface.
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 IngredientListAdapter adapter = (IngredientListAdapter) parent.getExpandableListAdapter();
-                Object obj = adapter.getChild(groupPosition, childPosition);
-
-                Ingredient ingredient = (Ingredient) obj;
+                Ingredient ingredient = (Ingredient) adapter.getChild(groupPosition, childPosition);
                 ingredient.setSelected(!ingredient.isSelected());
 
                 adapter.notifyDataSetChanged();

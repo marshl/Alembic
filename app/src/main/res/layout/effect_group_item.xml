@@ -3,22 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:padding="10dp" >
- 
-   <ImageView
-       android:id="@+id/effect_image_view"
-       android:layout_width="wrap_content"
-       android:layout_height="32dp"
-       android:paddingEnd="25dp"
-       android:paddingStart="25dp"
-       android:contentDescription="@string/effect_icon_description" />
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/effect_image_view"
+        android:layout_width="32dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25dp"
+        android:contentDescription="@string/effect_icon_description" />
     
     <TextView
         android:id="@+id/effect_text_view"
         android:layout_width="0dp"
         android:layout_height="32dp"
+        android:layout_marginStart="12dp"
         android:layout_weight="1"
         android:gravity="center_vertical|start"
         android:text="@string/effect_text_placeholder" />
-    
 </LinearLayout>

@@ -42,7 +42,7 @@ public class EffectListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.effect_list_fragment, container, false);
 
-        this.expListView = (ExpandableListView) rootView.findViewById(R.id.effect_list);
+        this.expListView = rootView.findViewById(R.id.effect_list);
 
         this.viewAdapter = new EffectExpandableListAdapter(this.getActivity(), game);
         this.expListView.setAdapter(this.viewAdapter);
@@ -51,7 +51,8 @@ public class EffectListFragment extends Fragment {
         this.expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                Ingredient ing = (Ingredient) parent.getExpandableListAdapter().getChild(groupPosition, childPosition);
+                EffectExpandableListAdapter adapter = (EffectExpandableListAdapter)parent.getExpandableListAdapter();
+                Ingredient ing = (Ingredient) adapter.getChild(groupPosition, childPosition);
                 toggleIngredient(ing);
                 return true;
             }

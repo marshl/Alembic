@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,8 +45,9 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         }
         convertView.setId(childPosition);
 
-        TextView label = (TextView) convertView.findViewById(R.id.effect_sub_text);
-        ImageView image = (ImageView) convertView.findViewById(R.id.effect_sub_image);
+        TextView label = convertView.findViewById(R.id.effect_sub_text);
+        ImageView image = convertView.findViewById(R.id.effect_sub_image);
+        CheckBox checkbox = convertView.findViewById(R.id.effect_checkbox);
 
         label.setText(ingredient.getName());
         label.setTypeface(null, ingredient.isSelected() ? Typeface.BOLD : Typeface.NORMAL);
@@ -55,6 +57,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         } else {
             ImageViewUtils.setLocked(image);
         }
+        checkbox.setChecked(ingredient.isSelected());
 
         return convertView;
     }
