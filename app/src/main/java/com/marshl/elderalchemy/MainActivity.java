@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        Toolbar myToolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(myToolbar);
 
 
-        this.viewPager = (ViewPager) this.findViewById(R.id.pager);
+        this.viewPager = this.findViewById(R.id.pager);
         this.pagerAdapter = new IngredientListPagerAdapter(this.getSupportFragmentManager());
         this.viewPager.setAdapter(this.pagerAdapter);
 

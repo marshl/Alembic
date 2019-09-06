@@ -50,7 +50,7 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         CheckBox checkbox = convertView.findViewById(R.id.effect_checkbox);
 
         label.setText(ingredient.getName());
-        label.setTypeface(null, ingredient.isSelected() ? Typeface.BOLD : Typeface.NORMAL);
+        label.setTypeface(null, ingredient.isSelected() ? Typeface.BOLD : Typeface.ITALIC);
         image.setImageResource(this.currentGame.getIngredientImageResource(ingredient, this.context));
         if (ingredient.isSelected()) {
             ImageViewUtils.setUnlocked(image);
@@ -94,11 +94,11 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
 
         AlchemyEffect effect = this.currentGame.getEffectByIndex(groupPosition);
 
-        TextView textView = (TextView) convertView.findViewById(R.id.effect_text_view);
-        textView.setTypeface(null, effect.getIsCraftable() ? Typeface.BOLD : Typeface.NORMAL);
+        TextView textView = convertView.findViewById(R.id.effect_text_view);
+        textView.setTypeface(null, effect.getIsCraftable() ? Typeface.BOLD : Typeface.ITALIC);
         textView.setText(effect.getName());
 
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.effect_image_view);
+        ImageView imageView = convertView.findViewById(R.id.effect_image_view);
         int imageID = this.currentGame.getEffectImageResource(effect.getCode(), this.context);
         imageView.setImageResource(imageID);
 

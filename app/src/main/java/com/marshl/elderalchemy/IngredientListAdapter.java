@@ -3,6 +3,7 @@ package com.marshl.elderalchemy;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,11 +55,12 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
         }
 
         convertView.setId(childPosition);
-        final TextView textView = (TextView) convertView.findViewById(R.id.label);
-        final ImageView imageView = (ImageView) convertView.findViewById(R.id.icon);
-        final CheckBox checkbox = (CheckBox) convertView.findViewById(R.id.ingredient_checkbox);
+        final TextView textView = convertView.findViewById(R.id.label);
+        final ImageView imageView = convertView.findViewById(R.id.icon);
+        final CheckBox checkbox = convertView.findViewById(R.id.ingredient_checkbox);
 
         textView.setText(ingredient.getName());
+        textView.setTypeface(null, ingredient.isSelected() ? Typeface.BOLD : Typeface.NORMAL);
         imageView.setImageResource(this.alchemyGame.getIngredientImageResource(ingredient, this.context));
         checkbox.setChecked(ingredient.isSelected());
 
@@ -102,7 +104,7 @@ public class IngredientListAdapter extends BaseExpandableListAdapter {
 
         convertView.setId(groupPosition);
 
-        final TextView textView = (TextView) convertView.findViewById(R.id.ingredient_group_text);
+        final TextView textView =  convertView.findViewById(R.id.ingredient_group_text);
         final Resources res = context.getResources();
         textView.setText(res.getString(R.string.ingredient_group_title, alchemyPackage.getPackageName()));
 
