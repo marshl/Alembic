@@ -202,13 +202,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSkillDialog() {
+        List<String> levels = this.currentGame.getLevels();
+        if (levels == null) {
+            return;
+        }
+
+        CharSequence[] cs = levels.toArray(new CharSequence[levels.size()]);
+        int selectedLevel = this.currentGame.getCurrentLevelIndex();
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Set Alchemy skill");
-
-        List<String> levels = this.currentGame.getLevels();
-        CharSequence[] cs = levels.toArray(new CharSequence[levels.size()]);
-
-        int selectedLevel = this.currentGame.getCurrentLevelIndex();
         builder.setSingleChoiceItems(cs, selectedLevel, null);
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override

@@ -3540,6 +3540,409 @@
                 <effect>slow</effect>
             </ingredient>
         </package>
+        <package>
+            <name>Rare Curios</name>
+            <ingredient>
+                <name>Alocasia Fruit</name>
+                <image>sr_alocasia_fruit</image>
+                <effect>regenerate_stamina</effect>
+                <effect>light</effect>
+                <effect>ravage_magicka</effect>
+                <effect>regenerate_health</effect>
+            </ingredient>
+            <ingredient>
+                <name>Ambrosia</name>
+                <image>sr_ambrosia</image>
+                <effect>restore_health</effect>
+                <effect>regenerate_health</effect>
+                <effect>fortify_health</effect>
+                <effect>cure_poison</effect>
+            </ingredient>
+            <ingredient>
+                <name>Aster Bloom Core</name>
+                <image>sr_aster_bloom_core</image>
+                <effect>resist_magic</effect>
+                <effect>fortify_light_armor</effect>
+                <effect>fortify_block</effect>
+                <effect>paralysis</effect>
+            </ingredient>
+            <ingredient>
+                <name>Bittergreen Petals</name>
+                <image>sr_bittergreen_petals</image>
+                <effect>lingering_damage_stamina</effect>
+                <effect>invisibility</effect>
+                <effect>cure_poison</effect>
+                <effect>damage_magicka</effect>
+            </ingredient>
+            <ingredient>
+                <name>Blind Watcher's Eye</name>
+                <image>sr_blind_watchers_eye</image>
+                <effect>light</effect>
+                <effect>fortify_magicka</effect>
+                <effect>fortify_alteration</effect>
+                <effect>spell_absorption</effect>
+            </ingredient>
+            <ingredient>
+                <name>Blister Pod Cap</name>
+                <image>sr_blister_pod_cap</image>
+                <effect>restore_magicka</effect>
+                <effect>fortify_magicka</effect>
+                <effect>night_eye</effect>
+                <effect>invisibility</effect>
+            </ingredient>
+            <ingredient>
+                <name>Bog Beacon</name>
+                <image>sr_bog_beacon</image>
+                <effect>restore_magicka</effect>
+                <effect>fortify_heavy_armor</effect>
+                <effect>fear</effect>
+                <effect>damage_stamina</effect>
+            </ingredient>
+            <ingredient>
+                <name>Bungler's Bane</name>
+                <image>sr_bunglers_bane</image>
+                <effect>slow</effect>
+                <effect>ravage_stamina</effect>
+                <effect>damage_stamina_regen</effect>
+                <effect>resist_magic</effect>
+            </ingredient>
+            <ingredient>
+                <name>Chokeberry</name>
+                <image>sr_chokeberry</image>
+                <effect>damage_health</effect>
+                <effect>ravage_health</effect>
+                <effect>lingering_damage_health</effect>
+                <effect>weakness_to_poison</effect>
+            </ingredient>
+            <ingredient>
+                <name>Chokeweed</name>
+                <image>sr_chokeweed</image>
+                <effect>weakness_to_frost</effect>
+                <effect>restore_stamina</effect>
+                <effect>cure_disease</effect>
+                <effect>damage_magicka</effect>
+            </ingredient>
+            <ingredient>
+                <name>Coda FLower</name>
+                <image>sr_coda_flower</image>
+                <effect>damage_health</effect>
+                <effect>lingering_damage_stamina</effect>
+                <effect>ravage_magicka</effect>
+                <effect>fortify_carry_weight</effect>
+            </ingredient>
+            <ingredient>
+                <name>Comberry</name>
+                <image>sr_comberry</image>
+                <effect>damage_stamina</effect>
+                <effect>spell_absorption</effect>
+                <effect>restore_magicka</effect>
+                <effect>fortify_destruction</effect>
+            </ingredient>
+            <ingredient>
+                <name>Congealed Putrescence</name>
+                <image>sr_congealed_putrescence</image>
+                <effect>ravage_health</effect>
+                <effect>restore_magicka</effect>
+                <effect>weakness_to_fire</effect>
+                <effect>fortify_conjuration</effect>
+            </ingredient>
+            <ingredient>
+                <name>Corkbulb Root</name>
+                <image>sr_corkbulb_root</image>
+                <effect>paralysis</effect>
+                <effect>restore_health</effect>
+                <effect>resist_shock</effect>
+                <effect>fortify_marksman</effect>
+            </ingredient>
+            <ingredient>
+                <name>Daedra Silk</name>
+                <image>sr_daedra_silk</image>
+                <effect>lingering_damage_stamina</effect>
+                <effect>paralysis</effect>
+                <effect>night_eye</effect>
+                <effect>invisibility</effect>
+            </ingredient>
+            <ingredient>
+                <name>Daedra Venin</name>
+                <image>sr_daedra_venin</image>
+                <effect>ravage_health</effect>
+                <effect>paralysis</effect>
+                <effect>fortify_destruction</effect>
+                <effect>spell_absorption</effect>
+            </ingredient>
+            <ingredient>
+                <name>Daedroth Teeth</name>
+                <image>sr_daedroth_teeth</image>
+                <effect>resist_frost</effect>
+                <effect>light</effect>
+                <effect>damage_magicka_regen</effect>
+                <effect>regenerate_stamina</effect>
+            </ingredient>
+            <ingredient>
+                <name>Dreugh Wax</name>
+                <image>sr_dreugh_wax</image>
+                <effect>weakness_to_magic</effect>
+                <effect>frenzy</effect>
+                <effect>fortify_enchanting</effect>
+                <effect>fortify_smithing</effect>
+            </ingredient>
+            <ingredient>
+                <name>Elytra Ichor</name>
+                <image>sr_elytra_ichor</image>
+                <effect>restore_magicka</effect>
+                <effect>invisibility</effect>
+                <effect>slow</effect>
+                <effect>fear</effect>
+            </ingredient>
+            <ingredient>
+                <name>Fire Petal</name>
+                <image>sr_fire_petal</image>
+                <effect>damage_health</effect>
+                <effect>resist_fire</effect>
+                <effect>spell_absorption</effect>
+                <effect>paralysis</effect>
+            </ingredient>
+            <ingredient>
+                <name>Fungus Stalk</name>
+                <image>sr_fungus_stalk</image>
+                <effect>restore_magicka</effect>
+                <effect>resist_frost</effect>
+                <effect>weakness_to_fire</effect>
+                <effect>invisibility</effect>
+            </ingredient>
+            <ingredient>
+                <name>Gnarl Bark</name>
+                <image>sr_gnarl_bark</image>
+                <effect>damage_health</effect>
+                <effect>regenerate_health</effect>
+                <effect>fortify_heavy_armor</effect>
+                <effect>resist_fire</effect>
+            </ingredient>
+            <ingredient>
+                <name>Gold Kanet</name>
+                <image>sr_gold_kanet</image>
+                <effect>paralysis</effect>
+                <effect>ravage_health</effect>
+                <effect>weakness_to_frost</effect>
+                <effect>fortify_smithing</effect>
+            </ingredient>
+            <ingredient>
+                <name>Hackle-Lo Leaf</name>
+                <image>sr_hackle_lo_leaf</image>
+                <effect>restore_stamina</effect>
+                <effect>paralysis</effect>
+                <effect>waterbreathing</effect>
+                <effect>fortify_restoration</effect>
+            </ingredient>
+            <ingredient>
+                <name>Heart of Order</name>
+                <image>sr_heart_of_order</image>
+                <effect>restore_health</effect>
+                <effect>fortify_health</effect>
+                <effect>fortify_one_handed</effect>
+                <effect>fortify_two_handed</effect>
+            </ingredient>
+            <ingredient>
+                <name>Hunger Tongue</name>
+                <image>sr_hunger_tongue</image>
+                <effect>weakness_to_fire</effect>
+                <effect>cure_disease</effect>
+                <effect>cure_poison</effect>
+                <effect>fortify_magicka</effect>
+            </ingredient>
+            <ingredient>
+                <name>Hydnum Azure Giant Spore</name>
+                <image>sr_hydnum_azure_giant_spore</image>
+                <effect>resist_frost</effect>
+                <effect>fortify_health</effect>
+                <effect>regenerate_health</effect>
+                <effect>light</effect>
+            </ingredient>
+            <ingredient>
+                <name>Hyphia Facia</name>
+                <image>sr_hyphia_facia</image>
+                <effect>weakness_to_poison</effect>
+                <effect>frenzy</effect>
+                <effect>ravage_stamina</effect>
+                <effect>resist_magic</effect>
+            </ingredient>
+            <ingredient>
+                <name>Imp Gall</name>
+                <image>sr_imp_gall</image>
+                <effect>damage_health</effect>
+                <effect>weakness_to_fire</effect>
+                <effect>fortify_barter</effect>
+                <effect>cure_poison</effect>
+            </ingredient>
+            <ingredient>
+                <name>Kagouti Hide</name>
+                <image>sr_kagouti_hide</image>
+                <effect>lingering_damage_stamina</effect>
+                <effect>night_eye</effect>
+                <effect>fortify_carry_weight</effect>
+                <effect>cure_poison</effect>
+            </ingredient>
+            <ingredient>
+                <name>Kresh Fiber</name>
+                <image>sr_kresh_fiber</image>
+                <effect>weakness_to_magic</effect>
+                <effect>slow</effect>
+                <effect>fortify_sneak</effect>
+                <effect>fortify_pickpocket</effect>
+            </ingredient>
+            <ingredient>
+                <name>Lichor</name>
+                <image>sr_lichor</image>
+                <effect>restore_magicka</effect>
+                <effect>regenerate_magicka</effect>
+                <effect>fortify_magicka</effect>
+                <effect>spell_absorption</effect>
+            </ingredient>
+            <ingredient>
+                <name>Luminous Russula</name>
+                <image>sr_luminous_russula</image>
+                <effect>lingering_damage_stamina</effect>
+                <effect>lingering_damage_health</effect>
+                <effect>waterbreathing</effect>
+                <effect>fear</effect>
+            </ingredient>
+            <ingredient>
+                <name>Marshmerrow</name>
+                <image>sr_marshmerrow</image>
+                <effect>restore_health</effect>
+                <effect>fortify_carry_weight</effect>
+                <effect>weakness_to_magic</effect>
+                <effect>damage_stamina</effect>
+            </ingredient>
+            <ingredient>
+                <name>Minotaur Horn</name>
+                <image>sr_minotaur_horn</image>
+                <effect>resist_poison</effect>
+                <effect>damage_magicka_regen</effect>
+                <effect>regenerate_health</effect>
+                <effect>regenerate_magicka</effect>
+            </ingredient>
+            <ingredient>
+                <name>Ogre's Teeth</name>
+                <image>sr_ogres_teeth</image>
+                <effect>weakness_to_shock</effect>
+                <effect>resist_poison</effect>
+                <effect>lingering_damage_magicka</effect>
+                <effect>regenerate_health</effect>
+            </ingredient>
+            <ingredient>
+                <name>Red Kelp Gas Bladder</name>
+                <image>sr_red_kelp_gas_bladder</image>
+                <effect>regenerate_stamina</effect>
+                <effect>waterbreathing</effect>
+                <effect>cure_disease</effect>
+                <effect>fortify_magicka</effect>
+            </ingredient>
+            <ingredient>
+                <name>Redwort Flower</name>
+                <image>sr_redwort_flower</image>
+                <effect>resist_frost</effect>
+                <effect>cure_poison</effect>
+                <effect>damage_health</effect>
+                <effect>invisibility</effect>
+            </ingredient>
+            <ingredient>
+                <name>Roobrush</name>
+                <image>sr_roobrush</image>
+                <effect>weakness_to_magic</effect>
+                <effect>fortify_sneak</effect>
+                <effect>lingering_damage_health</effect>
+                <effect>cure_poison</effect>
+            </ingredient>
+            <ingredient>
+                <name>Saltrice</name>
+                <image>sr_saltrice</image>
+                <effect>restore_stamina</effect>
+                <effect>fortify_magicka</effect>
+                <effect>damage_stamina_regen</effect>
+                <effect>restore_health</effect>
+            </ingredient>
+            <ingredient>
+                <name>Scalon Fin</name>
+                <image>sr_scalon_fin</image>
+                <effect>waterbreathing</effect>
+                <effect>damage_health</effect>
+                <effect>lingering_damage_magicka</effect>
+                <effect>damage_magicka_regen</effect>
+            </ingredient>
+            <ingredient>
+                <name>Scrib Jelly</name>
+                <image>sr_scrib_jelly</image>
+                <effect>regenerate_magicka</effect>
+                <effect>cure_poison</effect>
+                <effect>cure_disease</effect>
+                <effect>regenerate_stamina</effect>
+            </ingredient>
+            <ingredient>
+                <name>Scrib Jerky</name>
+                <image>sr_scrib_jerky</image>
+                <effect>restore_stamina</effect>
+                <effect>fortify_stamina</effect>
+                <effect>paralysis</effect>
+                <effect>waterbreathing</effect>
+            </ingredient>
+            <ingredient>
+                <name>Sload Soap</name>
+                <image>sr_sload_soap</image>
+                <effect>resist_fire</effect>
+                <effect>fear</effect>
+                <effect>fortify_conjuration</effect>
+                <effect>fortify_alteration</effect>
+            </ingredient>
+            <ingredient>
+                <name>Stoneflower Petals</name>
+                <image>sr_stoneflower_petals</image>
+                <effect>weakness_to_shock</effect>
+                <effect>fortify_one_handed</effect>
+                <effect>fortify_magicka</effect>
+                <effect>fortify_enchanting</effect>
+            </ingredient>
+            <ingredient>
+                <name>Void Essence</name>
+                <image>sr_void_essence</image>
+                <effect>restore_health</effect>
+                <effect>fortify_health</effect>
+                <effect>fortify_stamina</effect>
+                <effect>regenerate_health</effect>
+            </ingredient>
+            <ingredient>
+                <name>Watcher's Eye</name>
+                <image>sr_watchers_eye</image>
+                <effect>night_eye</effect>
+                <effect>fortify_magicka</effect>
+                <effect>fortify_illusion</effect>
+                <effect>spell_absorption</effect>
+            </ingredient>
+            <ingredient>
+                <name>Wisp Stalk Caps</name>
+                <image>sr_wisp_stalk_caps</image>
+                <effect>damage_health</effect>
+                <effect>weakness_to_poison</effect>
+                <effect>frenzy</effect>
+                <effect>regenerate_stamina</effect>
+            </ingredient>
+            <ingredient>
+                <name>Withering Moon</name>
+                <image>sr_withering_moon</image>
+                <effect>restore_magicka</effect>
+                <effect>spell_absorption</effect>
+                <effect>fortify_light_armor</effect>
+                <effect>cure_disease</effect>
+            </ingredient>
+            <ingredient>
+                <name>Worm's Head Cap</name>
+                <image>sr_worms_head_cap</image>
+                <effect>fortify_lockpicking</effect>
+                <effect>night_eye</effect>
+                <effect>fortify_carry_weight</effect>
+                <effect>slow</effect>
+            </ingredient>
+        </package>
         <effect>
             <code>weakness_to_frost</code>
             <name>Weakness to Frost</name>
@@ -3706,13 +4109,18 @@
             <image>sr_magic_hat</image>
         </effect>
         <effect>
-            <code>fortify_marksman</code>
-            <name>Fortify Marksman</name>
+            <code>cure_disease</code>
+            <name>Cure Disease</name>
             <image>sr_magic_hat</image>
         </effect>
         <effect>
-            <code>cure_disease</code>
-            <name>Cure Disease</name>
+            <code>damage_stamina_regen</code>
+            <name>Damage Stamina Regen</name>
+            <image>sr_magic_hat</image>
+        </effect>
+        <effect>
+            <code>fortify_marksman</code>
+            <name>Fortify Marksman</name>
             <image>sr_magic_hat</image>
         </effect>
         <effect>
@@ -3726,14 +4134,19 @@
             <image>sr_invisibility</image>
         </effect>
         <effect>
+            <code>light</code>
+            <name>Light</name>
+            <image>sr_light</image>
+        </effect>
+        <effect>
+            <code>spell_absorption</code>
+            <name>Spell Absorption</name>
+            <image>sr_invisibility</image>
+        </effect>
+        <effect>
             <code>waterbreathing</code>
             <name>Waterbreathing</name>
             <image>sr_alteration</image>
-        </effect>
-        <effect>
-            <code>damage_stamina_regen</code>
-            <name>Damage Stamina Regen</name>
-            <image>sr_magic_hat</image>
         </effect>
         <effect>
             <code>fortify_carry_weight</code>
@@ -3813,6 +4226,16 @@
         <effect>
             <code>lingering_damage_health</code>
             <name>Lingering Damage Health</name>
+            <image>sr_magic_hat</image>
+        </effect>
+        <effect>
+            <code>night_eye</code>
+            <name>Night Eye</name>
+            <image>sr_paralyze</image>
+        </effect>
+        <effect>
+            <code>cure_poison</code>
+            <name>Cure Poison</name>
             <image>sr_magic_hat</image>
         </effect>
     </game>

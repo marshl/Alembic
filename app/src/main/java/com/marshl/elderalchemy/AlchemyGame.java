@@ -3,6 +3,7 @@ package com.marshl.elderalchemy;
 import android.app.Activity;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,7 +63,7 @@ public class AlchemyGame implements Parcelable {
         this.currentLevelIndex = in.readInt();
     }
 
-    public AlchemyGame(String name, String prefix, List<String> levels) {
+    AlchemyGame(String name, String prefix, List<String> levels) {
         this.name = name;
         this.prefix = prefix;
         this.levels = levels;
@@ -74,35 +75,35 @@ public class AlchemyGame implements Parcelable {
 
     }
 
-    public void addPackage(AlchemyPackage pkg) {
+    void addPackage(AlchemyPackage pkg) {
         this.packages.add(pkg);
     }
 
-    public int getPackageCount() {
+    int getPackageCount() {
         return this.packages.size();
     }
 
-    public AlchemyPackage getPackage(int index) {
+    AlchemyPackage getPackage(int index) {
         return this.packages.get(index);
     }
 
-    public void addEffect(AlchemyEffect effect) {
+    void addEffect(AlchemyEffect effect) {
         this.effectMap.put(effect.getCode(), effect);
     }
 
-    public int getAvailableEffectCount() {
+    int getAvailableEffectCount() {
         return this.availableEffects.size();
     }
 
-    public AlchemyEffect getEffectByIndex(int index) {
+    AlchemyEffect getEffectByIndex(int index) {
         return this.getEffect(this.availableEffects.get(index));
     }
 
-    public AlchemyEffect getEffect(String code) {
+    private AlchemyEffect getEffect(String code) {
         return this.effectMap.get(code);
     }
 
-    public List<Ingredient> getIngredientsForEffect(String effectCode) {
+    List<Ingredient> getIngredientsForEffect(String effectCode) {
         return this.effectToIngredientMap.get(effectCode);
     }
 
@@ -121,15 +122,11 @@ public class AlchemyGame implements Parcelable {
         parcel.writeInt(this.currentLevelIndex);
     }
 
-    public String getGameName() {
-        return this.name;
-    }
-
-    public String getPrefix() {
+    String getPrefix() {
         return this.prefix;
     }
 
-    public void recalculateIngredientEffects() {
+    void recalculateIngredientEffects() {
         this.effectToIngredientMap = new HashMap<>();
         this.availableEffects = new ArrayList<>();
 
@@ -148,6 +145,10 @@ public class AlchemyGame implements Parcelable {
         for (Map.Entry<String, List<Ingredient>> entry : this.effectToIngredientMap.entrySet()) {
 
             AlchemyEffect effect = this.getEffect(entry.getKey());
+            if (effect == null) {
+                Log.e("AlchemyGame", "Unknown effect \"" + entry.getKey() + "\"");
+                continue;
+            }
             List<Ingredient> ingredients = entry.getValue();
             effect.setCanBeCrafted(ingredients.size() >= 2);
             int selectedIngredientCount = 0;
@@ -179,6 +180,10 @@ public class AlchemyGame implements Parcelable {
             public int compare(String o1, String o2) {
                 AlchemyEffect e1 = AlchemyGame.this.getEffect(o1);
                 AlchemyEffect e2 = AlchemyGame.this.getEffect(o2);
+                if (e1 == null || e2 == null) {
+                    Log.e("AlchemyGame", "Could not compare effects " + o1 + " and " + o2);
+                    return 0;
+                }
                 if (e1.getCanBeCrafted() && !e2.getCanBeCrafted()) {
                     return -1;
                 }

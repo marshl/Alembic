@@ -51,7 +51,7 @@ public class EffectListFragment extends Fragment {
         this.expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                EffectExpandableListAdapter adapter = (EffectExpandableListAdapter)parent.getExpandableListAdapter();
+                EffectExpandableListAdapter adapter = (EffectExpandableListAdapter) parent.getExpandableListAdapter();
                 Ingredient ing = (Ingredient) adapter.getChild(groupPosition, childPosition);
                 toggleIngredient(ing);
                 return true;
@@ -75,6 +75,9 @@ public class EffectListFragment extends Fragment {
     private void setExpandedEffects(List<String> effectList) {
         for (int i = 0; i < this.game.getAvailableEffectCount(); ++i) {
             AlchemyEffect effect = this.game.getEffectByIndex(i);
+            if (effect == null) {
+                continue;
+            }
             if (Collections.frequency(effectList, effect.getCode()) > 0) {
                 expListView.expandGroup(i);
             } else {

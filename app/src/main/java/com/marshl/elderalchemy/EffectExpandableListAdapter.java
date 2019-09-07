@@ -93,6 +93,9 @@ public class EffectExpandableListAdapter extends BaseExpandableListAdapter {
         }
 
         AlchemyEffect effect = this.currentGame.getEffectByIndex(groupPosition);
+        if(effect == null) {
+            return convertView;
+        }
 
         TextView textView = convertView.findViewById(R.id.effect_text_view);
         textView.setTypeface(null, effect.getCanBeCrafted() ? Typeface.BOLD : Typeface.ITALIC);
