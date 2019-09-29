@@ -177,7 +177,7 @@ class AlchemyXmlParser {
         String ingredientImage = null;
         int ingredientValue = 0;
         float ingredientWeight = 0;
-        List<IngredientEffect> ingredientEffects = new ArrayList<>();
+        ArrayList<IngredientEffect> ingredientEffects = new ArrayList<>();
         IngredientEffect lastEffect = null;
 
         while (parser.next() != XmlPullParser.END_TAG) {

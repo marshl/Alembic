@@ -22,10 +22,10 @@ public class Ingredient implements Parcelable {
     private final String image;
     private final int value;
     private final float weight;
-    private List<IngredientEffect> effects;
+    private ArrayList<IngredientEffect> effects = new ArrayList<IngredientEffect>();
     private boolean selected = false;
 
-    Ingredient(String name, String imageName, int value, float weight, List<IngredientEffect> effects) {
+    Ingredient(String name, String imageName, int value, float weight, ArrayList<IngredientEffect> effects) {
         this.name = name;
         this.effects = effects;
         this.image = imageName;
@@ -40,13 +40,7 @@ public class Ingredient implements Parcelable {
         this.selected = in.readInt() == 1;
         this.value = in.readInt();
         this.weight = in.readFloat();
-        IngredientEffect[] effectList = in.createTypedArray(IngredientEffect.CREATOR);
-        this.effects = Arrays.asList(effectList);
-//        in.readTypedList(this.effects, IngredientEffect.CREATOR);
-//        IngredientEffect[] tempEffects = new IngredientEffect[in.readInt()];
-//        in.readParcelableArray(tempEffects);
-////        this.effects.addAll(Arrays.asList(tempEffects));
-//        this.effects.addAll(Array)
+        in.readTypedList(this.effects, IngredientEffect.CREATOR);
     }
 
     boolean isSelected() {
@@ -85,9 +79,7 @@ public class Ingredient implements Parcelable {
         parcel.writeInt(this.selected ? 1 : 0);
         parcel.writeInt(this.value);
         parcel.writeFloat(this.weight);
-        parcel.writeTypedArray((IngredientEffect[])this.effects.toArray(), 0);
-//        parcel.writeInt(this.effects.size());
-//        parcel.writeStringArray(this.effects.toArray(new String[0]));
+        parcel.writeTypedList(this.effects);
     }
 
     List<IngredientEffect> getFirstEffects(int effectCount) {
