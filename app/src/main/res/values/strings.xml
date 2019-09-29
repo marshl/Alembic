@@ -17,4 +17,7 @@
     <string name="switch_game">Switch Game</string>
     <string name="set_skill">Set Skill</string>
     <string name="pick_game">Choose a game</string>
+    <string name="gold">Gold</string>
+    <string name="weight">Weight</string>
+    <string name="title_activity_ingredient_detail">IngredientDetailActivity</string>
 </resources>

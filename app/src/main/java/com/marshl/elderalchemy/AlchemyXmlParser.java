@@ -82,7 +82,7 @@ class AlchemyXmlParser {
                     levels = this.readLevelsNode(parser);
                     break;
                 default:
-                    throw new IOException("Unknown node type: \"" + nodeName + "\" when parsing root node");
+                    throw new IOException("Unknown node type: \"" + nodeName + "\" when parsing game node");
             }
         }
 
@@ -175,7 +175,10 @@ class AlchemyXmlParser {
 
         String ingredientName = null;
         String ingredientImage = null;
-        List<String> ingredientEffects = new ArrayList<>();
+        int ingredientValue = 0;
+        float ingredientWeight = 0;
+        List<IngredientEffect> ingredientEffects = new ArrayList<>();
+        IngredientEffect lastEffect = null;
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -188,17 +191,34 @@ class AlchemyXmlParser {
                     ingredientName = this.readText(parser);
                     break;
                 case "effect":
-                    ingredientEffects.add(this.readText(parser));
+                    lastEffect = new IngredientEffect(this.readText(parser));
+                    ingredientEffects.add(lastEffect);
                     break;
                 case "image":
                     ingredientImage = this.readText(parser);
+                    break;
+                case "value":
+                    ingredientValue = Integer.parseInt(this.readText(parser));
+                    break;
+                case "weight":
+                    ingredientWeight = Float.parseFloat(this.readText(parser));
+                    break;
+                case "value_multiplier":
+                    if (lastEffect != null) {
+                        lastEffect.setValueMultiplier(Float.parseFloat(this.readText(parser)));
+                    }
+                    break;
+                case "magnitude_multiplier":
+                    if (lastEffect != null) {
+                        lastEffect.setMagnitudeMultiplier(Float.parseFloat(this.readText(parser)));
+                    }
                     break;
                 default:
                     throw new XmlPullParserException("Unknown node type \"" + nodeName + "\" found in ingredient node");
             }
         }
 
-        return new Ingredient(ingredientName, ingredientImage, ingredientEffects);
+        return new Ingredient(ingredientName, ingredientImage, ingredientValue, ingredientWeight, ingredientEffects);
     }
 
     private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {

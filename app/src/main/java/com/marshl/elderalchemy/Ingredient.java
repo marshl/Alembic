@@ -20,13 +20,17 @@ public class Ingredient implements Parcelable {
     };
     private final String name;
     private final String image;
-    private List<String> effectCodes = new ArrayList<>();
+    private final int value;
+    private final float weight;
+    private List<IngredientEffect> effects;
     private boolean selected = false;
 
-    Ingredient(String name, String imageName, List<String> effectCodes) {
+    Ingredient(String name, String imageName, int value, float weight, List<IngredientEffect> effects) {
         this.name = name;
-        this.effectCodes = effectCodes;
+        this.effects = effects;
         this.image = imageName;
+        this.value = value;
+        this.weight = weight;
     }
 
     private Ingredient(Parcel in) {
@@ -34,10 +38,15 @@ public class Ingredient implements Parcelable {
         this.name = in.readString();
         this.image = in.readString();
         this.selected = in.readInt() == 1;
-
-        String[] tempEffects = new String[in.readInt()];
-        in.readStringArray(tempEffects);
-        this.effectCodes.addAll(Arrays.asList(tempEffects));
+        this.value = in.readInt();
+        this.weight = in.readFloat();
+        IngredientEffect[] effectList = in.createTypedArray(IngredientEffect.CREATOR);
+        this.effects = Arrays.asList(effectList);
+//        in.readTypedList(this.effects, IngredientEffect.CREATOR);
+//        IngredientEffect[] tempEffects = new IngredientEffect[in.readInt()];
+//        in.readParcelableArray(tempEffects);
+////        this.effects.addAll(Arrays.asList(tempEffects));
+//        this.effects.addAll(Array)
     }
 
     boolean isSelected() {
@@ -56,6 +65,14 @@ public class Ingredient implements Parcelable {
         return this.name;
     }
 
+    public float getValue() {
+        return this.value;
+    }
+
+    public float getWeight() {
+        return this.weight;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -66,16 +83,22 @@ public class Ingredient implements Parcelable {
         parcel.writeString(this.name);
         parcel.writeString(this.image);
         parcel.writeInt(this.selected ? 1 : 0);
-        parcel.writeInt(this.effectCodes.size());
-        parcel.writeStringArray(this.effectCodes.toArray(new String[0]));
+        parcel.writeInt(this.value);
+        parcel.writeFloat(this.weight);
+        parcel.writeTypedArray((IngredientEffect[])this.effects.toArray(), 0);
+//        parcel.writeInt(this.effects.size());
+//        parcel.writeStringArray(this.effects.toArray(new String[0]));
     }
 
-    List<String> getFirstEffects(int effectCount) {
+    List<IngredientEffect> getFirstEffects(int effectCount) {
         if (effectCount == 0) {
-            return this.effectCodes;
+
+            return this.effects;
+//            return Arrays.asList(this.effects);
         }
 
-        return this.effectCodes.subList(0, Math.min(effectCount, this.effectCodes.size()));
+        return this.effects.subList(0, Math.min(effectCount, this.effects.size()));
+//        return Arrays.asList(this.effects).subList(0, Math.min(effectCount, this.effects.length));
     }
 }
 

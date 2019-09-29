@@ -11,4 +11,6 @@
 signing.properties
 *.apk
 /app/release/
-*.py
+app/src/parser/venv/
+app/src/parser/html/
+app/src/parser/ingredients.xml

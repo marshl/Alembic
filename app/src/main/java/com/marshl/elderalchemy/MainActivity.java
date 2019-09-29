@@ -106,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences settings = this.getSharedPreferences(SHARED_PREFERENCE_KEY, 0);
         String gameName = settings.getString(GAME_NAME_KEY, "mw");
         this.currentGame = gameMap.get(gameName);
+        if(this.currentGame == null) {
+            this.currentGame = this.gameMap.get("mw");
+        }
         this.currentGame.setCurrentLevel(settings.getInt(GAME_LEVEL_KEY, -1));
 
         Set<String> selectedIngredients = settings.getStringSet(SELECTED_INGREDIENTS_KEY, null);

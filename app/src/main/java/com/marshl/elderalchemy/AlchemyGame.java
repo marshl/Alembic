@@ -132,7 +132,8 @@ public class AlchemyGame implements Parcelable {
 
         for (AlchemyPackage alchemyPackage : this.packages) {
             for (Ingredient ingredient : alchemyPackage.ingredients) {
-                for (String effectCode : ingredient.getFirstEffects(this.currentLevelIndex + 1)) {
+                for (IngredientEffect effect : ingredient.getFirstEffects(this.currentLevelIndex + 1)) {
+                    String effectCode = effect.getName();
                     if (this.effectToIngredientMap.get(effectCode) == null) {
                         this.effectToIngredientMap.put(effectCode, new ArrayList<Ingredient>());
                         this.availableEffects.add(effectCode);
@@ -199,6 +200,9 @@ public class AlchemyGame implements Parcelable {
 
     int getEffectImageResource(String effectCode, Activity context) {
         AlchemyEffect effect = this.effectMap.get(effectCode);
+        if(effect == null) {
+            return 0;
+        }
         return context.getResources().getIdentifier(effect.getImage(), "drawable", context.getPackageName().toLowerCase());
     }
 
