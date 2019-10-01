@@ -152,7 +152,7 @@ def find_game_effects(game: dict):
                     continue
 
                 if "img_url" not in name:
-                    img = "magic_hat"
+                    img = game["prefix"] + "_" + "magic_hat"
                 else:
                     if game["prefix"] == "ob":
                         matches = re.match(
