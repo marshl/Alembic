@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         if(this.currentGame == null) {
             this.currentGame = this.gameMap.get("mw");
         }
+        assert this.currentGame != null;
         this.currentGame.setCurrentLevel(settings.getInt(GAME_LEVEL_KEY, -1));
 
         Set<String> selectedIngredients = settings.getStringSet(SELECTED_INGREDIENTS_KEY, null);
@@ -212,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
 
         CharSequence[] cs = levels.toArray(new CharSequence[levels.size()]);
         int selectedLevel = this.currentGame.getCurrentLevelIndex();
+        Log.e("SKILL", "" + selectedLevel);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Set Alchemy skill");

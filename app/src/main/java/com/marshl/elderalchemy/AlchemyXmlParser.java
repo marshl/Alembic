@@ -175,6 +175,7 @@ class AlchemyXmlParser {
 
         String ingredientName = null;
         String ingredientImage = null;
+        String ingredientDescription = null;
         int ingredientValue = 0;
         float ingredientWeight = 0;
         ArrayList<IngredientEffect> ingredientEffects = new ArrayList<>();
@@ -189,6 +190,9 @@ class AlchemyXmlParser {
             switch (nodeName) {
                 case "name":
                     ingredientName = this.readText(parser);
+                    break;
+                case "description":
+                    ingredientDescription = this.readText(parser);
                     break;
                 case "effect":
                     lastEffect = new IngredientEffect(this.readText(parser));
@@ -218,7 +222,7 @@ class AlchemyXmlParser {
             }
         }
 
-        return new Ingredient(ingredientName, ingredientImage, ingredientValue, ingredientWeight, ingredientEffects);
+        return new Ingredient(ingredientName, ingredientDescription, ingredientImage, ingredientValue, ingredientWeight, ingredientEffects);
     }
 
     private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {

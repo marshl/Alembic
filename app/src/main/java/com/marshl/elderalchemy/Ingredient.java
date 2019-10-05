@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -19,14 +18,16 @@ public class Ingredient implements Parcelable {
         }
     };
     private final String name;
+    private final String description;
     private final String image;
     private final int value;
     private final float weight;
     private ArrayList<IngredientEffect> effects = new ArrayList<IngredientEffect>();
     private boolean selected = false;
 
-    Ingredient(String name, String imageName, int value, float weight, ArrayList<IngredientEffect> effects) {
+    Ingredient(String name, String description, String imageName, int value, float weight, ArrayList<IngredientEffect> effects) {
         this.name = name;
+        this.description = description;
         this.effects = effects;
         this.image = imageName;
         this.value = value;
@@ -36,6 +37,7 @@ public class Ingredient implements Parcelable {
     private Ingredient(Parcel in) {
         super();
         this.name = in.readString();
+        this.description = in.readString();
         this.image = in.readString();
         this.selected = in.readInt() == 1;
         this.value = in.readInt();
@@ -75,6 +77,7 @@ public class Ingredient implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.name);
+        parcel.writeString(this.description);
         parcel.writeString(this.image);
         parcel.writeInt(this.selected ? 1 : 0);
         parcel.writeInt(this.value);
@@ -91,6 +94,10 @@ public class Ingredient implements Parcelable {
 
         return this.effects.subList(0, Math.min(effectCount, this.effects.size()));
 //        return Arrays.asList(this.effects).subList(0, Math.min(effectCount, this.effects.length));
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 }
 

@@ -24,8 +24,10 @@ public class IngredientDetailActivity extends AppCompatActivity {
         ImageView ingredientImageView = this.findViewById(R.id.ingredient_detail_image);
         TextView ingredientGoldLabel = this.findViewById(R.id.ingredient_detail_gold_text);
         TextView ingredientWeightLabel = this.findViewById(R.id.ingredient_detail_weight_text);
+        TextView ingredientDescriptionLabel = this.findViewById(R.id.ingredient_detail_description);
 
         ingredientNameLabel.setText(this.ingredient.getName());
+        ingredientDescriptionLabel.setText(this.ingredient.getDescription());
         int imageResource = this.getResources().getIdentifier(ingredient.getImage(), "drawable", this.getPackageName().toLowerCase());
         ingredientImageView.setImageResource(imageResource);
         DecimalFormat df = new DecimalFormat("#.##");

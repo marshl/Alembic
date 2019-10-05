@@ -94,6 +94,7 @@ def parse_ingredient(first_row: BeautifulSoup, second_row: BeautifulSoup):
     name_tag = first_row.select_one("a[title]")
     ingredient["description"] = first_row.select("td")[2].text
     ingredient["name"] = name_tag.text
+
     effects = second_row.select("td")[:4]
     other = second_row.select("td")[4:]
     value_tag, weight_tag = other[:2]
@@ -190,6 +191,9 @@ def write_to_xml():
             for ingredient in package["ingredients"]:
                 ingredient_element = ET.SubElement(package_element, "ingredient")
                 ET.SubElement(ingredient_element, "name").text = ingredient["name"]
+                ET.SubElement(ingredient_element, "description").text = ingredient[
+                    "description"
+                ]
                 matches = re.match(
                     r".+?icon-ingredient-(?P<img>.+?)\.(png|jpg)", ingredient["img_url"]
                 )

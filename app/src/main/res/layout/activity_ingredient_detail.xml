@@ -18,7 +18,7 @@
     <ImageView
         android:id="@+id/ingredient_detail_image"
         android:layout_width="match_parent"
-        android:layout_height="139dp"
+        android:layout_height="80dp"
         android:layout_margin="10dp"
         android:contentDescription="@string/default_ingredient_name"
         app:srcCompat="@drawable/sr_netch_jelly" />
@@ -63,4 +63,11 @@
             android:textSize="18sp" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/ingredient_detail_description"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:text="Ingredient description"
+        android:textSize="18sp" />
 </LinearLayout>
